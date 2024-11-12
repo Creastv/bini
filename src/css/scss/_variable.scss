@@ -1,0 +1,47 @@
+// Query
+$xx: "only screen and (max-width: 350px)";
+$xs: "only screen and (max-width: 460px)";
+$sm: "only screen and (max-width: 768px)";
+$md: "only screen and (max-width: 998px)";
+$slg: "only screen and (max-width: 1200px)";
+$lg: "only screen and (max-width: 1300px)";
+$xlg: "only screen and (max-width: 1400px)";
+$xxlg: "only screen and (max-width: 1500px)";
+
+$main: #185ab1;
+$main1: #8bbc4f;
+$main2: #36a9e1;
+$main3: #f7931d;
+
+$black: #0c1a2f;
+$black2: #2b2b2b;
+$light-black: #394048;
+$gray: #b2b9c5;
+$light: #dff6ff;
+
+:root {
+  --main: #185ab1;
+  --main1: #8bbc4f;
+  --main2: #36a9e1;
+  --main3: #f7931d;
+
+  --black: #0c1a2f;
+  --black2: #2b2b2b;
+  --light-black: #394048;
+  --gray: #b2b9c5;
+  --light: #dff6ff;
+  --white: #fff;
+}
+
+.hight-contrast {
+  --main: #ffeb87;
+  --main: #ffeb87;
+  --main1: #ffeb87;
+  --main2: #ffeb87;
+  --main3: #ffeb87;
+  --black: #ffeb87;
+  --black2: #fff;
+  --light-black: #ffeb87;
+  --light: #212529;
+  --white: #212529;
+}

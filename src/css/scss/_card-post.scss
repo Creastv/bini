@@ -1,0 +1,108 @@
+.posts-wraper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+  @media #{$sm} {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.recommended-posts__posts-wraper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+  @media #{$lg} {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media #{$sm} {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+}
+
+.card-post {
+  transition: all 0.5s ease-out;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  header {
+    position: relative;
+    a {
+      overflow: hidden;
+      display: block;
+      img {
+        transition: all 0.5s ease-out;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      svg {
+        position: absolute;
+        z-index: 4;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .entry-date {
+      position: absolute;
+      z-index: 20;
+      bottom: 10px;
+      left: 20px;
+      background-color: var(--main);
+      color: var(--white);
+      padding: 5px 10px;
+      display: block;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      border-radius: 100%;
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--white);
+      }
+    }
+    .entry-term {
+      position: absolute;
+      z-index: 20;
+      left: 0px;
+      bottom: -15px;
+      background-color: var(--main);
+
+      padding: 5px 10px;
+      span {
+        color: var(--white);
+      }
+    }
+  }
+  .entry-wraper {
+    padding: 30px 20px 20px;
+    .entry-title {
+      a {
+        text-decoration: none;
+        color: var(--black);
+      }
+    }
+    .entry-content {
+    }
+  }
+
+  &:hover {
+    transform: translate(0, -10px);
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--main);
+    img {
+      filter: contrast(110%);
+      filter: brightness(1.3);
+      transform: scale(1.1);
+    }
+  }
+}

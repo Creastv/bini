@@ -1,0 +1,154 @@
+html {
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1680px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 90px;
+  padding-right: 90px;
+  @media #{$md} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media #{$sm} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.container-narrow {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media #{$sm} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.entry-content {
+  .container-narrow {
+    @media #{$sm} {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+.container-full {
+  // width: calc(100vw - 9px);
+  max-width: 1600px;
+  // width: 100vw;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media #{$sm} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+#main {
+  position: relative;
+  z-index: 1;
+}
+
+#go-to-top {
+  cursor: pointer;
+  position: fixed;
+  text-align: center;
+  z-index: 22;
+  right: 20px;
+  bottom: 30px;
+  width: 39px;
+  height: 39px;
+  border-radius: 100%;
+  transform: translate(0, 100px);
+  // padding: 11px;
+  transition: all 0.2s linear;
+  background-color: var(--main2);
+  border: 2px solid var(--white);
+  @media #{$sm} {
+    bottom: 20px;
+    right: 15px;
+  }
+  svg {
+    margin-top: 5px;
+    path {
+      fill: var(--white);
+    }
+  }
+  &:hover {
+    background-color: var(--main);
+    transform: translate(0, 100px), scale(1.1);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+#go-to-top.active {
+  transform: translate(0, 0);
+}
+
+.go-pagination {
+  width: 100%;
+  padding: 20px 0;
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  a {
+    padding: 5px 1px;
+    text-decoration: none;
+    &:hover {
+      color: var(--main2);
+    }
+  }
+  span.current {
+    background-color: var(--main2);
+    color: var(--white);
+    padding: 5px 5px;
+    border-radius: 3px;
+  }
+}
+
+.rank-math-breadcrumb {
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.8em;
+
+    span {
+      &:last-child {
+        color: var(--black);
+        font-size: 1em;
+        display: inline-block;
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "----";
+        text-align: left;
+      }
+    }
+  }
+}
