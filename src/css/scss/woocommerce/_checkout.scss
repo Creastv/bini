@@ -11,6 +11,12 @@
       padding: 0;
     }
   }
+  .entry-desc {
+    display: none;
+  }
+  .quantity {
+    justify-content: flex-end;
+  }
 }
 
 .custom-checkout {
@@ -72,6 +78,7 @@
   background-color: $main-light;
   padding: 30px;
   border-radius: 6px;
+  margin-bottom: 50px;
   #order_review_heading {
     text-transform: uppercase;
   }
@@ -177,7 +184,7 @@
   .woocommerce-shipping-fields {
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;
-    margin: 10px 0;
+    margin-top: 10px;
     #ship-to-different-address {
       padding: 10px 0px;
       margin: 0;
@@ -248,11 +255,20 @@
   }
   .product-remove {
     text-align: center;
+    @media #{$md} {
+      text-align: right !important;
+    }
+
     a {
       display: block;
       background: none !important;
       width: 100%;
       color: $black !important;
+      @media #{$md} {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
     }
     &:hover {
       a,
@@ -266,8 +282,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    @media #{$md} {
+    gap: 10px;
+    @media #{$sm} {
       flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
     .actions__wrap__cupon {
@@ -295,6 +314,10 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 10px;
+      width: 100%;
+      @media #{$xs} {
+        justify-content: center;
+      }
       button[name="apply_coupon"] {
         background: #d4df7e;
         font-size: 0.875rem !important;

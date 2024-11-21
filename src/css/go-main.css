@@ -2064,6 +2064,12 @@ select {
   margin: 0;
   padding: 0;
 }
+.woocommerce-checkout .entry-desc {
+  display: none;
+}
+.woocommerce-checkout .quantity {
+  justify-content: flex-end;
+}
 
 .custom-checkout {
   position: relative;
@@ -2129,6 +2135,7 @@ select {
   background-color: #f8f4e8;
   padding: 30px;
   border-radius: 6px;
+  margin-bottom: 50px;
 }
 .custom-checkout__form__col2 #order_review_heading {
   text-transform: uppercase;
@@ -2221,7 +2228,7 @@ select {
 .custom-checkout__form__col1 .woocommerce-shipping-fields {
   border-top: 1px solid #e1e1e1;
   border-bottom: 1px solid #e1e1e1;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 .custom-checkout__form__col1 .woocommerce-shipping-fields #ship-to-different-address {
   padding: 10px 0px;
@@ -2286,11 +2293,23 @@ select {
 .woocommerce-cart-form .product-remove {
   text-align: center;
 }
+@media only screen and (max-width: 998px) {
+  .woocommerce-cart-form .product-remove {
+    text-align: right !important;
+  }
+}
 .woocommerce-cart-form .product-remove a {
   display: block;
   background: none !important;
   width: 100%;
   color: #000 !important;
+}
+@media only screen and (max-width: 998px) {
+  .woocommerce-cart-form .product-remove a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 .woocommerce-cart-form .product-remove:hover a,
 .woocommerce-cart-form .product-remove:hover span {
@@ -2301,10 +2320,13 @@ select {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  gap: 10px;
 }
-@media only screen and (max-width: 998px) {
+@media only screen and (max-width: 768px) {
   .woocommerce-cart-form .actions__wrap {
     flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
   }
 }
 .woocommerce-cart-form .actions__wrap .actions__wrap__cupon {
@@ -2332,6 +2354,12 @@ select {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
+  width: 100%;
+}
+@media only screen and (max-width: 460px) {
+  .woocommerce-cart-form .actions__wrap .coupon {
+    justify-content: center;
+  }
 }
 .woocommerce-cart-form .actions__wrap .coupon button[name=apply_coupon] {
   background: #d4df7e;
