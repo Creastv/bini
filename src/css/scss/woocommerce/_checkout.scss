@@ -79,9 +79,14 @@
   padding: 30px;
   border-radius: 6px;
   margin-bottom: 50px;
+  @media #{$sm} {
+    padding: 15px;
+  }
+
   #order_review_heading {
     text-transform: uppercase;
   }
+
   .shop_table {
     border: none !important;
     thead,

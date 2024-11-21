@@ -2137,6 +2137,11 @@ select {
   border-radius: 6px;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 768px) {
+  .custom-checkout__form__col2 {
+    padding: 15px;
+  }
+}
 .custom-checkout__form__col2 #order_review_heading {
   text-transform: uppercase;
 }
