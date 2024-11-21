@@ -1,0 +1,48 @@
+@import "../../src/css/scss/variable";
+
+.bullets {
+  .bullets__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    @media #{$sm} {
+      flex-wrap: wrap;
+    }
+    .bullet {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @media #{$lg} {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      @media #{$sm} {
+        text-align: left;
+        flex-wrap: nowrap;
+      }
+      .bullet__left {
+        padding: 10px;
+        width: 35%;
+        @media #{$lg} {
+          width: 100%;
+        }
+        @media #{$sm} {
+          width: 35%;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .bullet__right {
+        width: 65%;
+        @media #{$lg} {
+          width: 100%;
+        }
+        @media #{$sm} {
+          width: 65%;
+        }
+      }
+    }
+  }
+}

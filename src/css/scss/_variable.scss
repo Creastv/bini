@@ -8,40 +8,12 @@ $lg: "only screen and (max-width: 1300px)";
 $xlg: "only screen and (max-width: 1400px)";
 $xxlg: "only screen and (max-width: 1500px)";
 
-$main: #185ab1;
-$main1: #8bbc4f;
-$main2: #36a9e1;
-$main3: #f7931d;
+$main: #f2db72;
+$main-light: #f8f4e8;
+$main2: #b3cce6;
+$main3: #e8f9fb;
 
-$black: #0c1a2f;
-$black2: #2b2b2b;
-$light-black: #394048;
-$gray: #b2b9c5;
-$light: #dff6ff;
-
-:root {
-  --main: #185ab1;
-  --main1: #8bbc4f;
-  --main2: #36a9e1;
-  --main3: #f7931d;
-
-  --black: #0c1a2f;
-  --black2: #2b2b2b;
-  --light-black: #394048;
-  --gray: #b2b9c5;
-  --light: #dff6ff;
-  --white: #fff;
-}
-
-.hight-contrast {
-  --main: #ffeb87;
-  --main: #ffeb87;
-  --main1: #ffeb87;
-  --main2: #ffeb87;
-  --main3: #ffeb87;
-  --black: #ffeb87;
-  --black2: #fff;
-  --light-black: #ffeb87;
-  --light: #212529;
-  --white: #212529;
-}
+$black: #000;
+$light-black: #4a4a4a;
+$gray: #e1e1e1;
+$light-gray: #f4f4f4;

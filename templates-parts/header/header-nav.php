@@ -7,7 +7,7 @@
 		'menu_class' 	  => 'navbar__navigation__list',
 		'container' 	  => false,
 		'echo' 			  => false,
-		'items_wrap' 	  => '<div class="navbar__navigation__list"><ul id="%1$s" class="%2$s js-navbar__navigation__list " itemscope itemtype="https://www.schema.org/SiteNavigationElement">%3$s </ul></div>',
+		'items_wrap' 	  => '<div class="navbar__navigation__list"><ul id="%1$s" class="%2$s js-navbar__navigation__list " itemscope itemtype="https://www.schema.org/SiteNavigationElement">%3$s <div class="border"></div></ul></div>',
 	));
 	$temp_menu = str_replace("<a", "<a itemprop='url' ", $temp_menu); // We set an attribute for menu items through replacement
 

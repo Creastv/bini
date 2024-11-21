@@ -10,21 +10,34 @@
     <title><?php wp_title('|', true, 'right'); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ueq0xyu.css">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <header id="header" class="js-header" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="navbar js-navbar">
-            <?php get_template_part('templates-parts/header/header', 'brand'); ?>
-            <?php get_template_part('templates-parts/header/header', 'nav'); ?>
-            <?php get_template_part('templates-parts/header/header', 'burger'); ?>
-            <?php get_template_part('templates-parts/header/header', 'cta'); ?>
-        </div>
-    </header>
+    <?php get_template_part('templates-parts/parts/info-stripe'); ?>
+    <?php if (!is_checkout()) { ?>
+        <header id="header" class="js-header" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="container">
+                <div class="navbar js-navbar">
+                    <div class="navbar-left">
+                        <?php //get_template_part('templates-parts/header/header', 'nav'); 
+                        ?>
+                        <?php get_template_part('templates-parts/header/header-megamenu'); ?>
+                        <?php get_template_part('templates-parts/header/header', 'burger'); ?>
+                    </div>
+                    <div class="navbar-middle">
+                        <?php get_template_part('templates-parts/header/header', 'brand'); ?>
+                    </div>
+                    <div class="navbar-right">
+                        <?php get_template_part('templates-parts/header/header', 'icons'); ?>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <?php } ?>
 
 
-    <main id="main">
+    <main class="main <?php echo get_field('remove_title_section', get_the_ID()) == false ? 'main-padding' : null; ?>">
         <div class="container">
             <div class="row">

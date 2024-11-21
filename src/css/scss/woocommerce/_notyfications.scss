@@ -1,0 +1,39 @@
+.woocommerce-message::before {
+  border-radius: 6px;
+  border: none !important;
+  content: "✔"; /* Znak sukcesu */
+  margin-right: 10px;
+  color: #28a745;
+}
+
+.woocommerce-error::before {
+  border-radius: 6px;
+  border: none !important;
+  content: "✖"; /* Znak błędu */
+  margin-right: 10px;
+  color: #dc3545;
+}
+
+.woocommerce-info::before {
+  border-radius: 6px;
+  border: none !important;
+  content: "ℹ"; /* Znak informacji */
+  margin-right: 10px;
+  color: #17a2b8;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border-radius: 10px !important;
+  outline: 0;
+  border-top-style: 1px solid !important;
+  //   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.0915) !important;
+  ul {
+    li {
+      strong {
+        font-weight: bold !important;
+      }
+    }
+  }
+}

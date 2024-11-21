@@ -3,7 +3,7 @@ function mytheme_customize_register($wp_customize)
 {
     // Dodanie sekcji dla linków do social media
     $wp_customize->add_section('social_media_section', array(
-        'title'       => __('Linki do Social Media', 'mytheme'),
+        'title'       => __('Linki do Social Media', 'go'),
         'priority'    => 35, // Kolejność wyświetlania sekcji
     ));
 
@@ -13,7 +13,7 @@ function mytheme_customize_register($wp_customize)
         'sanitize_callback' => 'esc_url_raw', // Walidacja URL
     ));
     $wp_customize->add_control('facebook_url', array(
-        'label'    => __('Facebook URL', 'mytheme'),
+        'label'    => __('Facebook URL', 'go'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ));
@@ -24,7 +24,7 @@ function mytheme_customize_register($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('twitter_url', array(
-        'label'    => __('Twitter URL', 'mytheme'),
+        'label'    => __('Twitter URL', 'go'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ));
@@ -35,7 +35,7 @@ function mytheme_customize_register($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('instagram_url', array(
-        'label'    => __('Instagram URL', 'mytheme'),
+        'label'    => __('Instagram URL', 'go'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ));
@@ -46,7 +46,7 @@ function mytheme_customize_register($wp_customize)
     //     'sanitize_callback' => 'esc_url_raw',
     // ));
     // $wp_customize->add_control('linkedin_url', array(
-    //     'label'    => __('LinkedIn URL', 'mytheme'),
+    //     'label'    => __('LinkedIn URL', 'go'),
     //     'section'  => 'social_media_section',
     //     'type'     => 'url',
     // ));

@@ -1,10 +1,10 @@
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+  font-weight: 300;
   font-style: normal;
   font-size: 100%;
   line-height: 1.2;
-  color: var(--black);
+  color: $black;
 }
 
 h1,
@@ -19,55 +19,72 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Lato", sans-serif;
-  font-weight: 800;
+  font-family: "neulis-neue", sans-serif;
+  font-weight: 500;
   font-style: normal;
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
-  color: var(--black);
+  color: $black;
   transition: all 0.3s;
+}
+.big-title,
+.woocommerce-products-header__title {
+  padding: 0;
+  margin: 0;
+  font-size: 3.8rem;
+  color: $black;
+  margin-bottom: 30px;
+  @media #{$sm} {
+    font-size: 2.2rem !important;
+  }
+}
+.has-x-large-font-size {
+  font-size: 5.125rem !important;
+  @media #{$sm} {
+    font-size: 3.8rem !important;
+  }
 }
 h1,
 .h1 {
-  font-size: 2.25em;
-  color: var(--black);
+  font-size: 2.5rem;
+  color: $black;
 }
 h2,
 .h2 {
-  font-size: 1.8em;
-  color: var(--black);
+  font-size: 2rem;
+  color: $black;
 }
 h3,
 .h3 {
-  font-size: 1.5em;
-  color: var(--black);
+  font-size: 1.75rem;
+  color: $black;
 }
 h4,
 .h4 {
-  font-size: 1.3em;
-  color: var(--black);
+  font-size: 1.5rem;
+  color: $black;
 }
 h5,
 .h5 {
-  font-size: 1.125em;
-  color: var(--black);
+  font-size: 1.25rem;
+  color: $black;
 }
 h6,
 .h6 {
-  font-size: 1em;
-  color: var(--black);
+  font-size: 1rem;
+  color: $black;
 }
 p {
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5;
-  color: var(--light-black);
+  color: $light-black;
   transition: all 0.3s;
   @media #{$sm} {
-    font-size: 0.875em;
+    font-size: 0.875rem;
   }
 }
 ul {
@@ -76,30 +93,29 @@ ul {
 }
 li {
   margin-bottom: 5px;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5;
-  color: var(--light-black);
+  color: $light-black;
 }
 li::marker {
-  color: var(--main);
+  color: $main;
 }
 
 b,
 strong {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
+  font-family: "itc-avant-garde-gothic-pro", sans-serif;
+  font-weight: 500;
   font-style: normal;
-  color: var(--black);
+  color: $black;
 }
 a {
-  color: var(--main2);
-  font-style: normal;
+  color: $main2;
   &:hover {
-    color: var(--main);
+    color: $main;
   }
 }
 span {
-  color: var(--black);
+  color: $black;
 }
 
 .text-center {

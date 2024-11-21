@@ -1,0 +1,24 @@
+.info-stripe {
+  background-color: $black;
+  padding: 15px;
+  .info-stripe__wrap {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+    span {
+      color: #fff;
+      display: block;
+      white-space: nowrap;
+      text-transform: uppercase;
+      padding: 0px;
+      font-size: 0.85rem;
+      white-space: wrap;
+      text-align: center;
+      width: 100%;
+      @media #{$xs} {
+        font-size: 0.55rem;
+      }
+    }
+  }
+}

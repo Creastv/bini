@@ -5,11 +5,18 @@ require_once get_template_directory() . '/func/enqueue-scripts.php';
 require get_template_directory() . '/func/clean-up.php';
 require get_template_directory() . '/blocks/blocks.php';
 require get_template_directory() . '/func/wp-cuztomize.php';
+require get_template_directory() . '/func/cpt.php';
+require get_template_directory() . '/func/woocommerce.php';
+
 
 
 add_theme_support('post-thumbnails');
 add_theme_support('custom-logo');
+
 add_image_size('post-futured', 600, 370, array('center', 'center'), true);
+add_image_size('category-futured', 500, 500, array('center', 'center'), true);
+add_image_size('collection-futured', 800, 500, array('center', 'center'), true);
+
 
 if (!function_exists('go_register_nav_menu')) {
 	function go_register_nav_menu()
@@ -42,24 +49,32 @@ function go_widgets_init()
 		'id'            => 'sidebar',
 		'before_widget' => '<div id="%1$s" class="calaps widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="h5 widget-title">',
 		'after_title'   => '</h4>',
 	));
 
-	register_sidebar(array(
-		'name'          => __('footer one', 'go'),
-		'id'            => 'footer-1',
-		'before_widget' => '<div id="%1$s" class="calaps widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	));
 	register_sidebar(array(
 		'name'          => __('footer two', 'go'),
 		'id'            => 'footer-2',
 		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="h5 widget-title">',
+		'after_title'   => '</h4>',
+	));
+	register_sidebar(array(
+		'name'          => __('footer tree', 'go'),
+		'id'            => 'footer-3',
+		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="h5 widget-title">',
+		'after_title'   => '</h4>',
+	));
+	register_sidebar(array(
+		'name'          => __('footer four', 'go'),
+		'id'            => 'footer-4',
+		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="h5 widget-title">',
 		'after_title'   => '</h4>',
 	));
 }
@@ -68,6 +83,16 @@ add_action('widgets_init', 'go_widgets_init');
 
 
 
+// Steings
+// add_filter('excerpt_length', 'my_excerpt_length');
+
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Ustawienia szablonu',
+		'menu_title' => 'Ustawienia szablonu',
+		'parent_slug' => 'themes.php',
+	));
+}
 
 
 
@@ -112,10 +137,46 @@ function wp_example_excerpt_length($length)
 
 add_filter('excerpt_length', 'wp_example_excerpt_length');
 
+// Aktualizacja produktów, dodając wzorzec o id 565
+// function add_reusable_block_to_products($post_id)
+// {
+// 	// Upewnij się, że edytowany post to produkt
+// 	if (get_post_type($post_id) !== 'product') {
+// 		return;
+// 	}
+
+// 	// ID reusable block (wstaw swoje ID)
+// 	$reusable_block_id = 565; // Zastąp ID wzorca
+
+// 	// Pobierz bieżącą treść produktu
+// 	$current_content = get_post_field('post_content', $post_id);
+
+// 	// Przygotuj blok reusable block jako JSON
+// 	$reusable_block = '<!-- wp:block {"ref":' . $reusable_block_id . '} /-->';
+
+// 	// Sprawdź, czy blok już istnieje w treści
+// 	if (strpos($current_content, $reusable_block) !== false) {
+// 		return; // Jeśli istnieje, nie dodawaj ponownie
+// 	}
+
+// 	// Dodaj reusable block na początku treści produktu
+// 	$updated_content = $reusable_block . "\n\n" . $current_content;
+
+// 	// Zaktualizuj treść produktu
+// 	wp_update_post([
+// 		'ID'           => $post_id,
+// 		'post_content' => $updated_content,
+// 	]);
+// }
+
+// // Hook uruchamiający funkcję podczas zapisu produktu
+// add_action('save_post', 'add_reusable_block_to_products');
+
+
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
-		'page_title' => 'Ustawienia szablonu',
-		'menu_title' => 'Ustawienia szablonu',
+		'page_title' => 'Mega menu',
+		'menu_title' => 'Mega menu',
 		'parent_slug' => 'themes.php',
 	));
 }

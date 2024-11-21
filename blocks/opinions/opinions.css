@@ -1,0 +1,51 @@
+.reviews-container {
+  width: 100%;
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.reviews-container h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.reviews-container .reviews {
+  list-style: none !important;
+  padding: 0;
+}
+.reviews-container .reviews li {
+  margin: 0px;
+  margin-top: -1px;
+  padding: 15px;
+  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+}
+.reviews-container .reviews li .comment-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.reviews-container .reviews li .comment-author .custom-rating-text {
+  display: none;
+}
+.reviews-container .reviews li .comment-author .star-rating {
+  float: none !important;
+}
+
+.custome-form-wraper {
+  padding: 50px 0;
+}
+.custome-form-wraper .custome-form {
+  width: 100%;
+  max-width: 798px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+.custome-form-wraper .custome-form label,
+.custome-form-wraper .custome-form input,
+.custome-form-wraper .custome-form textarea,
+.custome-form-wraper .custome-form button {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+}/*# sourceMappingURL=opinions.css.map */

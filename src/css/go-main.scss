@@ -2,10 +2,21 @@
 @import "scss/typo";
 @import "scss/global";
 @import "scss/footer";
+@import "scss/footer/footer-one";
 @import "scss/header";
+@import "scss/header/search-slider";
+@import "scss/header/mega-menu";
 @import "scss/title-post";
 @import "scss/page";
 @import "scss/single";
 @import "scss/btn";
 @import "scss/form";
 @import "scss/card-post";
+
+@import "scss/woocommerce/global";
+@import "scss/woocommerce/single-product";
+@import "scss/woocommerce/related-cat";
+@import "scss/woocommerce/checkout";
+@import "scss/woocommerce/notyfications";
+
+@import "scss/parts/info-stripe";

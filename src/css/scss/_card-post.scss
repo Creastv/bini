@@ -54,8 +54,8 @@
       z-index: 20;
       bottom: 10px;
       left: 20px;
-      background-color: var(--main);
-      color: var(--white);
+      background-color: $main;
+      color: #ffff;
       padding: 5px 10px;
       display: block;
       width: 60px;
@@ -67,7 +67,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        color: var(--white);
+        color: #ffff;
       }
     }
     .entry-term {
@@ -75,11 +75,11 @@
       z-index: 20;
       left: 0px;
       bottom: -15px;
-      background-color: var(--main);
+      background-color: $main;
 
       padding: 5px 10px;
       span {
-        color: var(--white);
+        color: #ffff;
       }
     }
   }
@@ -88,7 +88,7 @@
     .entry-title {
       a {
         text-decoration: none;
-        color: var(--black);
+        color: $black;
       }
     }
     .entry-content {
@@ -98,7 +98,7 @@
   &:hover {
     transform: translate(0, -10px);
     box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--main);
+    border: 1px solid $main;
     img {
       filter: contrast(110%);
       filter: brightness(1.3);

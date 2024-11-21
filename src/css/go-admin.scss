@@ -5,6 +5,9 @@
 @import "scss/header";
 @import "scss/btn";
 
+@import "scss/woocommerce/global";
+@import "scss/woocommerce/single-product";
+@import "scss/woocommerce/related-cat";
 .wp-block-spacer {
   background-color: #eeeef0 !important;
 }

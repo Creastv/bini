@@ -1,0 +1,11 @@
+.custome-category .related-cat {
+  padding: 15px 0;
+}
+.custome-category .custome-category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.custome-category .custome-category-grid .related-cat__item {
+  width: calc(33.33% - 30px);
+}/*# sourceMappingURL=category.css.map */

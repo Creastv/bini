@@ -1,90 +1,117 @@
-label {
-  width: 100%;
-  margin-bottom: 10px;
-  display: block;
-  > span {
-    display: block;
-  }
-}
 input,
-select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 0px;
-  border: 1px solid var(--main2);
-  margin: 5px 0;
-  background-color: var(--white);
-  color: var(--black);
-}
 textarea {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border-radius: 0px;
-  border: 1px solid var(--main2);
-  background-color: var(--white);
-  color: var(--black);
-  margin: 5px 0;
+  background-color: $light-gray;
+  border: none !important;
+  border-radius: 6px;
+  padding: 15px 10px;
+  // min-height: 55px;
 }
-.wpcf7-submit {
-  background-color: var(--main2);
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 0px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 200px;
-  margin-top: 10px;
-  @media #{$sm} {
-    max-width: 100%;
+.select2-container--default .select2-selection--single {
+  background-color: $light-gray;
+  border: none !important;
+  border-radius: 6px;
+  min-height: 55px;
+  // padding: 15px 10px;
+  .select2-selection__rendered {
+    padding-top: 13px;
+    font-size: 0.875rem;
+    color: $light-black;
+  }
+  .select2-selection__arrow b {
+    margin-top: 13px;
   }
 }
-.wpcf7-acceptance {
-  label {
-    font-size: 12px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
+select {
+  padding: 10px 15px;
+  outline: 0;
+}
+// label {
+//   width: 100%;
+//   margin-bottom: 10px;
+//   display: block;
+//   > span {
+//     display: block;
+//   }
+// }
+// input,
+// select {
+//   width: 100%;
+//   padding: 10px;
+//   border-radius: 0px;
+//   border: 1px solid $main2;
+//   margin: 5px 0;
+//   background-color: #ffff;
+//   color: $black;
+// }
+// textarea {
+//   display: block;
+//   width: 100%;
+//   padding: 10px;
+//   border-radius: 0px;
+//   border: 1px solid $main2;
+//   background-color: #ffff;
+//   color: $black;
+//   margin: 5px 0;
+// }
+// .wpcf7-submit {
+//   background-color: $main2;
+//   color: white;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 0px;
+//   cursor: pointer;
+//   width: 100%;
+//   max-width: 200px;
+//   margin-top: 10px;
+//   @media #{$sm} {
+//     max-width: 100%;
+//   }
+// }
+// .wpcf7-acceptance {
+//   label {
+//     font-size: 12px;
+//     display: flex;
+//     gap: 10px;
+//     align-items: flex-start;
 
-    input {
-      width: 20px;
-    }
-  }
-}
+//     input {
+//       width: 20px;
+//     }
+//   }
+// }
 
-.wpcf7-spinner {
-  position: absolute;
-}
+// .wpcf7-spinner {
+//   position: absolute;
+// }
 
-.wpcf7-not-valid-tip {
-  color: #dc3232;
-  font-size: 12px;
-  font-weight: normal;
-  display: block;
-}
+// .wpcf7-not-valid-tip {
+//   color: #dc3232;
+//   font-size: 12px;
+//   font-weight: normal;
+//   display: block;
+// }
 
-.row-form {
-  display: flex;
-  flex-wrap: wrap;
-  .col-1 {
-    width: 100%;
-    padding: 0 10px;
-    @media #{$sm} {
-      width: 100%;
-    }
-  }
-  .col-2 {
-    width: 50%;
-    padding: 0 10px;
-    @media #{$sm} {
-      width: 100%;
-    }
-  }
-  .col-btn {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
-  }
-}
+// .row-form {
+//   display: flex;
+//   flex-wrap: wrap;
+//   .col-1 {
+//     width: 100%;
+//     padding: 0 10px;
+//     @media #{$sm} {
+//       width: 100%;
+//     }
+//   }
+//   .col-2 {
+//     width: 50%;
+//     padding: 0 10px;
+//     @media #{$sm} {
+//       width: 100%;
+//     }
+//   }
+//   .col-btn {
+//     width: 100%;
+//     display: flex;
+//     justify-content: flex-end;
+//     padding: 0 10px;
+//   }
+// }

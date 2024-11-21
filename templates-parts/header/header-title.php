@@ -1,7 +1,17 @@
-<header class="entry-header  text-center">
-	<div class="entry-header__wrap">
-		<h1 class="entry-title">
-			<?php if (is_category()) :
+<?php
+$page_id = get_the_ID();
+$template = get_page_template();
+$displayTitle = get_field('remove_title_section', $page_id);
+$desc = get_field('title_description', $page_id);
+?>
+<?php if ($displayTitle !== true) { ?>
+	<header class="entry-header">
+		<?php if (is_checkout()) { ?>
+			<?php get_template_part('templates-parts/header/header', 'brand'); ?>
+		<?php } ?>
+		<h1 class="entry-title big-title  <?php echo basename($template) === 'page.php' ? "text-center" : false; ?>">
+			<?php
+			if (is_category()) :
 				single_cat_title();
 			elseif (is_tax()) :
 				single_tag_title();
@@ -9,7 +19,6 @@
 				the_title();
 			elseif (get_post_type(get_the_ID()) == 'prelegent') :
 				_e('Prelegenci', 'go');
-
 			elseif (is_404()) :
 				_e('404', 'go');
 			elseif (is_search()) :
@@ -18,7 +27,6 @@
 				the_title();
 			elseif (is_tag()) :
 				single_tag_title();
-
 			elseif (is_author()) :
 				the_post();
 				printf(__('%s', 'go'), get_the_author());
@@ -43,9 +51,17 @@
 				_e('Aktualności', 'go');
 			endif; ?>
 		</h1>
-	</div>
-	<?php if (is_category()) : ?>
-		<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
-		<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
-	<?php endif; ?>
-</header>
+
+		<div class="entry-desc">
+			<?php if (is_category()) : ?>
+				<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+				<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
+			<?php endif; ?>
+			<?php if ($desc) : ?>
+				<?php echo $desc; ?>
+			<?php endif; ?>
+		</div>
+
+	</header>
+
+<?php } ?>
