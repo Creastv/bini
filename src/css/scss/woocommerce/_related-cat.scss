@@ -41,14 +41,14 @@
       z-index: 3;
       top: 50%;
       left: 0;
-      transform: translate(-80px, -50%);
+      transform: translate(-80px, 50%);
     }
     .slider-nav__next {
       position: absolute;
       z-index: 3;
       top: 50%;
       right: 0;
-      transform: translate(80px, -50%);
+      transform: translate(80px, 50%);
     }
   }
 }
@@ -107,6 +107,10 @@
     .info {
       display: flex;
       justify-content: space-between;
+      @media #{$sm} {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
       span {
         display: flex;
         align-items: center;

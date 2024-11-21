@@ -55,5 +55,5 @@ body #header {
   padding: 10px 35px;
   font-size: 18px;
   background-color: #f8f4e8;
-  color: #000;
+  color: #000 !important;
 }/*# sourceMappingURL=slider.css.map */
