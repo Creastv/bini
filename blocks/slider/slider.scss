@@ -5,6 +5,40 @@ body #header {
   z-index: 99;
   width: 100%;
   background: none;
+  .menu-item > a span,
+  .wpml-ls-statics-shortcode_actions li a,
+  .wpml-ls-statics-shortcode_actions li a span {
+    color: #fff;
+    &:hover {
+      color: $main !important;
+    }
+  }
+  svg path {
+    fill: #fff;
+    &:hover {
+      fill: $main !important;
+    }
+  }
+  a:hover {
+    color: $black;
+  }
+}
+body #header.sticky {
+  // position: absolute;
+  // z-index: 99;
+  // width: 100%;
+  // background: none;
+  .menu-item > a span,
+  .wpml-ls-statics-shortcode_actions li a,
+  .wpml-ls-statics-shortcode_actions li a span {
+    color: $black;
+  }
+  svg path {
+    fill: $black;
+  }
+  a:hover {
+    color: $black;
+  }
 }
 
 .slider-hero {

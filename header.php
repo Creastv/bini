@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
     <?php get_template_part('templates-parts/parts/info-stripe'); ?>
     <?php if (!is_checkout()) { ?>
-        <header id="header" class="js-header" itemscope itemtype="http://schema.org/WPHeader">
+        <header id="header" class="js-header " itemscope itemtype="http://schema.org/WPHeader">
             <div class="container">
                 <div class="navbar js-navbar">
                     <div class="navbar-left">

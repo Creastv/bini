@@ -4,6 +4,37 @@ body #header {
   width: 100%;
   background: none;
 }
+body #header .menu-item > a span,
+body #header .wpml-ls-statics-shortcode_actions li a,
+body #header .wpml-ls-statics-shortcode_actions li a span {
+  color: #fff;
+}
+body #header .menu-item > a span:hover,
+body #header .wpml-ls-statics-shortcode_actions li a:hover,
+body #header .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #f2db72 !important;
+}
+body #header svg path {
+  fill: #fff;
+}
+body #header svg path:hover {
+  fill: #f2db72 !important;
+}
+body #header a:hover {
+  color: #000;
+}
+
+body #header.sticky .menu-item > a span,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a span {
+  color: #000;
+}
+body #header.sticky svg path {
+  fill: #000;
+}
+body #header.sticky a:hover {
+  color: #000;
+}
 
 .slider-hero {
   position: relative;
