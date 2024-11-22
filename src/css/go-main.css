@@ -2371,6 +2371,10 @@ select {
     align-items: flex-end;
   }
 }
+.woocommerce-cart-form .product-remove a span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
 .woocommerce-cart-form .product-remove:hover a,
 .woocommerce-cart-form .product-remove:hover span {
   color: red !important;

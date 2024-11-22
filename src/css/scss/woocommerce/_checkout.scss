@@ -274,6 +274,10 @@
         flex-direction: column;
         align-items: flex-end;
       }
+      span {
+        font-size: 10px;
+        text-transform: uppercase;
+      }
     }
     &:hover {
       a,
