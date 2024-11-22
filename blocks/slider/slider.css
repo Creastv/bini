@@ -3,6 +3,7 @@ body #header {
   z-index: 99;
   width: 100%;
   background: none;
+  border: none;
 }
 body #header .menu-item > a span,
 body #header .wpml-ls-statics-shortcode_actions li a,
@@ -23,6 +24,9 @@ body #header svg path:hover {
 body #header a:hover {
   color: #000;
 }
+body #header .navbar__toggler .navbar__toggler__btn span {
+  background-color: #fff;
+}
 
 body #header.sticky .menu-item > a span,
 body #header.sticky .wpml-ls-statics-shortcode_actions li a,
@@ -34,6 +38,9 @@ body #header.sticky svg path {
 }
 body #header.sticky a:hover {
   color: #000;
+}
+body #header.sticky .navbar__toggler .navbar__toggler__btn span {
+  background-color: #000;
 }
 
 .slider-hero {
