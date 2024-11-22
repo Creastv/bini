@@ -1346,6 +1346,97 @@ select {
   transform: scale(1.1);
 }
 
+body #header {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  background: none;
+}
+body #header .menu-item > a span,
+body #header .wpml-ls-statics-shortcode_actions li a,
+body #header .wpml-ls-statics-shortcode_actions li a span {
+  color: #fff;
+}
+body #header .menu-item > a span:hover,
+body #header .wpml-ls-statics-shortcode_actions li a:hover,
+body #header .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #f2db72 !important;
+}
+body #header svg path {
+  fill: #fff;
+}
+body #header svg path:hover {
+  fill: #f2db72 !important;
+}
+body #header a:hover {
+  color: #000;
+}
+
+body #header.sticky .menu-item > a span,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a span {
+  color: #000;
+}
+body #header.sticky svg path {
+  fill: #000;
+}
+body #header.sticky a:hover {
+  color: #000;
+}
+
+.slider-hero {
+  position: relative;
+  width: 100vw;
+  left: -50vw;
+  margin-left: 50%;
+}
+.slider-hero .item {
+  width: 100%;
+  height: 85vh;
+}
+.slider-hero .item .img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.slider-hero .item .img:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3192314426) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.slider-hero .item .content {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+  width: 100%;
+  max-width: 998px;
+  padding: 0 20px;
+}
+.slider-hero .item .content * {
+  color: #fff;
+}
+.slider-hero .item .content p {
+  margin-bottom: 40px;
+}
+.slider-hero .item .content .btn-main {
+  margin: 15px 0;
+  padding: 10px 35px;
+  font-size: 18px;
+  background-color: #f8f4e8;
+  color: #000 !important;
+}
+
 .woocommerce-breadcrumb {
   margin-bottom: 20px !important;
 }
