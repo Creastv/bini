@@ -7,7 +7,7 @@ get_header(); ?>
         <?php
         $args = array(
             'post_type'      => 'inspirations',
-            'posts_per_page' => 10,
+            'posts_per_page' => 9,
         );
         $query = new WP_Query($args);
 

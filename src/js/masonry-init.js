@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loadMoreBtn = document.querySelector('#load-more');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {
-            const currentPage = parseInt(loadMoreBtn.getAttribute('data-page') || '1', 10) + 1;
+            const currentPage = parseInt(loadMoreBtn.getAttribute('data-page') || '1', 9) + 1;
             const request = new XMLHttpRequest();
 
             request.open('POST', ajaxData.ajaxUrl, true);
