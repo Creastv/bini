@@ -7,7 +7,7 @@ $firstTab = get_field('wybrane_produkty_-_pierwszy_tab');
 <div class="product-accordion">
     <?php if ($descBefore) : ?>
         <?php if ($descBefore['tytul']) : ?>
-            <p class="h5"><?php echo $descBefore['tytul']; ?></p>
+            <h2 class="h5"><?php echo $descBefore['tytul']; ?></h2>
         <?php endif; ?>
         <?php if ($descBefore['opis']) : ?>
             <?php echo $descBefore['opis']; ?>
