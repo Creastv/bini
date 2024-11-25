@@ -9,16 +9,15 @@ $desc = get_field('title_description', $page_id);
 		<?php if (is_checkout()) { ?>
 			<?php get_template_part('templates-parts/header/header', 'brand'); ?>
 		<?php } ?>
-		<h1 class="entry-title  <?php echo basename($template) === 'page.php' ? "text-center" : false; ?>">
+		<h1
+			class="entry-title  <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspirations' ? "text-center" : false; ?>">
 			<?php
 			if (is_category()) :
 				single_cat_title();
 			elseif (is_tax()) :
 				single_tag_title();
-			elseif (get_post_type(get_the_ID()) == 'prelegent' && is_singular('prelegent')) :
-				the_title();
-			elseif (get_post_type(get_the_ID()) == 'prelegent') :
-				_e('Prelegenci', 'go');
+			elseif (get_post_type(get_the_ID()) == 'inspirations') :
+				_e('Inspiracje', 'go');
 			elseif (is_404()) :
 				_e('404', 'go');
 			elseif (is_search()) :
@@ -52,7 +51,8 @@ $desc = get_field('title_description', $page_id);
 			endif; ?>
 		</h1>
 
-		<div class="entry-desc <?php echo basename($template) === 'page.php' ? "entry-desc--narrow" : false; ?>">
+		<div
+			class="entry-desc <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspirations' ? "entry-desc--narrow" : false; ?>">
 			<?php if (is_category()) : ?>
 				<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
 				<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
@@ -61,7 +61,16 @@ $desc = get_field('title_description', $page_id);
 			<?php if ($desc) : ?>
 				<?php echo $desc; ?>
 			<?php endif; ?>
+			<?php if (get_post_type(get_the_ID()) == 'inspirations') : ?>
 
+				<p>
+					Make your home with what you love and who you love. The moments you’ve cherished and the memoriesthat
+					linger.
+					Fill your space with cozy corners and joyful chaos. BiNi the laughter, the quiet times, and everything
+					in
+					between. BiNi the messesthat tellstories and the traditionsthat bring comfort.</p>
+
+			<?php endif; ?>
 		</div>
 
 	</header>

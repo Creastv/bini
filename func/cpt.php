@@ -29,3 +29,36 @@ function create_collection_taxonomy()
     register_taxonomy('collection', array('product'), $args);
 }
 add_action('init', 'create_collection_taxonomy');
+
+
+// Cpt Inspirations
+function create_inspirations_cpt()
+{
+    $labels = array(
+        'name'          => __('Inspirations', 'textdomain'),
+        'singular_name' => __('Inspiration', 'textdomain'),
+        'menu_name'     => __('Inspirations', 'textdomain'),
+    );
+
+    $args = array(
+        'labels'        => $labels,
+        'public'        => true,
+        'has_archive'   => true,
+        'rewrite'       => array('slug' => 'inspirations'),
+        'supports'      => array('title', 'thumbnail'), // Wystarczy zdjęcie wyróżniające
+        'menu_icon'     => 'dashicons-lightbulb',
+    );
+
+    register_post_type('inspirations', $args);
+}
+add_action('init', 'create_inspirations_cpt');
+
+// Wyłączenie Gutenberg z podstrony Inspiration
+function enable_classic_editor_for_inspirations($can_edit, $post_type)
+{
+    if ($post_type === 'inspirations') {
+        return false;
+    }
+    return $can_edit;
+}
+add_filter('use_block_editor_for_post_type', 'enable_classic_editor_for_inspirations', 10, 2);
