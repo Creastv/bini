@@ -718,6 +718,11 @@ body {
   transition: all 0.3s ease;
   padding: 10px;
 }
+@media only screen and (max-width: 768px) {
+  .woocommerce a.button {
+    padding: 5px;
+  }
+}
 .woocommerce a.button:hover {
   opacity: 0.8;
   background-color: #000;
@@ -777,6 +782,37 @@ body {
   border-radius: 6px;
   border: 1px solid #e1e1e1;
   color: #4a4a4a;
+}
+
+.products.columns-4 {
+  margin-bottom: 30px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 45px 30px;
+}
+@media only screen and (max-width: 768px) {
+  .products.columns-4 {
+    gap: 30px 10px;
+  }
+}
+.products.columns-4:before, .products.columns-4:after {
+  display: none !important;
+}
+.products.columns-4 li.product {
+  width: calc(25% - 30px) !important;
+  float: none !important;
+  margin: 0 !important;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+}
+@media only screen and (max-width: 768px) {
+  .products.columns-4 li.product {
+    width: calc(50% - 10px) !important;
+  }
 }
 
 .products li.product {
