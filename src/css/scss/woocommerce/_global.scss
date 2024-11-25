@@ -289,12 +289,16 @@
     border-radius: 3px;
     // display: block;
   }
+  .new-label {
+    background-color: $black; /* Kolor tła, np. złoty */
+    color: white; /* Kolor tekstu */
+  }
   .best-seller-label {
-    background-color: #f39c12; /* Kolor tła, np. złoty */
+    background-color: #d4df7e; /* Kolor tła, np. złoty */
     color: white; /* Kolor tekstu */
   }
   .flash-sale-label {
-    background-color: green; /* Kolor tła, np. złoty */
+    background-color: $main2; /* Kolor tła, np. złoty */
     color: white; /* Kolor tekstu */
   }
 }

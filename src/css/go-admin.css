@@ -965,12 +965,16 @@ body {
   padding: 0px 10px;
   border-radius: 3px;
 }
+.labels .new-label {
+  background-color: #000; /* Kolor tła, np. złoty */
+  color: white; /* Kolor tekstu */
+}
 .labels .best-seller-label {
-  background-color: #f39c12; /* Kolor tła, np. złoty */
+  background-color: #d4df7e; /* Kolor tła, np. złoty */
   color: white; /* Kolor tekstu */
 }
 .labels .flash-sale-label {
-  background-color: green; /* Kolor tła, np. złoty */
+  background-color: #b3cce6; /* Kolor tła, np. złoty */
   color: white; /* Kolor tekstu */
 }
 
@@ -1064,11 +1068,15 @@ body {
   border-radius: 3px;
 }
 .labels-product .best-seller-label {
-  background-color: #f39c12; /* Kolor tła, np. złoty */
+  background-color: #d4df7e; /* Kolor tła, np. złoty */
+  color: white; /* Kolor tekstu */
+}
+.labels-product .new-label {
+  background-color: #000; /* Kolor tła, np. złoty */
   color: white; /* Kolor tekstu */
 }
 .labels-product .flash-sale-label {
-  background-color: #d4df7d; /* Kolor tła, np. złoty */
+  background-color: #b3cce6; /* Kolor tła, np. złoty */
   color: white; /* Kolor tekstu */
 }
 

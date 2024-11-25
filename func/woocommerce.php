@@ -32,63 +32,63 @@ add_action('wp_footer', 'custom_quantity_fields_script', 0);
 function custom_quantity_fields_script()
 {
 ?>
-    <script type='text/javascript'>
-        jQuery(function($) {
-            // Dodajemy przyciski + i - obok pola ilości
-            $('.quantity').each(function() {
-                var $quantity = $(this);
-                if ($quantity.find('.plus, .minus').length === 0) {
-                    // Dodajemy przyciski, jeśli jeszcze ich nie ma
-                    $quantity.prepend('<button type="button" class="minus">-</button>');
-                    $quantity.append('<button type="button" class="plus">+</button>');
-                }
-            });
+<script type='text/javascript'>
+jQuery(function($) {
+    // Dodajemy przyciski + i - obok pola ilości
+    $('.quantity').each(function() {
+        var $quantity = $(this);
+        if ($quantity.find('.plus, .minus').length === 0) {
+            // Dodajemy przyciski, jeśli jeszcze ich nie ma
+            $quantity.prepend('<button type="button" class="minus">-</button>');
+            $quantity.append('<button type="button" class="plus">+</button>');
+        }
+    });
 
-            // Funkcja obsługująca kliknięcie na przyciski plus i minus
-            $(document.body).on('click', '.plus, .minus', function() {
-                var $qty = $(this).closest('.quantity').find('.qty'),
-                    currentVal = parseFloat($qty.val()),
-                    max = parseFloat($qty.attr('max')),
-                    min = parseFloat($qty.attr('min')),
-                    step = parseFloat($qty.attr('step'));
+    // Funkcja obsługująca kliknięcie na przyciski plus i minus
+    $(document.body).on('click', '.plus, .minus', function() {
+        var $qty = $(this).closest('.quantity').find('.qty'),
+            currentVal = parseFloat($qty.val()),
+            max = parseFloat($qty.attr('max')),
+            min = parseFloat($qty.attr('min')),
+            step = parseFloat($qty.attr('step'));
 
-                // Domyślne wartości
-                if (isNaN(currentVal) || currentVal <= 0) currentVal = 0;
-                if (isNaN(max)) max = ''; // Brak maksymalnej ilości
-                if (isNaN(min)) min = 1; // Minimalna ilość to 1
-                if (isNaN(step) || step <= 0) step = 1; // Domyślny krok to 1
+        // Domyślne wartości
+        if (isNaN(currentVal) || currentVal <= 0) currentVal = 0;
+        if (isNaN(max)) max = ''; // Brak maksymalnej ilości
+        if (isNaN(min)) min = 1; // Minimalna ilość to 1
+        if (isNaN(step) || step <= 0) step = 1; // Domyślny krok to 1
 
-                // Funkcja do obliczania liczby miejsc po przecinku
-                function getDecimals(num) {
-                    var match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
-                    if (!match) {
-                        return 0;
-                    }
-                    return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
-                }
+        // Funkcja do obliczania liczby miejsc po przecinku
+        function getDecimals(num) {
+            var match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+            if (!match) {
+                return 0;
+            }
+            return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
+        }
 
-                // Zwiększanie ilości po kliknięciu "plus"
-                if ($(this).is('.plus')) {
-                    if (max && (currentVal >= max)) {
-                        $qty.val(max);
-                    } else {
-                        $qty.val((currentVal + step).toFixed(getDecimals(step)));
-                    }
-                }
-                // Zmniejszanie ilości po kliknięciu "minus"
-                else {
-                    if (min && (currentVal <= min)) {
-                        $qty.val(min);
-                    } else if (currentVal > 0) {
-                        $qty.val((currentVal - step).toFixed(getDecimals(step)));
-                    }
-                }
+        // Zwiększanie ilości po kliknięciu "plus"
+        if ($(this).is('.plus')) {
+            if (max && (currentVal >= max)) {
+                $qty.val(max);
+            } else {
+                $qty.val((currentVal + step).toFixed(getDecimals(step)));
+            }
+        }
+        // Zmniejszanie ilości po kliknięciu "minus"
+        else {
+            if (min && (currentVal <= min)) {
+                $qty.val(min);
+            } else if (currentVal > 0) {
+                $qty.val((currentVal - step).toFixed(getDecimals(step)));
+            }
+        }
 
-                // Wyzwalanie zmiany
-                $qty.trigger('change');
-            });
-        });
-    </script>
+        // Wyzwalanie zmiany
+        $qty.trigger('change');
+    });
+});
+</script>
 <?php
 }
 
@@ -175,12 +175,16 @@ function add_product_labels()
 {
     global $product; // Używamy globalnego obiektu produktu
 
-    // Dodanie etykiety "Best Seller" tylko jeśli produkt ma odpowiedni tag
+
     echo '<div class="labels-product">';
+    // Dodanie etykiety "Best Seller" tylko jeśli produkt ma odpowiedni tag
+    if (has_term('nowosc', 'product_tag', get_the_ID()) || has_term('new', 'product_tag', get_the_ID())) {
+        echo '<span class="labels-sale new-label">' . __('Nowość', 'go') . ' </span>';
+    }
+    // Dodanie etykiety "Nowość" tylko jeśli produkt ma odpowiedni tag
     if (has_term('bestseller', 'product_tag', get_the_ID())) {
         echo '<span class="labels-sale best-seller-label">Bestseller</span>';
     }
-
     // Dodanie etykiety "Flash Sale" jeśli produkt jest w promocji
     if ($product->is_on_sale()) {
         echo '<span class="labels-sale flash-sale-label">Sale</span>';
@@ -211,9 +215,12 @@ function add_on_hover_shop_loop_image()
     global $product;
 
     echo '<div class="product-thumbnails">';
-
-    // Dodanie etykiety "Best Seller" tylko jeśli produkt ma odpowiedni tag
     echo '<div class="labels">';
+    // Dodanie etykiety "Best Seller" tylko jeśli produkt ma odpowiedni tag
+    if (has_term('nowosc', 'product_tag', get_the_ID()) || has_term('new', 'product_tag', get_the_ID())) {
+        echo '<span class="labels-sale new-label"> ' . __('Nowość', 'go') . ' </span>';
+    }
+    // Dodanie etykiety "Nowość" tylko jeśli produkt ma odpowiedni tag
     if (has_term('bestseller', 'product_tag', get_the_ID())) {
         echo '<span class="labels-sale best-seller-label">Bestseller</span>';
     }
