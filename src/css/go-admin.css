@@ -1018,14 +1018,14 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .single-product .product .entry-summary .product_title {
-    font-size: 24px;
+    font-size: 1.313rem;
   }
 }
 .single-product .product .entry-summary .woocommerce-product-rating {
   margin-bottom: 10px;
 }
 .single-product .product .entry-summary .price {
-  font-size: 1.75rem;
+  font-size: 1.125rem;
   color: #e1e1e1;
 }
 .single-product .product .entry-summary .cart {
