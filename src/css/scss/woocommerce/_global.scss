@@ -121,7 +121,7 @@
     align-self: stretch;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-self: stretch;
     @media #{$sm} {
       width: calc(50% - 10px) !important;

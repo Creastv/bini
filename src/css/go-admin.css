@@ -806,7 +806,7 @@ body {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-self: stretch;
 }
 @media only screen and (max-width: 768px) {
