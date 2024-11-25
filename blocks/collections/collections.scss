@@ -1,0 +1,19 @@
+.custome-category {
+  .related-cat {
+    padding: 15px 0;
+    .slider-nav__next {
+      transform: translate(80px, -50%);
+    }
+    .slider-nav__prev {
+      transform: translate(-80px, -50%);
+    }
+  }
+  .custome-category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    .related-cat__item {
+      width: calc(50% - 30px);
+    }
+  }
+}

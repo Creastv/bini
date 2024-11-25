@@ -77,6 +77,31 @@ function register_acf_block_types()
     },
   ));
   acf_register_block_type(array(
+    'name'              => 'collections',
+    'title'             => __('collections '),
+    'render_template'   => 'blocks/collections/collections.php',
+    'category'          => 'formatting',
+    'icon' => array(
+      'background' => '#122b4f',
+      'foreground' => '#fff',
+      'src' => 'ellipsis',
+    ),
+    'mode'            => 'preview',
+    'keywords'          => array('collections'),
+    'supports'    => [
+      'align'      => false,
+      'anchor'    => true,
+      'customClassName'  => true,
+      'jsx'       => false,
+    ],
+    'enqueue_assets'    => function () {
+      wp_enqueue_style('go-colections',  get_template_directory_uri() . '/blocks/collections/collections.min.css');
+      wp_enqueue_style('go-swipeer_css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+      wp_enqueue_script('go-swiper_js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',  array(), '20130456', true);
+      wp_enqueue_script('go-collections-js', get_template_directory_uri() . '/blocks/collections/collections.js', array('jquery'), '20', true);
+    },
+  ));
+  acf_register_block_type(array(
     'name'              => 'testimonial',
     'title'             => __('testimonial '),
     'render_template'   => 'blocks/testimonial/testimonial.php',
@@ -123,6 +148,7 @@ function register_acf_block_types()
       wp_enqueue_style('go-container',  get_template_directory_uri() . '/blocks/container/container.min.css');
     }
   ));
+
   acf_register_block_type(array(
     'name'              => 'opinions',
     'title'             => __('opinions'),

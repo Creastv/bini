@@ -9,7 +9,7 @@ $desc = get_field('title_description', $page_id);
 		<?php if (is_checkout()) { ?>
 			<?php get_template_part('templates-parts/header/header', 'brand'); ?>
 		<?php } ?>
-		<h1 class="entry-title   <?php echo basename($template) === 'page.php' ? "text-center" : false; ?>">
+		<h1 class="entry-title  <?php echo basename($template) === 'page.php' ? "text-center" : false; ?>">
 			<?php
 			if (is_category()) :
 				single_cat_title();

@@ -12,9 +12,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     gap: 50px;
     padding-bottom: 50px;
+    @media #{$sm} {
+      justify-content: center;
+      gap: 10px;
+    }
     h1 {
       margin: 0;
       padding: 0;
