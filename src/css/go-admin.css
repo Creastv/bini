@@ -445,6 +445,36 @@ body {
   background-color: #fff;
   transition: all 0.3s ease;
 }
+#header:hover {
+  background-color: #fff !important;
+}
+#header:hover .menu-item > a span,
+#header:hover .wpml-ls-statics-shortcode_actions li a,
+#header:hover .wpml-ls-statics-shortcode_actions li a span {
+  color: #000;
+}
+#header:hover .menu-item > a span:hover,
+#header:hover .wpml-ls-statics-shortcode_actions li a:hover,
+#header:hover .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #f2db72 !important;
+}
+#header:hover .navbar__brand path {
+  fill: #000;
+}
+#header:hover .navbar-right svg path,
+#header:hover .navbar-left svg path {
+  fill: #000;
+}
+#header:hover .navbar-right svg path:hover,
+#header:hover .navbar-left svg path:hover {
+  fill: #f2db72 !important;
+}
+#header:hover a:hover {
+  color: #000;
+}
+#header:hover .navbar__toggler .navbar__toggler__btn span {
+  background-color: #000;
+}
 #header .navbar {
   display: flex;
   align-items: center;
@@ -498,8 +528,11 @@ body {
   padding: 5px 0;
 }
 
+.navbar__brand a {
+  display: block;
+}
 @media only screen and (max-width: 460px) {
-  .navbar__brand img {
+  .navbar__brand a svg {
     width: 100%;
     height: auto;
     max-width: 100px;
@@ -747,6 +780,7 @@ body {
 }
 
 .products li.product {
+  text-align: center;
   transition: all 0.3s ease;
 }
 .products li.product .product-thumbnails {
@@ -812,11 +846,12 @@ body {
   text-shadow: none !important;
 }
 .products li.product .sp-wqv-view-button:hover {
-  border-color: #f2db72 !important;
-  background-color: #f2db72 !important;
+  border-color: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
 }
 .products li.product .woocommerce-loop-product__title {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   display: block;
   line-height: 1.2;
 }
@@ -825,8 +860,11 @@ body {
     font-size: 0.85rem !important;
   }
 }
+.products li.product .button {
+  max-width: 250px;
+}
 .products li.product .price span {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   color: #a4a4a4 !important;
 }
 @media only screen and (max-width: 768px) {

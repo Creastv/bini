@@ -440,7 +440,7 @@ body {
 }
 
 .f-one {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 @media only screen and (max-width: 998px) {
   .f-one {
@@ -469,7 +469,9 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .f-one .f-one__wrap .col:nth-child(2) {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -542,11 +544,83 @@ body {
   text-align: right;
 }
 
+.calaps {
+  margin-top: -1px;
+}
+@media only screen and (max-width: 768px) {
+  .calaps {
+    border-bottom: 1px solid #8db2d9;
+    padding: 0px 10px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .calaps .calaps__opener {
+    position: relative;
+  }
+  .calaps .calaps__opener::after {
+    content: "";
+    background-image: url(../img/arrow.svg);
+    width: 18px;
+    height: 13px;
+    display: block;
+    position: absolute;
+    color: #4a4a4a;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .calaps .calaps__list {
+    display: none;
+    margin-top: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.calaps.active .calaps__opener::after {
+  transform: translate(0, -50%) rotate(180deg);
+}
+.calaps.active .calaps__list {
+  display: block !important;
+}
+
 #header {
   padding: 10px 0;
   border-bottom: 1px solid #f4f4f4;
   background-color: #fff;
   transition: all 0.3s ease;
+}
+#header:hover {
+  background-color: #fff !important;
+}
+#header:hover .menu-item > a span,
+#header:hover .wpml-ls-statics-shortcode_actions li a,
+#header:hover .wpml-ls-statics-shortcode_actions li a span {
+  color: #000;
+}
+#header:hover .menu-item > a span:hover,
+#header:hover .wpml-ls-statics-shortcode_actions li a:hover,
+#header:hover .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #f2db72 !important;
+}
+#header:hover .navbar__brand path {
+  fill: #000;
+}
+#header:hover .navbar-right svg path,
+#header:hover .navbar-left svg path {
+  fill: #000;
+}
+#header:hover .navbar-right svg path:hover,
+#header:hover .navbar-left svg path:hover {
+  fill: #f2db72 !important;
+}
+#header:hover a:hover {
+  color: #000;
+}
+#header:hover .navbar__toggler .navbar__toggler__btn span {
+  background-color: #000;
 }
 #header .navbar {
   display: flex;
@@ -601,8 +675,11 @@ body {
   padding: 5px 0;
 }
 
+.navbar__brand a {
+  display: block;
+}
 @media only screen and (max-width: 460px) {
-  .navbar__brand img {
+  .navbar__brand a svg {
     width: 100%;
     height: auto;
     max-width: 100px;
@@ -942,7 +1019,7 @@ body {
   overflow: auto;
   width: 100%;
   left: 0px;
-  background-color: #fbfbfb;
+  background-color: #f8f4e8;
   transform: translate(0, 20px);
   transition: all 0.4s;
   opacity: 0;
@@ -1502,6 +1579,7 @@ select {
 }
 
 .products li.product {
+  text-align: center;
   transition: all 0.3s ease;
 }
 .products li.product .product-thumbnails {
@@ -1567,11 +1645,12 @@ select {
   text-shadow: none !important;
 }
 .products li.product .sp-wqv-view-button:hover {
-  border-color: #f2db72 !important;
-  background-color: #f2db72 !important;
+  border-color: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
 }
 .products li.product .woocommerce-loop-product__title {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   display: block;
   line-height: 1.2;
 }
@@ -1580,8 +1659,11 @@ select {
     font-size: 0.85rem !important;
   }
 }
+.products li.product .button {
+  max-width: 250px;
+}
 .products li.product .price span {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   color: #a4a4a4 !important;
 }
 @media only screen and (max-width: 768px) {

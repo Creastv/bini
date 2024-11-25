@@ -11,8 +11,6 @@ require get_template_directory() . '/func/woocommerce.php';
 
 
 add_theme_support('post-thumbnails');
-add_theme_support('custom-logo');
-
 add_image_size('post-futured', 600, 370, array('center', 'center'), true);
 add_image_size('category-futured', 500, 500, array('center', 'center'), true);
 add_image_size('collection-futured', 800, 500, array('center', 'center'), true);
@@ -44,38 +42,38 @@ add_action('after_setup_theme', 'go_custom_logo_setup');
 
 function go_widgets_init()
 {
-	register_sidebar(array(
-		'name'          => __('sidebar', 'go'),
-		'id'            => 'sidebar',
-		'before_widget' => '<div id="%1$s" class="calaps widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="h5 widget-title">',
-		'after_title'   => '</h4>',
-	));
+	// register_sidebar(array(
+	// 	'name'          => __('sidebar', 'go'),
+	// 	'id'            => 'sidebar',
+	// 	'before_widget' => '<div id="%1$s" class="calaps widget %2$s">',
+	// 	'after_widget'  => '</div>',
+	// 	'before_title'  => '<h4 class="h5 widget-title">',
+	// 	'after_title'   => '</h4>',
+	// ));
 
 	register_sidebar(array(
-		'name'          => __('footer two', 'go'),
+		'name'          => __('footer one', 'go'),
 		'id'            => 'footer-2',
-		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="h5 widget-title">',
-		'after_title'   => '</h4>',
+		'before_widget' => '<div class="calaps">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<div class="calaps__opener"><h4 class="h5 widget-title">',
+		'after_title'   => '</h4></div> <div class="calaps__list">',
+	));
+	register_sidebar(array(
+		'name'          => __('footer two', 'go'),
+		'id'            => 'footer-3',
+		'before_widget' => '<div class="calaps">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<div class="calaps__opener"><h4 class="h5 widget-title">',
+		'after_title'   => '</h4></div> <div class="calaps__list">',
 	));
 	register_sidebar(array(
 		'name'          => __('footer tree', 'go'),
-		'id'            => 'footer-3',
-		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="h5 widget-title">',
-		'after_title'   => '</h4>',
-	));
-	register_sidebar(array(
-		'name'          => __('footer four', 'go'),
 		'id'            => 'footer-4',
-		'before_widget' => '<div id="%1$s" class=" widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="h5 widget-title">',
-		'after_title'   => '</h4>',
+		'before_widget' => '<div class="calaps">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<div class="calaps__opener"><h4 class="h5 widget-title">',
+		'after_title'   => '</h4></div> <div class="calaps__list">',
 	));
 }
 add_action('widgets_init', 'go_widgets_init');

@@ -218,3 +218,14 @@ for (let i = 0; i < menuItems.length; i++) {
 setupEvents();
 
 window.addEventListener("resize", setupEvents);
+
+
+
+
+ // footer
+ const calaps = document.querySelectorAll(".calaps");
+ for (let i = 0; i < calaps.length; i++) {
+   calaps[i].querySelector(".calaps__opener").addEventListener("click", function () {
+     calaps[i].classList.toggle("active");
+   });
+ }

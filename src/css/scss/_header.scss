@@ -3,6 +3,37 @@
   border-bottom: 1px solid $light-gray;
   background-color: #fff;
   transition: all 0.3s ease;
+  &:hover {
+    background-color: #fff !important;
+    .menu-item > a span,
+    .wpml-ls-statics-shortcode_actions li a,
+    .wpml-ls-statics-shortcode_actions li a span {
+      color: $black;
+      &:hover {
+        color: $main !important;
+      }
+    }
+    .navbar__brand {
+      path {
+        fill: $black;
+      }
+    }
+    .navbar-right,
+    .navbar-left {
+      svg path {
+        fill: $black;
+        &:hover {
+          fill: $main !important;
+        }
+      }
+    }
+    a:hover {
+      color: $black;
+    }
+    .navbar__toggler .navbar__toggler__btn span {
+      background-color: $black;
+    }
+  }
 
   .navbar {
     display: flex;
@@ -52,11 +83,14 @@
 }
 // logo
 .navbar__brand {
-  img {
-    @media #{$xs} {
-      width: 100%;
-      height: auto;
-      max-width: 100px;
+  a {
+    display: block;
+    svg {
+      @media #{$xs} {
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+      }
     }
   }
 }

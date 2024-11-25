@@ -1,5 +1,5 @@
 .f-one {
-  padding: 100px 0;
+  padding: 50px 0;
   @media #{$md} {
     padding: 50px 0;
   }
@@ -19,7 +19,9 @@
         display: flex;
         gap: 50px;
         @media #{$sm} {
+          flex-wrap: wrap;
           justify-content: center;
+          gap: 20px;
         }
       }
       @media #{$sm} {
@@ -96,5 +98,49 @@
         text-align: right;
       }
     }
+  }
+}
+
+.calaps {
+  margin-top: -1px;
+  @media #{$sm} {
+    border-bottom: 1px solid darken($main2, 10%);
+    padding: 0px 10px;
+    width: 100%;
+  }
+  .calaps__opener {
+    @media #{$sm} {
+      position: relative;
+
+      &::after {
+        content: "";
+        background-image: url(../img/arrow.svg);
+        width: 18px;
+        height: 13px;
+        display: block;
+        position: absolute;
+        color: $light-black;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+  .calaps__list {
+    @media #{$sm} {
+      display: none;
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+  }
+}
+.calaps.active {
+  .calaps__opener {
+    &::after {
+      transform: translate(0, -50%) rotate(180deg);
+    }
+  }
+  .calaps__list {
+    display: block !important;
   }
 }

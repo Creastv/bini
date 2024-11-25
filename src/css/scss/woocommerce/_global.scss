@@ -100,6 +100,7 @@
 // Product on archive
 .products {
   li.product {
+    text-align: center;
     transition: all 0.3s ease;
     .product-thumbnails {
       width: 100%;
@@ -168,23 +169,27 @@
       text-shadow: none !important;
 
       &:hover {
-        border-color: $main !important;
-        background-color: $main !important;
+        border-color: $black !important;
+        background-color: $black !important;
+        color: #fff !important;
       }
     }
     .woocommerce-loop-product__title {
-      font-size: 1.25rem !important;
+      font-size: 1rem !important;
       display: block;
       line-height: 1.2;
       @media #{$sm} {
         font-size: 0.85rem !important;
       }
     }
+    .button {
+      max-width: 250px;
+    }
 
     .price {
       span {
         // display: block;
-        font-size: 1.25rem !important;
+        font-size: 1rem !important;
         color: #a4a4a4 !important;
         @media #{$sm} {
           font-size: 0.85rem !important;

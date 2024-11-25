@@ -14,10 +14,18 @@ body #header {
       color: $main !important;
     }
   }
-  svg path {
-    fill: #fff;
-    &:hover {
-      fill: $main !important;
+  .navbar__brand {
+    path {
+      fill: #fff;
+    }
+  }
+  .navbar-right,
+  .navbar-left {
+    svg path {
+      fill: #fff;
+      &:hover {
+        fill: $main !important;
+      }
     }
   }
   a:hover {

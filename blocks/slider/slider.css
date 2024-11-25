@@ -15,10 +15,15 @@ body #header .wpml-ls-statics-shortcode_actions li a:hover,
 body #header .wpml-ls-statics-shortcode_actions li a span:hover {
   color: #f2db72 !important;
 }
-body #header svg path {
+body #header .navbar__brand path {
   fill: #fff;
 }
-body #header svg path:hover {
+body #header .navbar-right svg path,
+body #header .navbar-left svg path {
+  fill: #fff;
+}
+body #header .navbar-right svg path:hover,
+body #header .navbar-left svg path:hover {
   fill: #f2db72 !important;
 }
 body #header a:hover {
