@@ -2594,7 +2594,7 @@ select {
 
 .info-stripe {
   background-color: #000;
-  padding: 15px;
+  padding: 5px;
 }
 .info-stripe .info-stripe__wrap {
   display: flex;
