@@ -1041,8 +1041,7 @@ body {
   transition: all 0.3s ease;
 }
 .single-product .product .entry-summary .cart button:hover {
-  background-color: #f2db72;
-  color: #000;
+  opacity: 0.8;
 }
 .single-product .product .woocommerce-tabs,
 .single-product .product .woocommerce-Tabs-panel,
@@ -1251,9 +1250,13 @@ body {
   padding: 5px 10px;
   gap: 10px;
   font-size: 0.75rem;
+  transition: all 3s ease;
 }
 .product-accordion .related-products .product-item .product-price a * {
   color: #fff !important;
+}
+.product-accordion .related-products .product-item .product-price a:hover {
+  opacity: 0.8;
 }
 .product-accordion .related-products .product-item .product-info h3,
 .product-accordion .related-products .product-item .product-info p {

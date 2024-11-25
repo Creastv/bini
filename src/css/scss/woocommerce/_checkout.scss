@@ -1,5 +1,14 @@
 .woocommerce-checkout {
   .entry-header {
+    gap: 20px !important;
+    .navbar__brand {
+      svg {
+        width: 100px;
+        height: auto;
+      }
+    }
+  }
+  .entry-header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -244,6 +253,19 @@
     display: none !important;
   }
   .product-thumbnail {
+    @media #{$sm} {
+      display: block !important;
+      &:before {
+        display: none !important;
+      }
+    }
+    a {
+      @media #{$sm} {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
     img {
       width: 85px !important;
       height: auto;
