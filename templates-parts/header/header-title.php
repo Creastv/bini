@@ -52,14 +52,16 @@ $desc = get_field('title_description', $page_id);
 			endif; ?>
 		</h1>
 
-		<div class="entry-desc">
+		<div class="entry-desc <?php echo basename($template) === 'page.php' ? "entry-desc--narrow" : false; ?>">
 			<?php if (is_category()) : ?>
 				<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
 				<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
 			<?php endif; ?>
+
 			<?php if ($desc) : ?>
 				<?php echo $desc; ?>
 			<?php endif; ?>
+
 		</div>
 
 	</header>
