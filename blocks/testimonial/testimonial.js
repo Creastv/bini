@@ -16,14 +16,17 @@ var swiper = new Swiper(".testimonial-carousel", {
         prevEl: '.swiper-button-prev.OfferSwiperLeft',
     },
     breakpoints: {
-      640: {
-        pagination: true,
+      768: {
 
       },
-      1300: {
+      1024: {
         slidesPerView: 1,
-        pagination: false,
+
       },
+      1200: {
+        pagination: false,
+      }
+ 
     },
   });
   

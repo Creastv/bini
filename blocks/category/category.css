@@ -1,6 +1,12 @@
 .custome-category .related-cat {
   padding: 15px 0;
 }
+.custome-category .related-cat .slider-nav__next {
+  transform: translate(80px, -50%);
+}
+.custome-category .related-cat .slider-nav__prev {
+  transform: translate(-80px, -50%);
+}
 .custome-category .custome-category-grid {
   display: flex;
   flex-wrap: wrap;

@@ -8,7 +8,7 @@
   top: 50%;
   transform: translate(0, -50%);
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 998px) {
   .testimonial .testimonial__wrap .OfferSwiperLeft,
   .testimonial .testimonial__wrap .OfferSwiperRight {
     display: none;
@@ -40,11 +40,20 @@
 .testimonial .testimonial__wrap .OfferSwiperRight:hover svg rect {
   stroke: #f2db72;
 }
-.testimonial .testimonial__wrap .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+.testimonial .testimonial__wrap .OfferSwiperRight {
+  transform: translate(80px, -50%);
 }
-.testimonial .testimonial__wrap .swiper-pagination-bullet-active {
+.testimonial .testimonial__wrap .OfferSwiperLeft {
+  transform: translate(-80px, -50%);
+}
+.testimonial .testimonial__wrap .swiper-pagination {
+  bottom: 0;
+}
+.testimonial .testimonial__wrap .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.testimonial .testimonial__wrap .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #b3cce6;
 }
 .testimonial .testimonial__wrap .swiper-slide .item {

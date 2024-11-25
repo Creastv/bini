@@ -7,15 +7,18 @@
   .swiper {
     position: relative;
     padding: 30px 0;
-    .swiper-pagination-bullet {
-      width: 22px;
-    }
-    .swiper-pagination-bullet-active {
-      background-color: $main2;
+    .swiper-pagination {
+      bottom: 0;
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: $main2;
+      }
     }
   }
-  .swiper-pagination {
-  }
+
   .slider-nav {
     @media #{$sm} {
       display: none;

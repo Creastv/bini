@@ -122,9 +122,9 @@ if (!empty($categories)) { ?>
                     </div>
                 <?php } ?>
             </div>
-
+            <div class="swiper-pagination swiper-pagination--col"></div>
         </div>
-        <div class="swiper-pagination"></div>
+
         <div class="slider-nav">
             <div class="slider-nav__prev">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
