@@ -128,7 +128,7 @@ endif;
                                                 <button class="quantity-minus"
                                                     data-id="<?php echo $product->get_id(); ?>">-</button>
                                                 <input type="text" class="quantity-input" value="1" min="1" max="3"
-                                                    data-id="<?php echo $product->get_id(); ?>" readonly disabled>
+                                                    data-id="<?php echo $product->get_id(); ?>" readonly>
                                                 <button class="quantity-plus" data-id="<?php echo $product->get_id(); ?>">+</button>
                                             </div>
                                         </div>
@@ -238,7 +238,7 @@ endif;
             ?>
             <!--end Kategoria 2 -->
             <!-- Kategoria 3 -->
-            <?php if ($queryTwo->have_posts()) : ?>
+            <?php if ($queryTree->have_posts()) : ?>
                 <div class="product-list__header">
                     <?php if (get_field('nazwa_sekcji_tree', 'options')) : ?>
                         <h2> <?php echo get_field('nazwa_sekcji_tree', 'options'); ?></h2>
@@ -269,7 +269,7 @@ endif;
                 </div>
                 <div class="swiper catTree">
                     <div class="swiper-wrapper">
-                        <?php while ($queryTwo->have_posts()) : $queryTwo->the_post();
+                        <?php while ($queryTree->have_posts()) : $queryTree->the_post();
                             global $product;
                             $image_id = '';
                             if ($product->get_gallery_image_ids()) {

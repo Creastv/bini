@@ -53,8 +53,8 @@ var swiper = new Swiper(".catOne", {
       clickable: true,
     },
     navigation: {
-        nextEl: ".slider-nav--one .slider-nav__next",
-        prevEl: ".slider-nav--one .slider-nav__prev",
+        nextEl: ".slider-nav--two .slider-nav__next",
+        prevEl: ".slider-nav--two .slider-nav__prev",
       },
     breakpoints: {
         640: {
@@ -97,8 +97,8 @@ var swiper = new Swiper(".catOne", {
       clickable: true,
     },
     navigation: {
-        nextEl: ".slider-nav--one .slider-nav__next",
-        prevEl: ".slider-nav--one .slider-nav__prev",
+        nextEl: ".slider-nav--tree .slider-nav__next",
+        prevEl: ".slider-nav--tree .slider-nav__prev",
       },
     breakpoints: {
         640: {
