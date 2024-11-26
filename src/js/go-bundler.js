@@ -241,25 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Podsumowanie cen
-    // function updateSummary() {
-    //     const originalPrice = selectedProducts.reduce((sum, product) => sum + product.price, 0);
-    //     const discountedPrice = originalPrice * 0.85;
-    //      const discountedPrice = originalPrice - discount; // Cena po rabacie
-
-    //     originalPriceElement.textContent = `${originalPrice.toFixed(2)} zł`;
-    //     discountedPriceElement.textContent = `${discountedPrice.toFixed(2)} zł`;
-
-    //     if (selectedProducts.length === 3) {
-    //         checkoutButton.disabled = false;
-    //         checkoutButton.style.opacity = '1';
-    //         checkoutButton.style.pointerEvents = 'auto';
-    //     } else {
-    //         checkoutButton.disabled = true;
-    //         checkoutButton.style.opacity = '0.5';
-    //         checkoutButton.style.pointerEvents = 'none';
-    //     }
-    // }
     function updateSummary() {
         const originalPrice = selectedProducts.reduce((sum, product) => sum + product.price, 0);
         const discount = originalPrice * 0.15; // Oblicz rabat (15%)
@@ -295,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Wysyłam produkty:', productsToAdd);
 
             try {
-                const response = await fetch('http://localhost/bini/wp-json/custom-bundler/v1/add-to-cart', {
+                const response = await fetch('https://bini.jffrbblxkx.cfolks.pl/wp-json/custom-bundler/v1/add-to-cart', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
