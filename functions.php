@@ -7,6 +7,7 @@ require get_template_directory() . '/func/wp-cuztomize.php';
 require get_template_directory() . '/func/cpt.php';
 require get_template_directory() . '/func/woocommerce.php';
 require_once get_template_directory() . '/func/inspirations.php';
+require_once get_template_directory() . '/func/bundler.php';
 
 
 

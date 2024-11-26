@@ -1335,6 +1335,22 @@ body.single .entry-content a {
   opacity: 0.8;
 }
 
+.btn-rev {
+  border-radius: 9999px;
+  box-shadow: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: calc(0.667em + 2px) calc(2.333em + 2px);
+  background-color: transparent;
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  transition: all 0.3s ease;
+}
+.btn-rev:hover {
+  opacity: 0.8;
+}
+
 .wp-block-buttons {
   margin: 10px 0;
 }
@@ -1565,6 +1581,284 @@ select {
 }
 .load-more button {
   border: none;
+}
+
+#product-bundler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+#product-bundler .bundler-left {
+  width: calc(70% - 50px);
+}
+@media only screen and (max-width: 768px) {
+  #product-bundler .bundler-left {
+    width: 100%;
+  }
+}
+#product-bundler .bundler-right {
+  width: 30%;
+}
+@media only screen and (max-width: 768px) {
+  #product-bundler .bundler-right {
+    width: 100%;
+  }
+}
+#product-bundler .bundler-right__wrap {
+  background-color: #f8f4e8;
+  padding: 5% 10%;
+  border-radius: 6px;
+  margin-bottom: 50px;
+  position: sticky;
+  top: 110px;
+}
+#product-bundler .bundler-right__wrap .bundler-right__header .h1 {
+  text-transform: uppercase;
+}
+#product-bundler .bundler-right__wrap .bundler-right__header .h5 {
+  text-transform: uppercase;
+  margin: 0;
+}
+#product-bundler .bundler-right__wrap #selected-products .h2 {
+  line-height: 1.1;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px dashed #a4a4a4;
+  border-radius: 6px;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder .img {
+  box-sizing: border-box;
+  width: 33px;
+  height: 33px;
+  background: #f4f4f4;
+  border: 1px dashed #a4a4a4;
+  border-radius: 6px;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder .title {
+  font-family: "ITC Avant Garde Gothic Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #a4a4a4;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected {
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  width: 100%;
+  border: 1px solid #d4df7e;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected img {
+  width: 52px;
+  height: 52px;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected .info {
+  flex: auto;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected .info h4 {
+  font-size: 0.85rem;
+  margin: 0;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected .info p {
+  margin: 0;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected .remove-from-selected {
+  color: red;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  border-radius: 3px;
+}
+#product-bundler .bundler-right__wrap #selected-products .placeholder-selected .remove-from-selected:hover {
+  background-color: red;
+  color: #fff;
+}
+#product-bundler .bundler-right__wrap .summary {
+  text-align: center;
+  padding: 15px 0;
+}
+#product-bundler .bundler-right__wrap .summary p {
+  margin: 0;
+}
+#product-bundler .bundler-right__wrap .summary .btn-main {
+  background-color: #d4df7e;
+  color: black !important;
+  border: none !important;
+  margin-top: 30px;
+  width: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.swiper-grid-column > .swiper-wrapper {
+  flex-direction: row !important;
+}
+
+#product-list {
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  #product-list {
+    margin-bottom: 30px;
+  }
+}
+#product-list .swiper-wrapper {
+  padding: 20px 0;
+}
+#product-list .swiper-slide {
+  margin-top: 0px !important;
+  margin-bottom: 30px;
+}
+#product-list .product-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+#product-list .product-list__header h2 {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+#product-list .product-list__header .sep {
+  width: 100%;
+  border-bottom: 1px solid #f4f4f4;
+}
+#product-list .product-list__header .slider-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  #product-list .product-list__header .slider-nav {
+    display: none;
+  }
+}
+#product-list .product-list__header .slider-nav .slider-nav__prev,
+#product-list .product-list__header .slider-nav .slider-nav__next {
+  cursor: pointer;
+}
+#product-list .product-list__header .slider-nav .slider-nav__prev:hover path,
+#product-list .product-list__header .slider-nav .slider-nav__next:hover path {
+  fill: #f2db72 !important;
+}
+#product-list .product-list__header .slider-nav .slider-nav__prev:hover rect,
+#product-list .product-list__header .slider-nav .slider-nav__next:hover rect {
+  stroke: #f2db72 !important;
+}
+#product-list .hidden {
+  display: none;
+}
+#product-list .product-item {
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+#product-list .product-item .product-link {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  display: block;
+}
+#product-list .product-item .img {
+  transition: all 0.5s ease;
+  border-radius: 6px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+#product-list .product-item .img2 {
+  border-radius: 6px;
+}
+#product-list .product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+#product-list .product-item a {
+  display: block;
+  text-decoration: none;
+}
+#product-list .product-item h3 {
+  padding: 0.5em 0;
+  margin: 0;
+  font-size: 1rem !important;
+  display: block;
+  line-height: 1.2;
+}
+#product-list .product-item .woocommerce-Price-amount.amount * {
+  font-size: 1.25rem !important;
+  color: #a4a4a4 !important;
+}
+#product-list .product-item .control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5em 0;
+}
+@media only screen and (max-width: 768px) {
+  #product-list .product-item .control {
+    flex-wrap: wrap;
+  }
+}
+#product-list .product-item .control button {
+  border: none;
+}
+#product-list .product-item .control .btn-main,
+#product-list .product-item .control .btn-rev {
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  text-transform: none;
+  border: none;
+}
+@media only screen and (max-width: 768px) {
+  #product-list .product-item .control .btn-main,
+  #product-list .product-item .control .btn-rev {
+    order: 2;
+  }
+}
+#product-list .product-item .control .quantity-control {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+@media only screen and (max-width: 768px) {
+  #product-list .product-item .control .quantity-control {
+    order: 1;
+  }
+}
+#product-list .product-item .control .quantity-control input {
+  background-color: #f4f4f4;
+  padding: 5px;
+  width: 25px;
+  text-align: center;
+}
+#product-list .product-item:hover {
+  transform: translate(0, -15px);
+}
+#product-list .product-item:hover .img {
+  opacity: 0 !important;
 }
 
 .woocommerce-breadcrumb {

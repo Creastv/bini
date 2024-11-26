@@ -184,10 +184,10 @@ for (let i = 0; i < menuItems.length; i++) {
   const menuItems = document.querySelectorAll(".menu-item .arrow-plus");
   // console.log(menuItems);
   for (let i = 0; i < menuItems.length; i++) {
-    console.log(menuItems[i]);
+    // console.log(menuItems[i]);
     menuItems[i].addEventListener("click", function (event) {
       // event.preventDefault(); // Zapobiega domyślnemu działaniu
-      console.log('test')
+      // console.log('test')
       const parentItem = menuItems[i].parentElement; // Pobierz rodzica elementu arrow-plus
       const isHasChild = parentItem.classList.contains("has-child");
   
@@ -197,11 +197,9 @@ for (let i = 0; i < menuItems.length; i++) {
         if (dropdown) {
           if (menuItems[e] === menuItems[i] && isHasChild) {
             // Aktywuj dropdown, jeśli element ma klasę has-child
-            console.log('test')
             dropdown.classList.toggle("active");
             menuItems[e].parentElement.classList.toggle("active");
           } else {
-            console.log('test')
             // Usuń klasę active z pozostałych
             dropdown.classList.remove("active");
             menuItems[e].parentElement.classList.remove("active");

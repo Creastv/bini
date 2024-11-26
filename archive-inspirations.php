@@ -24,9 +24,6 @@ get_header(); ?>
         wp_reset_postdata();
         ?>
     </div>
-
-
-
     <!-- Sidebar -->
     <div id="sidebar">
         <div id="sidebar-content">
