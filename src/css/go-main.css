@@ -812,7 +812,6 @@ body {
 
 /* sliding formsearch */
 .search-slider {
-  position: relative;
   z-index: 99;
 }
 
@@ -857,13 +856,14 @@ body {
   overflow: hidden;
   position: absolute;
   z-index: 99999;
-  width: 0px;
-  top: calc(50% - 1px);
-  right: 0px;
-  transform: translate(0, -50%);
+  width: calc(100% - 30px);
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, 0);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
   border-radius: 106.878px;
   transition: all 0.3s ease;
+  max-width: 500px;
 }
 
 .search-slider .search-slider__form form {
@@ -871,7 +871,7 @@ body {
 }
 
 .search-slider__form.active {
-  width: 380px;
+  top: 50px;
 }
 
 .search-slider__bg {
@@ -1513,6 +1513,12 @@ select {
 
 .inspirations {
   display: none;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .inspirations {
+    margin-bottom: 30px;
+  }
 }
 
 .inspirations-container {

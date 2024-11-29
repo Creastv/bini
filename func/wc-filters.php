@@ -7,7 +7,7 @@ function display_filter_dropdown()
 {
     // Filtr koloru
     $color_terms = get_terms(array(
-        'taxonomy' => 'pa_color',
+        'taxonomy' => 'tkaniny',
         'orderby' => 'name',
         'order' => 'ASC',
         'hide_empty' => true,
@@ -32,11 +32,11 @@ function display_filter_dropdown()
                 </option>
             <?php endforeach; ?>
         </select>
-        <select name="color" class="color-filter-dropdown" onchange="this.form.submit()">
-            <option value=""><?php _e('Sortuj po kolorze', 'go'); ?></option>
+        <select name="tkaniny" class="color-filter-dropdown" onchange="this.form.submit()">
+            <option value=""><?php _e('Sortuj po tkaninie', 'go'); ?></option>
             <?php foreach ($color_terms as $term) : ?>
                 <option value="<?php echo esc_attr($term->slug); ?>"
-                    <?php echo isset($_GET['color']) && $_GET['color'] === $term->slug ? 'selected' : ''; ?>>
+                    <?php echo isset($_GET['tkaniny']) && $_GET['tkaniny'] === $term->slug ? 'selected' : ''; ?>>
                     <?php echo esc_html($term->name); ?>
                 </option>
             <?php endforeach; ?>
@@ -56,9 +56,9 @@ function filter_products_by_color_and_size($query)
         // Filtr koloru
         if (!empty($_GET['color'])) {
             $tax_query[] = array(
-                'taxonomy' => 'pa_color',
+                'taxonomy' => 'tkaniny',
                 'field'    => 'slug',
-                'terms'    => sanitize_text_field($_GET['color']),
+                'terms'    => sanitize_text_field($_GET['tkaniny']),
             );
         }
 

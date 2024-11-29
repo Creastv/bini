@@ -31,6 +31,37 @@ function create_collection_taxonomy()
 }
 add_action('init', 'create_collection_taxonomy');
 
+// Rejestracja niestandardowej taksonomii Collection i przypisanie jej do produktów WooCommerce
+function create_tkaniny_taxonomy()
+{
+    $labels = array(
+        'name'              => _x('Tkaniny', 'taxonomy general name'),
+        'singular_name'     => _x('Collection', 'taxonomy singular name'),
+        'search_items'      => __('Search Tkaniny'),
+        'all_items'         => __('All Tkaniny'),
+        'parent_item'       => __('Parent Collection'),
+        'parent_item_colon' => __('Parent Collection:'),
+        'edit_item'         => __('Edit Collection'),
+        'update_item'       => __('Update Collection'),
+        'add_new_item'      => __('Add New Collection'),
+        'new_item_name'     => __('New Collection Name'),
+        'menu_name'         => __('Tkaniny'),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'tkaniny'),
+    );
+
+    register_taxonomy('tkaniny', array('product'), $args);
+}
+add_action('init', 'create_tkaniny_taxonomy');
+
 
 // Cpt Inspirations
 function create_inspirations_cpt()
