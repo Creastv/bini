@@ -479,6 +479,12 @@ body {
 #header:hover .arrow-plus path {
   fill: #000 !important;
 }
+@media only screen and (max-width: 1300px) {
+  #header:hover .close-nav path,
+  #header:hover .arrow-plus path {
+    fill: #fff !important;
+  }
+}
 #header .navbar {
   display: flex;
   align-items: center;

@@ -37,6 +37,9 @@
     .arrow-plus {
       path {
         fill: $black !important;
+        @media #{$lg} {
+          fill: #fff !important;
+        }
       }
     }
   }

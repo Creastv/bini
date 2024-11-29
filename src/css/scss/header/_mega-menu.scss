@@ -65,8 +65,8 @@
       width: 100%;
       padding: 10px 0;
       display: block;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
+      border-top: 1px solid #2e2e2e;
+      border-bottom: 1px solid #2e2e2e;
       margin-top: -1px;
       margin-bottom: 0;
     }
@@ -280,7 +280,7 @@ li.active {
       border-right: 1px solid $gray;
       @media #{$lg} {
         border-right: none;
-        border-bottom: 1px solid $gray;
+        border-bottom: 1px solid #242424;
       }
     }
     .bold {

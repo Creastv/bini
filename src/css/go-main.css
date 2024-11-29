@@ -630,6 +630,12 @@ body {
 #header:hover .arrow-plus path {
   fill: #000 !important;
 }
+@media only screen and (max-width: 1300px) {
+  #header:hover .close-nav path,
+  #header:hover .arrow-plus path {
+    fill: #fff !important;
+  }
+}
 #header .navbar {
   display: flex;
   align-items: center;
@@ -958,8 +964,8 @@ body {
     width: 100%;
     padding: 10px 0;
     display: block;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
     margin-top: -1px;
     margin-bottom: 0;
   }
@@ -1170,7 +1176,7 @@ li.active .arrow-plus svg path {
 @media only screen and (max-width: 1300px) {
   .mega-submenu .wraper-links .separator-prawy {
     border-right: none;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #242424;
   }
 }
 .mega-submenu .wraper-links .bold {
