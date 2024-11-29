@@ -1,5 +1,6 @@
 <?php
 $styl = get_field('styl');
+$exclude = get_field('wylaczyc_kategorie');
 ?>
 <?php
 
@@ -8,6 +9,7 @@ $args = array(
     'orderby'    => 'name',
     'order'      => 'ASC',
     'hide_empty' => true, // Set to true to exclude empty categories
+    'exclude'    => $exclude,
 );
 
 $categories = get_terms($args);
