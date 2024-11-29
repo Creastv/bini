@@ -297,10 +297,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     const language = window.location.pathname.split('/')[1]; 
                     console.log(language);
                     if (language === 'en') {
-                        window.location.href = '/bini/en/checkout/';
+                        window.location.href = '/en/checkout/';
                         
                     } else { 
-                        window.location.href = '/bini/zamowienie/';
+                        window.location.href = '/zamowienie/';
                     }
                 } else {
                     console.error('Błąd podczas dodawania do koszyka:', result.message);
