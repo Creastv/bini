@@ -9,10 +9,13 @@ function load_more_inspirations()
     }
 
     $page = intval($_POST['page']);
+    $posts_per_page = 9;
+    $offset = ($page - 1) * $posts_per_page;
     $args = array(
         'post_type'      => 'inspiracje',
-        'posts_per_page' => 5,
+        'posts_per_page' => $posts_per_page,
         'paged'          => $page,
+        'offset'         => $offset,
     );
 
     $query = new WP_Query($args);
