@@ -1,5 +1,9 @@
 .inspirations {
   display: none;
+  margin-bottom: 50px;
+  @media #{$sm} {
+    margin-bottom: 30px;
+  }
 }
 .inspirations-container {
   display: flex;
