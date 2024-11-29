@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <img src="${productImage}" alt="${product.name}">
                     <div class="info">
                     <h4>${product.name}</h4>
-                    <p>${product.price.toFixed(2)} zł</p>
+                    <p>${product.price.toFixed(2)} ${ wpmlStrings.zl}</p>
                     </div>
                     <button class="remove-from-selected" data-slot="${index}">X</button>
                     </div>
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 slot.innerHTML = `
                     <div class="placeholder">
                     <span class="img"></span>
-                    <span class="title">Select a product</span>
+                    <span class="title">${ wpmlStrings.selectProduct}</span>
                     </div>
                 `;
             }
@@ -319,12 +319,12 @@ document.addEventListener('DOMContentLoaded', function () {
     checkoutButton.addEventListener('click', async () => {
         if (selectedProducts.length > 0) {
             checkoutButton.classList.add('loading'); // Dodaj loader
-            checkoutButton.textContent = 'Przetwarzanie...'; // Zmień tekst
+            checkoutButton.textContent = wpmlStrings.przetwarzanie; // Zmień tekst
             try {
                 // Reszta kodu...
             } finally {
                 checkoutButton.classList.remove('loading'); // Usuń loader po zakończeniu
-                checkoutButton.textContent = 'Przejdź do zamówienia'; // Przywróć tekst
+                checkoutButton.textContent = wpmlStrings.przejdzDoZamowienia; // Przywróć tekst
             }
         }
     });
