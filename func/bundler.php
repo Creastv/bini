@@ -138,7 +138,7 @@ function remove_all_bundler_products_with_notice($cart_item_key, $cart)
         WC()->session->__unset('bundler_products');
 
         // Dodaj komunikat do sesji
-        WC()->session->set('bundler_removal_notice', 'Wszystkie produkty z bundlera zostały usunięte.');
+        WC()->session->set('bundler_removal_notice', __('Wszystkie produkty z bundlera zostały usunięte.', 'go'));
     }
 }
 
