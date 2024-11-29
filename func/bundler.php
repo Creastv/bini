@@ -29,6 +29,7 @@ function create_bundler_taxonomy()
         'public'            => false,
         'labels'            => $labels,
         'show_ui'           => true,
+        'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array('slug' => 'bundler'),
