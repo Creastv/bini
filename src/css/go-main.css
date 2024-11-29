@@ -628,7 +628,7 @@ body {
 }
 #header:hover .close-nav path,
 #header:hover .arrow-plus path {
-  fill: #fff !important;
+  fill: #000 !important;
 }
 #header .navbar {
   display: flex;
