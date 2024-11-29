@@ -360,7 +360,7 @@ endif;
 
 
             <div class="summary">
-                <p class="h5"><span id="discounted-price"> <?php echo __('0.00 zł', 'go'); ?> </span></p>
+                <p class="h5"><span id="discounted-price"><?php echo __('0.00 zł', 'go'); ?> </span></p>
                 <p><?php echo __('Oszczędzasz:', 'go'); ?>
                     <span id="saved-amount">
                         <?php echo __('0.00 zł', 'go'); ?>

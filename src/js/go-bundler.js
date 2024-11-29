@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 const response = await fetch('https://bini.jffrbblxkx.cfolks.pl/wp-json/custom-bundler/v1/add-to-cart', {
+                    // const response = await fetch('http://localhost/bini/wp-json/custom-bundler/v1/add-to-cart', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -293,6 +294,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (result.success) {
                     window.location.href = '/bini/zamowienie/';
+                    const language = window.location.pathname.split('/')[2]; 
+                    console.log(language);
+                    if (language === 'en') {
+                        window.location.href = '/bini/en/checkout/';
+                        
+                    } else { 
+                        window.location.href = '/bini/zamowienie/';
+                    }
                 } else {
                     console.error('Błąd podczas dodawania do koszyka:', result.message);
                     alert('Nie udało się dodać produktów do koszyka.');

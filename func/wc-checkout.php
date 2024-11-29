@@ -48,8 +48,30 @@ function remove_state_field($fields)
 }
 
 
+// Przekierowania
 function change_cart_url_to_checkout()
 {
     return wc_get_checkout_url();
 }
 add_filter('woocommerce_get_cart_url', 'change_cart_url_to_checkout', 10, 1);
+
+add_action('template_redirect', function () {
+    // Sprawdź, czy użytkownik jest na stronie koszyka
+    if (is_cart()) {
+        // Przekierowanie na stronę checkout
+        wp_safe_redirect(wc_get_checkout_url());
+        exit;
+    }
+});
+
+add_action('template_redirect', function () {
+    // Sprawdź, czy jesteś na stronie checkout
+    if (is_checkout() && !is_wc_endpoint_url('order-received')) {
+        // Sprawdź, czy koszyk jest pusty
+        if (WC()->cart->is_empty()) {
+            // Przekierowanie na stronę sklepu
+            wp_safe_redirect(wc_get_page_permalink('shop'));
+            exit;
+        }
+    }
+});

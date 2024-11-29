@@ -206,7 +206,7 @@ function apply_bundler_discount($cart)
         $discount = $bundler_total * 0.15;
 
         if ($discount > 0) {
-            $cart->add_fee('Rabat Bundlera (-15%)', -$discount);
+            $cart->add_fee(__('Rabat Bundlera (-15%)', 'go'), -$discount);
         }
     }
 }
@@ -220,8 +220,21 @@ function add_bundler_info_to_cart_item_name($product_name, $cart_item, $cart_ite
 
     // Sprawdź, czy produkt należy do bundlera
     if (!empty($bundler_products) && in_array($cart_item['product_id'], $bundler_products)) {
-        $product_name .= '<p style="color: green; font-size: 0.9em;">Produkt dodany przez bundler</p>';
+        $product_name .= '<p style="color: green; font-size: 0.9em;"> ' . __('Produkt dodany przez bundler', 'go') . ' </p>';
     }
 
     return $product_name;
 }
+
+
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/custom.js', ['jquery'], '1.0', true);
+
+    // Pobierz bieżący język
+    $current_language = apply_filters('wpml_current_language', null);
+
+    // Przekaż język do JavaScript
+    wp_localize_script('custom-script', 'wpmlSettings', [
+        'currentLanguage' => $current_language
+    ]);
+});
