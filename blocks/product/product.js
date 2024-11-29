@@ -3,10 +3,10 @@ var swiper = new Swiper(".products-carousel", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    // autoplay: {
-    //   delay: 4500,
-    //   disableOnInteraction: false
-    // },
+    autoplay: {
+      delay: 5500,
+      disableOnInteraction: false
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true
