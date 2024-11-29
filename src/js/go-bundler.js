@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (result.success) {
                     window.location.href = '/bini/zamowienie/';
-                    const language = window.location.pathname.split('/')[2]; 
+                    const language = window.location.pathname.split('/')[1]; 
                     console.log(language);
                     if (language === 'en') {
                         window.location.href = '/bini/en/checkout/';
