@@ -189,7 +189,7 @@
   height: auto;
   transform: translate(0, 50px);
   @media #{$lg} {
-    transform: translate(0, 0);
+    transform: translate(0, 0) !important;
   }
 }
 

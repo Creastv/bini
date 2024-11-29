@@ -33,6 +33,12 @@
     .navbar__toggler .navbar__toggler__btn span {
       background-color: $black;
     }
+    .close-nav,
+    .arrow-plus {
+      path {
+        fill: #fff !important;
+      }
+    }
   }
 
   .navbar {

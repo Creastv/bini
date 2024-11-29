@@ -1,9 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const wrap = document.querySelector('.inspirations');
     const container = document.querySelector('.inspirations-container');
     const grid = document.querySelector('#inspirations-grid');
     const sidebar = document.querySelector('#sidebar');
     const sidebarImage = document.querySelector('#sidebar-image');
-    const sidebarProducts = document.querySelector('#sidebar-products ul');
+    // const sidebarProduct = document.querySelector('#product');
+    const sidebarProducts = document.querySelector('#sidebar-products .swiper-wrapper');
+    const closeSidebar = document.querySelector('.colose-sidebar');
+
+    const sidebarContent = document.querySelector('#sidebar-content');
+    
+    wrap.style.display = "block";
+
+    function pokazWysokosc() {
+    sidebarContent.style.maxHeight = (window.innerHeight - 130) + "px";
+
+    }
+
+    pokazWysokosc()
+    window.addEventListener('resize', pokazWysokosc);
+    function sidebarScroll(){
+        const topPosition = container.getBoundingClientRect().top;
+        if (topPosition < 0) {
+            sidebarContent.style.overflow = 'auto';
+        } else {
+            sidebarContent.style.overflow = 'hidden';
+        }
+    }
+    sidebarScroll()
+    window.addEventListener('scroll', sidebarScroll);
+
+    closeSidebar.addEventListener('click', function(){
+        
+        container.classList.remove('active');
+        if (masonry) {
+            masonry.reloadItems(); // Przeładuj elementy
+            masonry.layout();      // Przywróć układ
+        }
+    });
+
+
     let masonry = null;
 
     // Inicjalizacja Masonry
@@ -27,8 +63,26 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Ustaw obraz w sidebarze
+        // // // Ustaw obraz w sidebarze
         sidebarImage.src = image;
+
+        // if(sidebarProduct) {
+        //    const produkt = get_field('glowny_produkt', inspirationId );
+        //    console.log(product);
+        //     sidebarProduct.innerHTML =   `<div class='swiper-slide'>
+        //         <div class='item'>
+        //         <a href='{$permalink}'>
+        //             <img src='{$thumbnail}' alt='{$title}'>
+        //             </a>
+        //             <div class='item__content' >
+        //             <p class='h5'>{$title}</p>
+        //             <a href='{$add_to_cart_url}' class='btn-main add-to-cart'>$button • {$price}</a>
+        //             </div>
+        //         </div>
+        //     </div>`;
+        // }
+
+
 
         // Pobieranie produktów za pomocą AJAX
         const request = new XMLHttpRequest();
@@ -39,8 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const response = JSON.parse(request.responseText);
                 if (response.success) {
                     sidebarProducts.innerHTML = response.data;
+                    
                 } else {
-                    console.error('Error:', response.data);
+                    console.error('Error test:', response.data);
+                    sidebarProducts.innerHTML = '';
+                    
                 }
             } catch (e) {
                 console.error('Invalid JSON:', request.responseText);
@@ -55,6 +112,11 @@ document.addEventListener('DOMContentLoaded', function () {
             masonry.reloadItems(); // Przeładuj elementy
             masonry.layout();      // Przywróć układ
         }
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+             spaceBetween: 30,
+        });
+
     }
 
     // Funkcja dodająca event listener do elementów gridu

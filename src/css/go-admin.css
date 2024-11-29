@@ -475,6 +475,10 @@ body {
 #header:hover .navbar__toggler .navbar__toggler__btn span {
   background-color: #000;
 }
+#header:hover .close-nav path,
+#header:hover .arrow-plus path {
+  fill: #fff !important;
+}
 #header .navbar {
   display: flex;
   align-items: center;

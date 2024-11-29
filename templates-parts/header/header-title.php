@@ -10,13 +10,13 @@ $desc = get_field('title_description', $page_id);
 			<?php get_template_part('templates-parts/header/header', 'brand'); ?>
 		<?php } ?>
 		<h1
-			class="entry-title  <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspirations' ? "text-center" : false; ?>">
+			class="entry-title  <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspiracje' ? "text-center" : false; ?>">
 			<?php
 			if (is_category()) :
 				single_cat_title();
 			elseif (is_tax()) :
 				single_tag_title();
-			elseif (get_post_type(get_the_ID()) == 'inspirations') :
+			elseif (get_post_type(get_the_ID()) == 'inspiracje') :
 				_e('Inspiracje', 'go');
 			elseif (is_404()) :
 				_e('404', 'go');
@@ -52,7 +52,7 @@ $desc = get_field('title_description', $page_id);
 		</h1>
 
 		<div
-			class="entry-desc <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspirations' ? "entry-desc--narrow" : false; ?>">
+			class="entry-desc <?php echo basename($template) === 'page.php' && get_post_type(get_the_ID()) !== 'inspiracje' ? "entry-desc--narrow" : false; ?>">
 			<?php if (is_category()) : ?>
 				<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
 				<?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
@@ -61,7 +61,7 @@ $desc = get_field('title_description', $page_id);
 			<?php if ($desc) : ?>
 				<?php echo $desc; ?>
 			<?php endif; ?>
-			<?php if (get_post_type(get_the_ID()) == 'inspirations') : ?>
+			<?php if (get_post_type(get_the_ID()) == 'inspiracje') : ?>
 
 				<p>
 					Make your home with what you love and who you love. The moments you’ve cherished and the memoriesthat

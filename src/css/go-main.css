@@ -626,6 +626,10 @@ body {
 #header:hover .navbar__toggler .navbar__toggler__btn span {
   background-color: #000;
 }
+#header:hover .close-nav path,
+#header:hover .arrow-plus path {
+  fill: #fff !important;
+}
 #header .navbar {
   display: flex;
   align-items: center;
@@ -1073,7 +1077,7 @@ body {
 }
 @media only screen and (max-width: 1300px) {
   .mega-submenu.active {
-    transform: translate(0, 0);
+    transform: translate(0, 0) !important;
   }
 }
 
@@ -1501,10 +1505,19 @@ select {
   transform: scale(1.1);
 }
 
+.inspirations {
+  display: none;
+}
+
 .inspirations-container {
   display: flex;
   position: relative;
   align-items: stretch;
+}
+@media only screen and (max-width: 768px) {
+  .inspirations-container {
+    flex-wrap: wrap;
+  }
 }
 .inspirations-container .masonry-grid {
   display: flex;
@@ -1518,6 +1531,13 @@ select {
   margin: 5px;
   overflow: hidden;
   border-radius: 6px;
+}
+@media only screen and (max-width: 768px) {
+  .inspirations-container .masonry-grid .grid-item {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 15px;
+  }
 }
 .inspirations-container .masonry-grid .grid-item img {
   width: 100%;
@@ -1538,12 +1558,36 @@ select {
   width: 100%;
 }
 
+.inspirations-container.active + .load-more {
+  text-align: left !important;
+}
+
 #sidebar {
   background: #fff;
   transition: right 0.3s ease;
   width: 0%;
   overflow: hidden;
   right: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    z-index: 9999999999999;
+    bottom: 0;
+    left: 0;
+    height: auto !important;
+    background: none !important;
+    padding: 0;
+  }
+}
+#sidebar .colose-sidebar {
+  position: absolute;
+  z-index: 4;
+  right: 30px;
+  top: 25px;
+  z-index: 88888;
+  font-size: 28px;
+  cursor: pointer;
 }
 #sidebar #sidebar-content {
   background-color: #f8f4e8;
@@ -1556,6 +1600,62 @@ select {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  display: block;
+  margin-bottom: 20px;
+}
+#sidebar #sidebar-content .swiper-slide {
+  width: 350px;
+}
+@media only screen and (max-width: 768px) {
+  #sidebar #sidebar-content .swiper-slide {
+    width: 100%;
+  }
+}
+#sidebar #sidebar-content .item {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#sidebar #sidebar-content .item img {
+  width: 70px;
+  height: 70px;
+}
+@media only screen and (max-width: 768px) {
+  #sidebar #sidebar-content .item img {
+    width: 50px;
+    height: 50px;
+  }
+}
+#sidebar #sidebar-content .item p {
+  margin: 0;
+  padding: 0;
+}
+#sidebar #sidebar-content .item .h5 {
+  display: block;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #sidebar #sidebar-content .item .h5 {
+    font-size: 14px;
+  }
+}
+#sidebar #sidebar-content .item .btn-main {
+  display: inline-block;
+  background-color: #fff !important;
+  border: 1px solid #000;
+  padding: 5px 20px;
+  font-size: 10px;
+  color: #000 !important;
+}
+#sidebar #sidebar-content .item .btn-main * {
+  color: #000 !important;
+  font-size: 12px !important;
+}
+#sidebar #sidebar-content .item .btn-main span {
+  color: #000 !important;
 }
 
 .inspirations-container.active {
@@ -1563,16 +1663,26 @@ select {
 }
 
 .inspirations-container.active .masonry-grid {
-  width: 60%;
+  width: 30%;
+}
+@media only screen and (max-width: 768px) {
+  .inspirations-container.active .masonry-grid {
+    width: 100%;
+  }
 }
 
 .inspirations-container.active .masonry-grid .grid-item {
-  width: calc(50% - 10px);
+  width: calc(100% - 10px);
 }
 
 .inspirations-container.active #sidebar {
-  width: 40%;
+  width: 70%;
   overflow: initial;
+}
+@media only screen and (max-width: 768px) {
+  .inspirations-container.active #sidebar {
+    width: 100%;
+  }
 }
 
 .load-more {

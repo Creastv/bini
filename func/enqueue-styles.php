@@ -11,7 +11,9 @@ function enqueue_styles()
 	if (is_shop() || is_product_category() || is_tax('collection')) {
 		wp_enqueue_style('go-swipeer_css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 	}
-	// bundler
-	wp_enqueue_style('go-swipeer_css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+	if (is_page_template('teplate-bundler.php') || is_post_type_archive('inspiracje')) {
+		// bundler i inspiracje
+		wp_enqueue_style('go-swipeer_css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+	}
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');

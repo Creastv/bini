@@ -10,7 +10,7 @@ function load_more_inspirations()
 
     $page = intval($_POST['page']);
     $args = array(
-        'post_type'      => 'inspirations',
+        'post_type'      => 'inspiracje',
         'posts_per_page' => 5,
         'paged'          => $page,
     );
@@ -58,21 +58,28 @@ function fetch_products_for_inspiration()
 
     if ($products && is_array($products)) {
         $output = '';
+
         foreach ($products as $product) {
             $thumbnail = get_the_post_thumbnail_url($product->ID, 'thumbnail'); // Miniaturka
             $permalink = get_permalink($product->ID);                         // Link do produktu
             $title = $product->post_title;                                   // Tytuł produktu
             $price = wc_price(get_post_meta($product->ID, '_price', true));  // Cena
+            $add_to_cart_url = esc_url(add_query_arg('add-to-cart', $product->ID, wc_get_cart_url()));
+            $button = __('Dodaj do koszyka', 'go');
 
             // HTML dla każdego produktu
             $output .= "
-                <li>
+                 <div class='swiper-slide'>
+                    <div class='item'>
                     <a href='{$permalink}'>
                         <img src='{$thumbnail}' alt='{$title}'>
-                        <p>{$title}</p>
-                        <p>{$price}</p>
-                    </a>
-                </li>";
+                        </a>
+                        <div class='item__content' >
+                        <p class='h5'>{$title}</p>
+                         <a href='{$add_to_cart_url}' class='btn-main add-to-cart'>$button • {$price}</a>
+                        </div>
+                    </div>
+                </div>";
         }
         // Zwróć HTML z produktami
         wp_send_json_success($output);
