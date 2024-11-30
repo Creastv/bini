@@ -226,16 +226,3 @@ function add_bundler_info_to_cart_item_name($product_name, $cart_item, $cart_ite
 
     return $product_name;
 }
-
-
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/custom.js', ['jquery'], '1.0', true);
-
-    // Pobierz bieżący język
-    $current_language = apply_filters('wpml_current_language', null);
-
-    // Przekaż język do JavaScript
-    wp_localize_script('custom-script', 'wpmlSettings', [
-        'currentLanguage' => $current_language
-    ]);
-});
