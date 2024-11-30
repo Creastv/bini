@@ -209,7 +209,7 @@
       }
     }
     .woocommerce-loop-product__title {
-      font-size: 1rem !important;
+      font-size: 1.125rem !important;
       display: block;
       line-height: 1.2;
       @media #{$sm} {
@@ -228,7 +228,7 @@
     .price {
       span {
         // display: block;
-        font-size: 1.25rem !important;
+        font-size: 1rem !important;
         color: #a4a4a4 !important;
         @media #{$sm} {
           font-size: 0.85rem !important;

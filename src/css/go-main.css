@@ -1928,7 +1928,7 @@ select {
   line-height: 1.2;
 }
 #product-list .product-item .woocommerce-Price-amount.amount * {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   color: #a4a4a4 !important;
 }
 #product-list .product-item .control {
@@ -2197,7 +2197,7 @@ select {
   color: #fff !important;
 }
 .products li.product .woocommerce-loop-product__title {
-  font-size: 1rem !important;
+  font-size: 1.125rem !important;
   display: block;
   line-height: 1.2;
 }
@@ -2217,7 +2217,7 @@ select {
   }
 }
 .products li.product .price span {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   color: #a4a4a4 !important;
 }
 @media only screen and (max-width: 768px) {

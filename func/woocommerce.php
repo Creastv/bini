@@ -304,8 +304,8 @@ add_filter('woocommerce_pagination_args', 'custom_pagination_text');
 
 function custom_pagination_text($args)
 {
-    $args['prev_text'] = '← Poprzednia'; // Tekst dla przycisku poprzedniej strony
-    $args['next_text'] = 'Następna →'; // Tekst dla przycisku następnej strony
+    $args['prev_text'] =  __('← Poprzednia', 'go'); // Tekst dla przycisku poprzedniej strony
+    $args['next_text'] = __('Następna →', 'go'); // Tekst dla przycisku następnej strony
     return $args;
 }
 
