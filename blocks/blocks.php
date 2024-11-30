@@ -172,6 +172,28 @@ function register_acf_block_types()
     }
   ));
   acf_register_block_type(array(
+    'name'              => 'opinions-two',
+    'title'             => __('Opinions two'),
+    'render_template'   => 'blocks/opinions-two/opinions-two.php',
+    'category'          => 'formatting',
+    'icon' => array(
+      'background' => '#122b4f',
+      'foreground' => '#fff',
+      'src' => 'ellipsis',
+    ),
+    'mode'            => 'preview',
+    'keywords'          => array('Kontener', 'opinions-two'),
+    'supports'    => [
+      'align'      => false,
+      'anchor'    => false,
+      'customClassName'  => true,
+      'jsx'       => true,
+    ],
+    'enqueue_assets'    => function () {
+      wp_enqueue_style('go-opinions-two',  get_template_directory_uri() . '/blocks/opinions-two/opinions-two.min.css');
+    }
+  ));
+  acf_register_block_type(array(
     'name'              => 'bullet',
     'title'             => __('bullet'),
     'render_template'   => 'blocks/bullet/bullet.php',
