@@ -857,7 +857,7 @@ body {
   position: absolute;
   z-index: 99999;
   width: calc(100% - 30px);
-  top: -100%;
+  top: -200%;
   left: 50%;
   transform: translate(-50%, 0);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
