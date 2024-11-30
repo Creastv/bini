@@ -7,6 +7,7 @@ $args = array(
     'posts_per_page' => 4,
     'orderby'        => 'rand', // Losowe sortowanie
     'post_status'    => 'publish', // Tylko opublikowane wpisy
+    'lang' => ICL_LANGUAGE_CODE
 );
 
 $opinie = new WP_Query($args);
