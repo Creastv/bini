@@ -177,7 +177,11 @@
         display: none !important;
       }
       #sp-wqv-view-button {
-        display: block !important;
+        display: inline-block !important;
+        width: 35px;
+        height: 35px;
+        border-radius: 100px !important;
+        padding: 5px 6px !important;
       }
     }
     .sp-wqv-view-button {

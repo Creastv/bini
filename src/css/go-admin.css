@@ -888,7 +888,11 @@ body {
   display: none !important;
 }
 .products li.product .quick-view #sp-wqv-view-button {
-  display: block !important;
+  display: inline-block !important;
+  width: 35px;
+  height: 35px;
+  border-radius: 100px !important;
+  padding: 5px 6px !important;
 }
 .products li.product .sp-wqv-view-button {
   position: absolute;
