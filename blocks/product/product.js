@@ -1,6 +1,6 @@
 
 var swiper = new Swiper(".products-carousel", {
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 30,
     loop: true,
     autoplay: {
@@ -11,20 +11,35 @@ var swiper = new Swiper(".products-carousel", {
         el: ".swiper-pagination",
         clickable: true
       },
-      navigation: {
-        nextEl: '.slider-nav__prod__next',
-        prevEl: '.slider-nav__prod__prev',
-    },
+     
     breakpoints: {
       640: {
-        pagination: true,
-
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
-      1300: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1024: {
         slidesPerView: 4,
+        spaceBetween: 30,
         pagination: false,
-        navigation: false,
+        navigation: {
+            nextEl: '.slider-nav__prod__next',
+            prevEl: '.slider-nav__prod__prev',
+        },
       },
+    
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        pagination: false,
+        navigation: {
+          nextEl: '.slider-nav__prod__next',
+          prevEl: '.slider-nav__prod__prev',
+        }
+      },
+     
     },
   });
-  

@@ -925,6 +925,13 @@ body {
 .products li.product .button {
   max-width: 250px;
 }
+@media only screen and (max-width: 768px) {
+  .products li.product .button {
+    max-width: 100%;
+    width: 100%;
+    display: block !important;
+  }
+}
 .products li.product .price span {
   font-size: 1.25rem !important;
   color: #a4a4a4 !important;
@@ -1002,6 +1009,34 @@ body {
 .labels .flash-sale-label {
   background-color: #b3cce6; /* Kolor tła, np. złoty */
   color: white; /* Kolor tekstu */
+}
+
+.woocommerce-filter .select2-container {
+  max-width: 200px; /* Dostosuj szerokość */
+  margin: 0 auto; /* Wyśrodkuj, jeśli potrzebne */
+}
+.woocommerce-filter .select2-container .select2-selection {
+  border: 1px solid #e1e1e1 !important;
+  border-radius: 6px !important;
+  padding: 4px;
+  min-height: 45px !important;
+}
+.woocommerce-filter .select2-selection__rendered {
+  padding: 5px 20px 5px 10px !important;
+}
+.woocommerce-filter .select2-selection__arrow {
+  height: 100% !important;
+}
+.woocommerce-filter .select2-results__option {
+  font-size: 14px;
+}
+
+.select2-results__option--highlighted {
+  background-color: #000 !important;
+}
+
+.select2-results__option {
+  font-size: 14px;
 }
 
 .single-product .product {

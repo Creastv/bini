@@ -44,10 +44,9 @@ if ($type == 1) {
             // Dodatkowe informacje o produkcie można dodać w podobny sposób
             endwhile;
             echo '</div>'; ?>
-
-
-
-            <div class="slider-nav__prev slider-nav__prod__prev">
+            <div class="swiper-pagination swiper-pagination--col"></div>
+            <?php echo '</div>'; ?>
+            <div class="slider-navv__prev slider-nav__prod__prev">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#b3cce6" />
                     <path
@@ -55,7 +54,7 @@ if ($type == 1) {
                         fill="#b3cce6" />
                 </svg>
             </div>
-            <div class="slider-nav__next slider-nav__prod__next">
+            <div class="slider-navv__next slider-nav__prod__next">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)"
                         stroke="#b3cce6" />
@@ -65,10 +64,7 @@ if ($type == 1) {
                 </svg>
 
             </div>
-
-        <?php
-            echo '</div>';
-            wp_reset_postdata();
+        <?php wp_reset_postdata();
 
         endif;
         ?>

@@ -214,6 +214,11 @@
     }
     .button {
       max-width: 250px;
+      @media #{$sm} {
+        max-width: 100%;
+        width: 100%;
+        display: block !important;
+      }
     }
 
     .price {
@@ -301,4 +306,34 @@
     background-color: $main2; /* Kolor tła, np. złoty */
     color: white; /* Kolor tekstu */
   }
+}
+
+// Select
+.woocommerce-filter {
+  .select2-container {
+    max-width: 200px; /* Dostosuj szerokość */
+    margin: 0 auto; /* Wyśrodkuj, jeśli potrzebne */
+  }
+
+  .select2-container .select2-selection {
+    border: 1px solid $gray !important;
+    border-radius: 6px !important;
+    padding: 4px;
+    min-height: 45px !important;
+  }
+  .select2-selection__rendered {
+    padding: 5px 20px 5px 10px !important;
+  }
+  .select2-selection__arrow {
+    height: 100% !important;
+  }
+  .select2-results__option {
+    font-size: 14px;
+  }
+}
+.select2-results__option--highlighted {
+  background-color: $black !important;
+}
+.select2-results__option {
+  font-size: 14px;
 }

@@ -324,3 +324,14 @@ function custom_shop_section()
         get_template_part('templates-parts/woocommerce/category');
     }
 }
+
+
+
+function enqueue_custom_sort_select2_script()
+{
+    if (is_shop() || is_product_taxonomy()) {
+        wp_enqueue_script('custom-sort-select2', get_template_directory_uri() . '/src/js/custom-sort-select2.js', array('jquery', 'select2'), '1.0', true);
+        wp_enqueue_style('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css', array(), '4.0.13');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_sort_select2_script');
