@@ -66,24 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // // // Ustaw obraz w sidebarze
         sidebarImage.src = image;
 
-        // if(sidebarProduct) {
-        //    const produkt = get_field('glowny_produkt', inspirationId );
-        //    console.log(product);
-        //     sidebarProduct.innerHTML =   `<div class='swiper-slide'>
-        //         <div class='item'>
-        //         <a href='{$permalink}'>
-        //             <img src='{$thumbnail}' alt='{$title}'>
-        //             </a>
-        //             <div class='item__content' >
-        //             <p class='h5'>{$title}</p>
-        //             <a href='{$add_to_cart_url}' class='btn-main add-to-cart'>$button • {$price}</a>
-        //             </div>
-        //         </div>
-        //     </div>`;
-        // }
-
-
-
         // Pobieranie produktów za pomocą AJAX
         const request = new XMLHttpRequest();
         request.open('POST', ajaxData.ajaxUrl, true);
@@ -113,8 +95,24 @@ document.addEventListener('DOMContentLoaded', function () {
             masonry.layout();      // Przywróć układ
         }
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: "auto",
-             spaceBetween: 30,
+            slidesPerView: 1,
+             spaceBetween: 15,
+             pagination: {
+                el: ".swiper-pagination--col",
+                clickable: true,
+              },
+              breakpoints: {
+
+                768: {
+                  slidesPerView: 1,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
+                1200: {
+                  slidesPerView: 2,
+                }
+              }
         });
 
     }

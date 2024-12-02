@@ -44,8 +44,11 @@ get_header(); ?>
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                         </div>
+
                     </div>
                 </div>
+                <br>
+                <div class="swiper-pagination swiper-pagination--col"></div>
             </div>
         </div>
     </div>

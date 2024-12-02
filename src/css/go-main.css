@@ -1616,7 +1616,7 @@ select {
   margin-bottom: 20px;
 }
 #sidebar #sidebar-content .swiper-slide {
-  width: 350px;
+  width: 100%;
 }
 @media only screen and (max-width: 768px) {
   #sidebar #sidebar-content .swiper-slide {

@@ -102,7 +102,8 @@
       margin-bottom: 20px;
     }
     .swiper-slide {
-      width: 350px;
+      // width: 350px;
+      width: 100%;
       @media #{$sm} {
         width: 100%;
       }
