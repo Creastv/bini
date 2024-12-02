@@ -39,7 +39,8 @@
                             </div>
                             <h4 class="h5"><?php _e('Kurierzy', 'go'); ?></h4>
                             <div class="b-info__wrap__logos">
-                                <img src="https://bini.jffrbblxkx.cfolks.pl/wp-content/uploads/2024/11/pay.png" alt="">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/delivery.png"
+                                    alt="Delivery">
                             </div>
                         </div>
                     </div>
