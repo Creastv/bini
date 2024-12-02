@@ -14,4 +14,9 @@
 }
 .custome-category .custome-category-grid .related-cat__item {
   width: calc(50% - 30px);
+}
+@media only screen and (max-width: 768px) {
+  .custome-category .custome-category-grid .related-cat__item {
+    width: 100%;
+  }
 }/*# sourceMappingURL=collections.css.map */

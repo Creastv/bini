@@ -14,4 +14,14 @@
 }
 .custome-category .custome-category-grid .related-cat__item {
   width: calc(33.33% - 30px);
+}
+@media only screen and (max-width: 998px) {
+  .custome-category .custome-category-grid .related-cat__item {
+    width: calc(50% - 30px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .custome-category .custome-category-grid .related-cat__item {
+    width: 100%;
+  }
 }/*# sourceMappingURL=category.css.map */
