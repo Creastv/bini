@@ -33,8 +33,9 @@
                         <div class="b-info__wrap">
                             <h4 class="h5"><?php _e('Metody płatności', 'go'); ?></h4>
                             <div class="b-info__wrap__logos">
-                                <img src="https://bini.jffrbblxkx.cfolks.pl/wp-content/uploads/2024/11/pay.png" alt="">
-                                <img src="https://bini.jffrbblxkx.cfolks.pl/wp-content/uploads/2024/11/pay.png" alt="">
+                                <img src="https://bini.jffrbblxkx.cfolks.pl/wp-content/uploads/2024/12/platnosci-1.png"
+                                    alt="">
+
                             </div>
                             <h4 class="h5"><?php _e('Kurierzy', 'go'); ?></h4>
                             <div class="b-info__wrap__logos">
