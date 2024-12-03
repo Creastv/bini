@@ -6,6 +6,10 @@ body #header {
   width: 100%;
   background: none;
   border: none;
+
+  @media #{$sm} {
+    background-color: #fff;
+  }
   .menu-item > a span,
   .wpml-ls-statics-shortcode_actions li a,
   .wpml-ls-statics-shortcode_actions li a span {

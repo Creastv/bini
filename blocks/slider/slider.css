@@ -5,6 +5,11 @@ body #header {
   background: none;
   border: none;
 }
+@media only screen and (max-width: 768px) {
+  body #header {
+    background-color: #fff;
+  }
+}
 body #header .menu-item > a span,
 body #header .wpml-ls-statics-shortcode_actions li a,
 body #header .wpml-ls-statics-shortcode_actions li a span {
