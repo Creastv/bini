@@ -1781,11 +1781,20 @@ select {
 #product-bundler {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  justify-content: space-between;
+  gap: 0px;
 }
 @media only screen and (max-width: 768px) {
   #product-bundler {
     gap: 15px;
+  }
+}
+#product-bundler .bundler-header {
+  width: calc(70% - 50px);
+}
+@media only screen and (max-width: 768px) {
+  #product-bundler .bundler-header {
+    width: 100%;
   }
 }
 #product-bundler .bundler-left {
@@ -1811,12 +1820,14 @@ select {
   padding: 5% 10%;
   border-radius: 6px;
   margin-bottom: 50px;
+  margin-top: -120px;
   position: sticky;
   top: 110px;
 }
 @media only screen and (max-width: 768px) {
   #product-bundler .bundler-right__wrap {
     margin-bottom: 15px;
+    margin-top: 0;
   }
 }
 #product-bundler .bundler-right__wrap .bundler-right__header .h1 {

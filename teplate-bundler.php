@@ -1,7 +1,8 @@
 <?php
 /* Template Name: Product Bundler */
 get_header();
-
+$page_id = get_the_ID();
+$desc = get_field('title_description', $page_id);
 $catOne = get_field('pierwsza_kategoria', 'options');
 $catTwo = get_field('druga_kategoria', 'options');
 $catTree = get_field('trzecia_kategoria', 'options');
@@ -50,12 +51,16 @@ endif;
 ?>
 
 <div id="product-bundler">
-    <?php get_template_part('templates-parts/header/header', 'title');  ?>
-    <?php the_content(); ?>
+    <header class="bundler-header">
+        <h1 class="h2"><?php the_title(); ?></h1>
+        <?php if ($desc) { ?>
+            <?php echo $desc; ?>
+        <?php } ?>
+        <?php the_content(); ?>
+    </header>
     <div class="bundler-left">
 
         <div id="product-list">
-
             <!-- Kategoria 1 -->
             <?php if ($queryOne->have_posts()) : ?>
                 <div class="product-list__header">
