@@ -160,6 +160,8 @@ body #header.sticky {
         margin-bottom: 50px;
         @media #{$sm} {
           margin-bottom: 30px;
+          line-height: 1.1;
+          font-size: 31px;
         }
       }
 

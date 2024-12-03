@@ -4,10 +4,10 @@ var swiper = new Swiper(".slider-carousel", {
     // spaceBetween: 30,
     loop: true,
     effect: "fade",
-    autoplay: {
-      delay: 4500,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4500,
+    //   disableOnInteraction: false
+    // },
     pagination: {
         el: ".swiper-pagination",
         clickable: true

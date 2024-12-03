@@ -142,6 +142,8 @@ body #header.sticky .navbar__toggler .navbar__toggler__btn span {
 @media only screen and (max-width: 768px) {
   .slider-hero .item .content .h1 {
     margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 31px;
   }
 }
 .slider-hero .item .content .btn-main {
