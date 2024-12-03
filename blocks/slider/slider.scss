@@ -8,7 +8,40 @@ body #header {
   border: none;
 
   @media #{$sm} {
-    background-color: #fff;
+    background-color: #fff !important;
+    .menu-item > a span,
+    .wpml-ls-statics-shortcode_actions li a,
+    .wpml-ls-statics-shortcode_actions li a span {
+      color: $black !important;
+      &:hover {
+        color: $main !important;
+      }
+    }
+    .wpml-ls-statics-shortcode_actions {
+      * {
+        color: $black !important;
+      }
+    }
+    .navbar__brand {
+      path {
+        fill: $black !important;
+      }
+    }
+    .navbar-right,
+    .navbar-left {
+      svg path {
+        fill: $black !important;
+        &:hover {
+          fill: $main !important;
+        }
+      }
+    }
+    a:hover {
+      color: $black !important;
+    }
+    .navbar__toggler .navbar__toggler__btn span {
+      background-color: $black !important;
+    }
   }
   .menu-item > a span,
   .wpml-ls-statics-shortcode_actions li a,

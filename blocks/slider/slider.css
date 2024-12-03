@@ -7,7 +7,37 @@ body #header {
 }
 @media only screen and (max-width: 768px) {
   body #header {
-    background-color: #fff;
+    background-color: #fff !important;
+  }
+  body #header .menu-item > a span,
+  body #header .wpml-ls-statics-shortcode_actions li a,
+  body #header .wpml-ls-statics-shortcode_actions li a span {
+    color: #000 !important;
+  }
+  body #header .menu-item > a span:hover,
+  body #header .wpml-ls-statics-shortcode_actions li a:hover,
+  body #header .wpml-ls-statics-shortcode_actions li a span:hover {
+    color: #f2db72 !important;
+  }
+  body #header .wpml-ls-statics-shortcode_actions * {
+    color: #000 !important;
+  }
+  body #header .navbar__brand path {
+    fill: #000 !important;
+  }
+  body #header .navbar-right svg path,
+  body #header .navbar-left svg path {
+    fill: #000 !important;
+  }
+  body #header .navbar-right svg path:hover,
+  body #header .navbar-left svg path:hover {
+    fill: #f2db72 !important;
+  }
+  body #header a:hover {
+    color: #000 !important;
+  }
+  body #header .navbar__toggler .navbar__toggler__btn span {
+    background-color: #000 !important;
   }
 }
 body #header .menu-item > a span,
