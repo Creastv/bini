@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
             masonry.reloadItems(); // Przeładuj elementy
             masonry.layout();      // Przywróć układ
         }
+        // swiper.slideTo(0);
+       
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
              spaceBetween: 15,
@@ -114,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
               }
         });
+    Swiper.reInit();
 
     }
 
