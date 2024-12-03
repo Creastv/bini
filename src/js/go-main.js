@@ -158,7 +158,7 @@ for (let i = 0; i < menuItems.length; i++) {
     // console.log(menuItems[i]);
     menuItems[i].addEventListener("click", function (event) {
       // event.preventDefault(); // Zapobiega domyślnemu działaniu
-      // console.log('test')
+      console.log('test')
       const parentItem = menuItems[i].parentElement; // Pobierz rodzica elementu arrow-plus
       const isHasChild = parentItem.classList.contains("has-child");
   
@@ -184,20 +184,21 @@ for (let i = 0; i < menuItems.length; i++) {
 
   
 };
-setupEvents();
+  setupEvents();
 
-window.addEventListener("resize", setupEvents);
+  // window.addEventListener("resize", setupEvents);
+  // window.addEventListener("scroll", setupEvents);
 
 
 
 
- // footer
- const calaps = document.querySelectorAll(".calaps");
- for (let i = 0; i < calaps.length; i++) {
-   calaps[i].querySelector(".calaps__opener").addEventListener("click", function () {
-     calaps[i].classList.toggle("active");
-   });
- }
+  // footer
+  const calaps = document.querySelectorAll(".calaps");
+  for (let i = 0; i < calaps.length; i++) {
+    calaps[i].querySelector(".calaps__opener").addEventListener("click", function () {
+      calaps[i].classList.toggle("active");
+    });
+  }
 
 
 });
