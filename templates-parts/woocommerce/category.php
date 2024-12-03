@@ -1,10 +1,13 @@
 <?php
+$exclude = get_field('exclude_category', 'options');
+
 
 $args = array(
     'taxonomy'   => 'product_cat',
     'orderby'    => 'name',
     'order'      => 'ASC',
     'hide_empty' => true, // Set to true to exclude empty categories
+    'exclude'    => $exclude,
 );
 
 $categories = get_terms($args);
