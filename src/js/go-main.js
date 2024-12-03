@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', function () {
 // HEader fixed
 
 const togglerNav = document.querySelector(".js-navbar__toggler");
@@ -198,3 +198,6 @@ window.addEventListener("resize", setupEvents);
      calaps[i].classList.toggle("active");
    });
  }
+
+
+});
