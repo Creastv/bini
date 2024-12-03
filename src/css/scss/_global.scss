@@ -256,3 +256,9 @@ body {
     }
   }
 }
+
+.h2-sm-small {
+  @media #{$sm} {
+    font-size: 21px;
+  }
+}

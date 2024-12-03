@@ -384,6 +384,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .h2-sm-small {
+    font-size: 21px;
+  }
+}
+
 #footer {
   background-color: #b3cce6;
 }
