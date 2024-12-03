@@ -138,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const discountedPriceElement = document.getElementById('discounted-price');
     const checkoutButton = document.getElementById('checkout-button');
 
+    const isMobile = window.innerWidth <= 768;
+
     // Kliknięcie w "+" lub "-"
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('quantity-minus') || e.target.classList.contains('quantity-plus')) {
@@ -172,9 +174,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.target.nextElementSibling.classList.remove('hidden');
                 updateSelectedProducts();
                 updateSummary();
+                if(isMobile){
+                goToDiv();
+                }
+                sessionStorage.setItem('scrollPosition', window.scrollY);
             }
         }
     });
+    // idz do sekcji podsumowania
+    function goToDiv() {
+        const targetDiv = document.querySelector(".bundler-right");
+        const yOffset = -100; // Offset in pixels
+        const y = targetDiv.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
 
     // Usuwanie produktu z bundlera
     document.addEventListener('click', (e) => {
@@ -209,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 updateSelectedProducts();
                 updateSummary();
+              
             }
         }
     });
@@ -221,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const productImage = document.querySelector(`.product-item[data-id="${product.id}"] img`).src;
                 console.log(product);
                 slot.innerHTML = `
+                
                    <div class="placeholder-selected">
                     <img src="${productImage}" alt="${product.name}">
                     <div class="info">
@@ -232,14 +248,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
             } else {
                 slot.innerHTML = `
+                    <a class="back" href="#">
                     <div class="placeholder">
                     <span class="img"></span>
                     <span class="title">${ wpmlStrings.selectProduct}</span>
                     </div>
+                    </a>
                 `;
             }
         });
+
+        document.querySelectorAll('.back').forEach(anchor => {
+            anchor.addEventListener('click', (event) => {
+                event.preventDefault(); // Zapobiega przeładowaniu strony
+                const scrollPosition = sessionStorage.getItem('scrollPosition');
+                if (scrollPosition !== null) {
+                    window.scrollTo(0, parseInt(scrollPosition, 10));
+                    sessionStorage.removeItem('scrollPosition'); // Opcjonalne: wyczyść zapis pozycję
+                }
+            });
+        });
+    
     }
+
+
 
     function updateSummary() {
         const originalPrice = selectedProducts.reduce((sum, product) => sum + product.price, 0);

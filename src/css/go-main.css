@@ -1775,12 +1775,18 @@ select {
   flex-wrap: wrap;
   gap: 50px;
 }
+@media only screen and (max-width: 768px) {
+  #product-bundler {
+    gap: 15px;
+  }
+}
 #product-bundler .bundler-left {
   width: calc(70% - 50px);
 }
 @media only screen and (max-width: 768px) {
   #product-bundler .bundler-left {
     width: 100%;
+    order: 2;
   }
 }
 #product-bundler .bundler-right {
@@ -1789,6 +1795,7 @@ select {
 @media only screen and (max-width: 768px) {
   #product-bundler .bundler-right {
     width: 100%;
+    order: 1;
   }
 }
 #product-bundler .bundler-right__wrap {
@@ -1798,6 +1805,11 @@ select {
   margin-bottom: 50px;
   position: sticky;
   top: 110px;
+}
+@media only screen and (max-width: 768px) {
+  #product-bundler .bundler-right__wrap {
+    margin-bottom: 15px;
+  }
 }
 #product-bundler .bundler-right__wrap .bundler-right__header .h1 {
   text-transform: uppercase;
@@ -1809,7 +1821,13 @@ select {
 #product-bundler .bundler-right__wrap #selected-products .h2 {
   line-height: 1.1;
 }
-#product-bundler .bundler-right__wrap #selected-products .placeholder {
+#product-bundler .bundler-right__wrap #selected-products .product-slot:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.02);
+}
+#product-bundler .bundler-right__wrap #selected-products .product-slot a {
+  text-decoration: none;
+}
+#product-bundler .bundler-right__wrap #selected-products .product-slot .placeholder {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -1820,7 +1838,7 @@ select {
   border: 1px dashed #a4a4a4;
   border-radius: 6px;
 }
-#product-bundler .bundler-right__wrap #selected-products .placeholder .img {
+#product-bundler .bundler-right__wrap #selected-products .product-slot .placeholder .img {
   box-sizing: border-box;
   width: 33px;
   height: 33px;
@@ -1828,7 +1846,7 @@ select {
   border: 1px dashed #a4a4a4;
   border-radius: 6px;
 }
-#product-bundler .bundler-right__wrap #selected-products .placeholder .title {
+#product-bundler .bundler-right__wrap #selected-products .product-slot .placeholder .title {
   font-family: "ITC Avant Garde Gothic Pro";
   font-style: normal;
   font-weight: 300;
@@ -1915,6 +1933,11 @@ select {
   align-items: center;
   gap: 20px;
   padding: 50px 0;
+}
+@media only screen and (max-width: 768px) {
+  #product-list .product-list__header {
+    padding: 15px 0;
+  }
 }
 #product-list .product-list__header h2 {
   margin: 0;
