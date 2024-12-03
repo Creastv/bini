@@ -108,16 +108,6 @@ body #header.sticky .navbar__toggler .navbar__toggler__btn span {
   background-size: cover;
   background-position: center;
 }
-.slider-hero .item .img:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3192314426) 0%, rgba(255, 255, 255, 0) 100%);
-}
 .slider-hero .item .content {
   position: absolute;
   bottom: 10%;
