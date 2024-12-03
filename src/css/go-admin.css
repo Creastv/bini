@@ -376,10 +376,12 @@ body {
   }
 }
 
-.center-sm-text figure {
-  float: none;
-  text-align: center;
-  width: 100%;
+@media only screen and (max-width: 768px) {
+  .center-sm-text figure {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 #footer {

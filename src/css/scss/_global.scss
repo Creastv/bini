@@ -248,9 +248,11 @@ body {
 }
 
 .center-sm-text {
-  figure {
-    float: none;
-    text-align: center;
-    width: 100%;
+  @media #{$sm} {
+    figure {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
   }
 }
