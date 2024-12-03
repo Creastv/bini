@@ -24,7 +24,7 @@ function display_filter_dropdown()
 
     <form method="GET" action="<?php echo esc_url(home_url('/sklep/')); ?>" class="filter-form">
         <select name="collection" class="size-filter-dropdown" onchange="this.form.submit()">
-            <option value=""><?php _e('Sortuj po kolekcji', 'go'); ?></option>
+            <option value=""><?php _e('Filtruj po kolekcji', 'go'); ?></option>
             <?php foreach ($size_terms as $term) : ?>
                 <option value="<?php echo esc_attr($term->slug); ?>"
                     <?php echo isset($_GET['collection']) && $_GET['collection'] === $term->slug ? 'selected' : ''; ?>>
@@ -33,7 +33,7 @@ function display_filter_dropdown()
             <?php endforeach; ?>
         </select>
         <select name="tkaniny" class="color-filter-dropdown" onchange="this.form.submit()">
-            <option value=""><?php _e('Sortuj po tkaninie', 'go'); ?></option>
+            <option value=""><?php _e('Filtruj po tkaninie', 'go'); ?></option>
             <?php foreach ($color_terms as $term) : ?>
                 <option value="<?php echo esc_attr($term->slug); ?>"
                     <?php echo isset($_GET['tkaniny']) && $_GET['tkaniny'] === $term->slug ? 'selected' : ''; ?>>
