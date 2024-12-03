@@ -380,6 +380,12 @@ body {
   color: #000 !important;
 }
 
+@media only screen and (max-width: 460px) {
+  .xs-display-none {
+    display: none !important;
+  }
+}
+
 #footer {
   background-color: #b3cce6;
 }
