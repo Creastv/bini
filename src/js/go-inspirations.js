@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+   
     const wrap = document.querySelector('.inspirations');
     const container = document.querySelector('.inspirations-container');
     const grid = document.querySelector('#inspirations-grid');
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             masonry.layout();      // Przywróć układ
         }
         // swiper.slideTo(0);
-       
+        
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
              spaceBetween: 15,
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clickable: true,
               },
               breakpoints: {
-
+    
                 768: {
                   slidesPerView: 1,
                 },
@@ -116,7 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
               }
         });
-    Swiper.reInit();
+        // swiper.update();
+        // swiper.destroy()
+        // swiper.update()
+
 
     }
 
