@@ -100,7 +100,7 @@
       width: 80%;
     }
   }
-  .header-nav-list li a span {
+  #header-nav-list li a span {
     color: $black !important;
     @media #{$lg} {
       color: #fff !important;
