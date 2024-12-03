@@ -448,15 +448,21 @@ body {
 #header:hover {
   background-color: #fff !important;
 }
-#header:hover .menu-item > a span,
 #header:hover .wpml-ls-statics-shortcode_actions li a,
 #header:hover .wpml-ls-statics-shortcode_actions li a span {
-  color: #000;
+  color: #000 !important;
 }
-#header:hover .menu-item > a span:hover,
 #header:hover .wpml-ls-statics-shortcode_actions li a:hover,
 #header:hover .wpml-ls-statics-shortcode_actions li a span:hover {
   color: #f2db72 !important;
+}
+#header:hover .header-nav-list li a span {
+  color: #000 !important;
+}
+@media only screen and (max-width: 1300px) {
+  #header:hover .header-nav-list li a span {
+    color: #fff !important;
+  }
 }
 #header:hover .navbar__brand path {
   fill: #000;
@@ -540,6 +546,24 @@ body {
 @media only screen and (max-width: 460px) {
   #header.sticky .navbar__brand a svg {
     width: 80%;
+  }
+}
+#header.sticky .header-nav-list li a span {
+  color: #000 !important;
+}
+@media only screen and (max-width: 1300px) {
+  #header.sticky .header-nav-list li a span {
+    color: #fff !important;
+  }
+}
+#header.sticky .close-nav path,
+#header.sticky .arrow-plus path {
+  fill: #000 !important;
+}
+@media only screen and (max-width: 1300px) {
+  #header.sticky .close-nav path,
+  #header.sticky .arrow-plus path {
+    fill: #fff !important;
   }
 }
 

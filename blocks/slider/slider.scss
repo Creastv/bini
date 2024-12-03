@@ -6,12 +6,18 @@ body #header {
   width: 100%;
   background: none;
   border: none;
+  .wpml-ls-statics-shortcode_actions li a,
+  .wpml-ls-statics-shortcode_actions li a span {
+    color: #fff !important;
+    &:hover {
+      color: $main !important;
+    }
+  }
 
   @media #{$sm} {
     background-color: #fff !important;
-    .menu-item > a span,
-    .wpml-ls-statics-shortcode_actions li a,
-    .wpml-ls-statics-shortcode_actions li a span {
+
+    .menu-item > a span {
       color: $black !important;
       &:hover {
         color: $main !important;
@@ -27,8 +33,7 @@ body #header {
         fill: $black !important;
       }
     }
-    .navbar-right,
-    .navbar-left {
+    .navbar-right {
       svg path {
         fill: $black !important;
         &:hover {
@@ -42,10 +47,17 @@ body #header {
     .navbar__toggler .navbar__toggler__btn span {
       background-color: $black !important;
     }
+    .wpml-ls-statics-shortcode_actions li a,
+    .wpml-ls-statics-shortcode_actions li a span {
+      color: $black !important;
+      &:hover {
+        color: $main !important;
+      }
+    }
   }
-  .arrow-plus path {
-    fill: #fff !important;
-  }
+  // .arrow-plus path {
+  //   fill: #fff !important;
+  // }
   .menu-item > a span {
     color: #fff !important;
     &:hover {
@@ -81,7 +93,7 @@ body #header.sticky {
   .menu-item > a span,
   .wpml-ls-statics-shortcode_actions li a,
   .wpml-ls-statics-shortcode_actions li a span {
-    color: $black;
+    color: $black !important;
   }
   svg path {
     fill: $black;

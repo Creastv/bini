@@ -5,12 +5,18 @@
   transition: all 0.3s ease;
   &:hover {
     background-color: #fff !important;
-    .menu-item > a span,
+
     .wpml-ls-statics-shortcode_actions li a,
     .wpml-ls-statics-shortcode_actions li a span {
-      color: $black;
+      color: $black !important;
       &:hover {
         color: $main !important;
+      }
+    }
+    .header-nav-list li a span {
+      color: $black !important;
+      @media #{$lg} {
+        color: #fff !important;
       }
     }
     .navbar__brand {
@@ -92,6 +98,21 @@
   .navbar__brand a svg {
     @media #{$xs} {
       width: 80%;
+    }
+  }
+  .header-nav-list li a span {
+    color: $black !important;
+    @media #{$lg} {
+      color: #fff !important;
+    }
+  }
+  .close-nav,
+  .arrow-plus {
+    path {
+      fill: $black !important;
+      @media #{$lg} {
+        fill: #fff !important;
+      }
     }
   }
 }
