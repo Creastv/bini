@@ -95,3 +95,12 @@ function fetch_products_for_inspiration()
 }
 add_action('wp_ajax_fetch_products', 'fetch_products_for_inspiration');
 add_action('wp_ajax_nopriv_fetch_products', 'fetch_products_for_inspiration');
+
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Opcje Inspiracji',
+        'menu_title' => 'Opcje Inspiracji',
+        'parent_slug' => 'edit.php?post_type=inspiracje',
+    ));
+}

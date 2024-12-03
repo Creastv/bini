@@ -3,6 +3,7 @@ $page_id = get_the_ID();
 $template = get_page_template();
 $displayTitle = get_field('remove_title_section', $page_id);
 $desc = get_field('title_description', $page_id);
+$inspDesc = get_field('opis_pod_naglowkiem', 'options');
 ?>
 <?php if ($displayTitle !== true) { ?>
 	<header class="entry-header">
@@ -61,15 +62,8 @@ $desc = get_field('title_description', $page_id);
 			<?php if ($desc) : ?>
 				<?php echo $desc; ?>
 			<?php endif; ?>
-			<?php if (get_post_type(get_the_ID()) == 'inspiracje') : ?>
-
-				<p>
-					Make your home with what you love and who you love. The moments you’ve cherished and the memoriesthat
-					linger.
-					Fill your space with cozy corners and joyful chaos. BiNi the laughter, the quiet times, and everything
-					in
-					between. BiNi the messesthat tellstories and the traditionsthat bring comfort.</p>
-
+			<?php if (get_post_type(get_the_ID()) == 'inspiracje' && $inspDesc) : ?>
+				<?php echo $inspDesc; ?>
 			<?php endif; ?>
 		</div>
 
