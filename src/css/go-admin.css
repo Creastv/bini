@@ -1538,4 +1538,8 @@ html :where(.wp-block)[data-align=left],
 html :where(.wp-block)[data-align=right] {
   width: 100%;
   height: initial !important;
+}
+
+.acf-block-preview .custome-separator {
+  background-color: #eeeef0 !important;
 }/*# sourceMappingURL=go-admin.css.map */
