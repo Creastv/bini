@@ -87,7 +87,12 @@
   z-index: 9;
   background-color: #fff;
   .navbar {
-    padding: 5px 0;
+    padding: 0px 0;
+  }
+  .navbar__brand a svg {
+    @media #{$xs} {
+      width: 80%;
+    }
   }
 }
 // logo
@@ -96,6 +101,7 @@
     display: block;
     svg {
       @media #{$xs} {
+        transition: all 0.3s ease;
         width: 100%;
         height: auto;
         max-width: 100px;

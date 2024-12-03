@@ -43,10 +43,11 @@ body #header {
       background-color: $black !important;
     }
   }
-  .menu-item > a span,
-  .wpml-ls-statics-shortcode_actions li a,
-  .wpml-ls-statics-shortcode_actions li a span {
-    color: #fff;
+  .arrow-plus path {
+    fill: #fff !important;
+  }
+  .menu-item > a span {
+    color: #fff !important;
     &:hover {
       color: $main !important;
     }

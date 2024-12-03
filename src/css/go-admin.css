@@ -535,7 +535,12 @@ body {
   background-color: #fff;
 }
 #header.sticky .navbar {
-  padding: 5px 0;
+  padding: 0px 0;
+}
+@media only screen and (max-width: 460px) {
+  #header.sticky .navbar__brand a svg {
+    width: 80%;
+  }
 }
 
 .navbar__brand a {
@@ -543,6 +548,7 @@ body {
 }
 @media only screen and (max-width: 460px) {
   .navbar__brand a svg {
+    transition: all 0.3s ease;
     width: 100%;
     height: auto;
     max-width: 100px;
@@ -710,6 +716,9 @@ body {
   text-decoration: none;
 }
 
+.woocommerce-pagination {
+  padding: 30px 0;
+}
 .woocommerce-pagination .page-numbers {
   border: none !important;
   display: flex !important;
@@ -781,6 +790,7 @@ body {
   .woocommerce-filter .woocommerce-filter__wrap .woocommerce-result-count {
     width: 100%;
     order: 4;
+    padding: 15px 0;
   }
 }
 .woocommerce-filter .woocommerce-filter__wrap .separator {
@@ -1019,14 +1029,26 @@ body {
   max-width: 200px; /* Dostosuj szerokość */
   margin: 0 auto; /* Wyśrodkuj, jeśli potrzebne */
 }
+@media only screen and (max-width: 460px) {
+  .woocommerce-filter .select2-container {
+    max-width: 90px;
+  }
+}
 .woocommerce-filter .select2-container .select2-selection {
   border: 1px solid #e1e1e1 !important;
   border-radius: 6px !important;
   padding: 4px;
-  min-height: 45px !important;
+  min-height: 37px !important;
 }
 .woocommerce-filter .select2-selection__rendered {
   padding: 5px 20px 5px 10px !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+}
+@media only screen and (max-width: 460px) {
+  .woocommerce-filter .select2-selection__rendered {
+    font-size: 12px !important;
+  }
 }
 .woocommerce-filter .select2-selection__arrow {
   height: 100% !important;

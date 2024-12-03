@@ -40,14 +40,13 @@ body #header {
     background-color: #000 !important;
   }
 }
-body #header .menu-item > a span,
-body #header .wpml-ls-statics-shortcode_actions li a,
-body #header .wpml-ls-statics-shortcode_actions li a span {
-  color: #fff;
+body #header .arrow-plus path {
+  fill: #fff !important;
 }
-body #header .menu-item > a span:hover,
-body #header .wpml-ls-statics-shortcode_actions li a:hover,
-body #header .wpml-ls-statics-shortcode_actions li a span:hover {
+body #header .menu-item > a span {
+  color: #fff !important;
+}
+body #header .menu-item > a span:hover {
   color: #f2db72 !important;
 }
 body #header .navbar__brand path {
