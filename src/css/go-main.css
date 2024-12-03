@@ -376,6 +376,12 @@ body {
   }
 }
 
+.center-sm-text figure {
+  float: none;
+  text-align: center;
+  width: 100%;
+}
+
 #footer {
   background-color: #b3cce6;
 }

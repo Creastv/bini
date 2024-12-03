@@ -246,3 +246,11 @@ body {
     display: none !important;
   }
 }
+
+.center-sm-text {
+  figure {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+}
