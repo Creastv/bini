@@ -202,6 +202,16 @@ body {
   }
 }
 
+.page-template-default .entry-content {
+  word-break: break-word;
+}
+@media only screen and (max-width: 768px) {
+  .page-template-default .entry-content .container-narrow {
+    padding-left: 0;
+    padding-right: 0px;
+  }
+}
+
 .container-narrow {
   max-width: 940px;
   margin: 0 auto;

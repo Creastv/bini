@@ -43,6 +43,18 @@ body {
   }
 }
 
+.page-template-default {
+  // overflow: hidden;
+  .entry-content {
+    word-break: break-word;
+    .container-narrow {
+      @media #{$sm} {
+        padding-left: 0;
+        padding-right: 0px;
+      }
+    }
+  }
+}
 .container-narrow {
   max-width: 940px;
   margin: 0 auto;
