@@ -1383,7 +1383,12 @@ body {
 }
 .related-cat .swiper {
   position: relative;
-  padding: 30px 0;
+  padding: 15px 0;
+}
+@media only screen and (max-width: 768px) {
+  .related-cat .swiper {
+    padding: 15px 0 30px 0;
+  }
 }
 .related-cat .swiper .swiper-pagination {
   bottom: 0;
