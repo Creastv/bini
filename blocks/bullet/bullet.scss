@@ -5,13 +5,16 @@
     display: flex;
     justify-content: space-between;
     gap: 30px;
+
     @media #{$sm} {
       flex-wrap: wrap;
+      gap: 10px;
     }
     .bullet {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      width: 100%;
       @media #{$lg} {
         flex-wrap: wrap;
         text-align: center;
@@ -21,26 +24,47 @@
         flex-wrap: nowrap;
       }
       .bullet__left {
-        padding: 10px;
-        width: 35%;
+        // padding: 10px;
+        text-align: center;
+        width: 40%;
         @media #{$lg} {
           width: 100%;
         }
         @media #{$sm} {
           width: 35%;
         }
+        @media #{$xs} {
+          width: 30%;
+        }
+
         img {
           max-width: 100%;
           height: auto;
         }
       }
       .bullet__right {
-        width: 65%;
+        width: 60%;
         @media #{$lg} {
           width: 100%;
         }
         @media #{$sm} {
           width: 65%;
+        }
+        @media #{$xs} {
+          width: 70%;
+        }
+
+        .h5 {
+          margin-bottom: 10px;
+          @media #{$sm} {
+            font-size: 1rem;
+          }
+        }
+        p {
+          font-size: 14px;
+          @media #{$xs} {
+            display: none;
+          }
         }
       }
     }

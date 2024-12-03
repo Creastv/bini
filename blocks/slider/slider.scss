@@ -147,20 +147,29 @@ body #header.sticky {
       left: 50%;
       transform: translate(-50%, 0%);
       text-align: center;
-
       width: 100%;
       max-width: 998px;
       padding: 0 20px;
+      @media #{$sm} {
+        bottom: 40px;
+      }
       * {
         color: #fff;
       }
-      p {
-        margin-bottom: 40px;
+      .h1 {
+        margin-bottom: 50px;
+        @media #{$sm} {
+          margin-bottom: 30px;
+        }
       }
+
       .btn-main {
         margin: 15px 0;
-        padding: 10px 35px;
-        font-size: 18px;
+        padding: 10px 45px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 400px;
+        font-weight: bold;
         background-color: #f8f4e8;
         color: $black !important;
       }

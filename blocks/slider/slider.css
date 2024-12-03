@@ -128,16 +128,29 @@ body #header.sticky .navbar__toggler .navbar__toggler__btn span {
   max-width: 998px;
   padding: 0 20px;
 }
+@media only screen and (max-width: 768px) {
+  .slider-hero .item .content {
+    bottom: 40px;
+  }
+}
 .slider-hero .item .content * {
   color: #fff;
 }
-.slider-hero .item .content p {
-  margin-bottom: 40px;
+.slider-hero .item .content .h1 {
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .slider-hero .item .content .h1 {
+    margin-bottom: 30px;
+  }
 }
 .slider-hero .item .content .btn-main {
   margin: 15px 0;
-  padding: 10px 35px;
-  font-size: 18px;
+  padding: 10px 45px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  font-weight: bold;
   background-color: #f8f4e8;
   color: #000 !important;
 }/*# sourceMappingURL=slider.css.map */
