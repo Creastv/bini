@@ -2173,7 +2173,7 @@ select {
   margin-bottom: 30px !important;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 45px 30px;
 }
 @media only screen and (max-width: 768px) {

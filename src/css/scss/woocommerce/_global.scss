@@ -107,7 +107,7 @@
   margin-bottom: 30px !important;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 45px 30px;
   @media #{$sm} {
     gap: 30px 10px;
