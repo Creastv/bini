@@ -1073,11 +1073,6 @@ body {
   max-width: 200px; /* Dostosuj szerokość */
   margin: 0 auto; /* Wyśrodkuj, jeśli potrzebne */
 }
-@media only screen and (max-width: 460px) {
-  .woocommerce-filter .select2-container {
-    max-width: 90px;
-  }
-}
 .woocommerce-filter .select2-container .select2-selection {
   border: 1px solid #e1e1e1 !important;
   border-radius: 6px !important;

@@ -320,7 +320,7 @@
     max-width: 200px; /* Dostosuj szerokość */
     margin: 0 auto; /* Wyśrodkuj, jeśli potrzebne */
     @media #{$xs} {
-      max-width: 90px;
+      // max-width: 90px;
     }
   }
 
