@@ -5,6 +5,11 @@
   width: 100vw;
   left: -50vw;
   margin-left: 50%;
+  @media #{$sm} {
+    br {
+      display: none !important;
+    }
+  }
   .row {
     display: flex;
     // align-items: center;
@@ -31,6 +36,7 @@
     max-width: 660px;
     @media #{$sm} {
       padding: 30px 20px;
+      max-width: 100%;
     }
   }
 }

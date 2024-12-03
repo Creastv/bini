@@ -4,6 +4,11 @@
   left: -50vw;
   margin-left: 50%;
 }
+@media only screen and (max-width: 768px) {
+  .section-img br {
+    display: none !important;
+  }
+}
 .section-img .row {
   display: flex;
 }
@@ -35,6 +40,7 @@
 @media only screen and (max-width: 768px) {
   .section-img .content {
     padding: 30px 20px;
+    max-width: 100%;
   }
 }
 
