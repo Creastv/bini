@@ -13,12 +13,12 @@ function add_invoice_checkbox_and_fields($checkout)
     ], $checkout->get_value('invoice_checkbox'));
 
     // Pole: nazwa firmy
-    woocommerce_form_field('invoice_company_name', [
+    woocommerce_form_field('billing_company', [
         'type'        => 'text',
         'class'       => ['form-row-first hidden-field'],
         // 'label'       => 'Nazwa firmy',
         'placeholder' => __('Nazwa firmy', 'go'),
-    ], $checkout->get_value('invoice_company_name'));
+    ], $checkout->get_value('billing_company'));
 
     // Pole: NIP
     woocommerce_form_field('billing_nip', [
@@ -38,7 +38,7 @@ add_action('woocommerce_checkout_process', 'validate_invoice_fields');
 function validate_invoice_fields()
 {
     if (!empty($_POST['invoice_checkbox'])) {
-        if (empty($_POST['invoice_company_name'])) {
+        if (empty($_POST['billing_company'])) {
             wc_add_notice(__('<strong>Nazwa firmy</strong> jest wymaganym polem.', 'go'), 'error');
         }
         if (empty($_POST['billing_nip'])) {
@@ -53,7 +53,7 @@ function save_invoice_fields($order_id)
 {
     if (!empty($_POST['invoice_checkbox'])) {
         update_post_meta($order_id, 'invoice_checkbox', 'tak');
-        update_post_meta($order_id, 'invoice_company_name', sanitize_text_field($_POST['invoice_company_name']));
+        update_post_meta($order_id, 'billing_company', sanitize_text_field($_POST['billing_company']));
         update_post_meta($order_id, 'billing_nip', sanitize_text_field($_POST['billing_nip']));
     }
 }
@@ -64,12 +64,12 @@ add_action('woocommerce_admin_order_data_after_billing_address', 'display_invoic
 function display_invoice_fields_in_admin($order)
 {
     $invoice_checkbox = get_post_meta($order->get_id(), 'invoice_checkbox', true);
-    $invoice_company_name = get_post_meta($order->get_id(), 'invoice_company_name', true);
+    $billing_company = get_post_meta($order->get_id(), 'billing_company', true);
     $billing_nip = get_post_meta($order->get_id(), 'billing_nip', true);
 
     if ($invoice_checkbox === 'tak') {
         echo '<li><strong>Faktura VAT:</strong> Tak</li>';
-        echo '<li><strong>Nazwa firmy:</strong> ' . esc_html($invoice_company_name) . '</li>';
+        echo '<li><strong>Nazwa firmy:</strong> ' . esc_html($billing_company) . '</li>';
         echo '<li><strong>NIP:</strong> ' . esc_html($billing_nip) . '</li>';
     }
 }

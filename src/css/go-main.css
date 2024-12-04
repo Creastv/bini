@@ -3299,6 +3299,10 @@ select {
   display: none;
 }
 
+.form-row.vat-number {
+  display: none !important;
+}
+
 .woocommerce-message::before {
   border-radius: 6px;
   border: none !important;
