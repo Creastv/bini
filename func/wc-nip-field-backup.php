@@ -21,12 +21,12 @@ function add_invoice_checkbox_and_fields($checkout)
     ], $checkout->get_value('invoice_company_name'));
 
     // Pole: NIP
-    woocommerce_form_field('billing_nip', [
+    woocommerce_form_field('invoice_nip', [
         'type'        => 'text',
         'class'       => ['form-row-last hidden-field'],
         // 'label'       => 'NIP',
         'placeholder' => 'NIP',
-    ], $checkout->get_value('billing_nip'));
+    ], $checkout->get_value('invoice_nip'));
 
     echo '</div>';
 }
@@ -41,7 +41,7 @@ function validate_invoice_fields()
         if (empty($_POST['invoice_company_name'])) {
             wc_add_notice(__('<strong>Nazwa firmy</strong> jest wymaganym polem.', 'go'), 'error');
         }
-        if (empty($_POST['billing_nip'])) {
+        if (empty($_POST['invoice_nip'])) {
             wc_add_notice(__('<strong>NIP</strong> jest wymaganym polem.', 'go'), 'error');
         }
     }
@@ -54,7 +54,7 @@ function save_invoice_fields($order_id)
     if (!empty($_POST['invoice_checkbox'])) {
         update_post_meta($order_id, 'invoice_checkbox', 'tak');
         update_post_meta($order_id, 'invoice_company_name', sanitize_text_field($_POST['invoice_company_name']));
-        update_post_meta($order_id, 'billing_nip', sanitize_text_field($_POST['billing_nip']));
+        update_post_meta($order_id, 'invoice_nip', sanitize_text_field($_POST['invoice_nip']));
     }
 }
 
@@ -65,12 +65,12 @@ function display_invoice_fields_in_admin($order)
 {
     $invoice_checkbox = get_post_meta($order->get_id(), 'invoice_checkbox', true);
     $invoice_company_name = get_post_meta($order->get_id(), 'invoice_company_name', true);
-    $billing_nip = get_post_meta($order->get_id(), 'billing_nip', true);
+    $invoice_nip = get_post_meta($order->get_id(), 'invoice_nip', true);
 
     if ($invoice_checkbox === 'tak') {
         echo '<li><strong>Faktura VAT:</strong> Tak</li>';
         echo '<li><strong>Nazwa firmy:</strong> ' . esc_html($invoice_company_name) . '</li>';
-        echo '<li><strong>NIP:</strong> ' . esc_html($billing_nip) . '</li>';
+        echo '<li><strong>NIP:</strong> ' . esc_html($invoice_nip) . '</li>';
     }
 }
 
