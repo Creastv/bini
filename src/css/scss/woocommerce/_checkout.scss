@@ -318,7 +318,7 @@
     justify-content: space-between;
     padding: 10px 0;
     gap: 10px;
-    @media #{$sm} {
+    @media #{$xs} {
       flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
@@ -346,12 +346,18 @@
     }
     .coupon {
       display: flex;
-      flex-wrap: wrap;
+
       justify-content: flex-end;
       gap: 10px;
       width: 100%;
       @media #{$xs} {
+        flex-wrap: wrap;
         justify-content: center;
+      }
+      [name="coupon_code"] {
+        @media #{$xs} {
+          width: 100% !important;
+        }
       }
       button[name="apply_coupon"] {
         background: #d4df7e;
@@ -363,9 +369,13 @@
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
+        float: none !important;
         &:hover {
           background: #d4df7e;
           color: $black;
+        }
+        @media #{$xs} {
+          width: 100% !important;
         }
       }
       #coupon_code {

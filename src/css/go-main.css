@@ -4,7 +4,6 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 100%;
-  line-height: 1.2;
   color: #000;
 }
 
@@ -567,7 +566,7 @@ body {
     text-align: left;
     align-items: baseline;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
   }
 }
@@ -3207,7 +3206,7 @@ select {
   padding: 10px 0;
   gap: 10px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 460px) {
   .woocommerce-cart-form .actions__wrap {
     flex-wrap: wrap;
     gap: 15px;
@@ -3236,14 +3235,19 @@ select {
 }
 .woocommerce-cart-form .actions__wrap .coupon {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
   width: 100%;
 }
 @media only screen and (max-width: 460px) {
   .woocommerce-cart-form .actions__wrap .coupon {
+    flex-wrap: wrap;
     justify-content: center;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .woocommerce-cart-form .actions__wrap .coupon [name=coupon_code] {
+    width: 100% !important;
   }
 }
 .woocommerce-cart-form .actions__wrap .coupon button[name=apply_coupon] {
@@ -3256,10 +3260,16 @@ select {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  float: none !important;
 }
 .woocommerce-cart-form .actions__wrap .coupon button[name=apply_coupon]:hover {
   background: #d4df7e;
   color: #000;
+}
+@media only screen and (max-width: 460px) {
+  .woocommerce-cart-form .actions__wrap .coupon button[name=apply_coupon] {
+    width: 100% !important;
+  }
 }
 .woocommerce-cart-form .actions__wrap .coupon #coupon_code {
   min-width: 150px;
