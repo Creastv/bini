@@ -64,7 +64,36 @@ function create_tkaniny_taxonomy()
 }
 add_action('init', 'create_tkaniny_taxonomy');
 
+// Rozmiar
+function create_rozmiar_taxonomy()
+{
+    $labels = array(
+        'name'              => _x('Rozmiar', 'go'),
+        'singular_name'     => _x('Rozmiar', 'go'),
+        'search_items'      => __('Search rozmiar'),
+        'all_items'         => __('All rozmiar'),
+        'parent_item'       => __('Parent rozmiar'),
+        'parent_item_colon' => __('Parent rozmiar:'),
+        'edit_item'         => __('Edit rozmiar'),
+        'update_item'       => __('Update rozmiar'),
+        'add_new_item'      => __('Add New rozmiar'),
+        'new_item_name'     => __('New rozmiar Name'),
+        'menu_name'         => __('Rozmiar'),
+    );
 
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'rozmiar'),
+    );
+
+    register_taxonomy('rozmiar', array('product'), $args);
+}
+add_action('init', 'create_rozmiar_taxonomy');
 // Cpt Opinie
 function create_opinie_cpt()
 {

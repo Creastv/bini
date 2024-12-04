@@ -15,7 +15,7 @@ function display_filter_dropdown()
 
     // Filtr rozmiaru
     $size_terms = get_terms(array(
-        'taxonomy' => 'collection',
+        'taxonomy' => 'rozmiar',
         'orderby' => 'name',
         'order' => 'ASC',
         'hide_empty' => true,
@@ -24,10 +24,10 @@ function display_filter_dropdown()
 
     <form method="GET" action="<?php echo esc_url(home_url('/sklep/')); ?>" class="filter-form">
         <select name="collection" class="size-filter-dropdown" onchange="this.form.submit()">
-            <option value=""><?php _e('Filtruj po kolekcji', 'go'); ?></option>
+            <option value=""><?php _e('Filtruj po rozmiarze', 'go'); ?></option>
             <?php foreach ($size_terms as $term) : ?>
                 <option value="<?php echo esc_attr($term->slug); ?>"
-                    <?php echo isset($_GET['collection']) && $_GET['collection'] === $term->slug ? 'selected' : ''; ?>>
+                    <?php echo isset($_GET['rozmiar']) && $_GET['rozmiar'] === $term->slug ? 'selected' : ''; ?>>
                     <?php echo esc_html($term->name); ?>
                 </option>
             <?php endforeach; ?>
@@ -63,11 +63,11 @@ function filter_products_by_color_and_size($query)
         }
 
         // Filtr rozmiaru
-        if (!empty($_GET['collection'])) {
+        if (!empty($_GET['rozmiar'])) {
             $tax_query[] = array(
-                'taxonomy' => 'collection',
+                'taxonomy' => 'rozmiar',
                 'field'    => 'slug',
-                'terms'    => sanitize_text_field($_GET['collection']),
+                'terms'    => sanitize_text_field($_GET['rozmiar']),
             );
         }
 
