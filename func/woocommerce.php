@@ -254,10 +254,10 @@ function add_on_hover_shop_loop_image()
     }
     echo '</div>';
 
-    // Szybki podgląd i przycisk "Dodaj do koszyka"
-    echo '<div class="quick-view">';
-    echo woocommerce_template_loop_add_to_cart(); // Przycisk dodania do koszyka
-    echo '</div>';
+    // // Szybki podgląd i przycisk "Dodaj do koszyka"
+    // echo '<div class="quick-view">';
+    // // echo woocommerce_template_loop_add_to_cart(); // Przycisk dodania do koszyka
+    // echo '</div>';
 
     echo '</div>'; // Zamykanie div.product-thumbnails
 }
