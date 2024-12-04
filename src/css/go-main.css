@@ -525,11 +525,6 @@ body {
   gap: 20px;
 }
 @media only screen and (max-width: 768px) {
-  .b-logo .b-logo__wrap {
-    justify-content: center;
-  }
-}
-@media only screen and (max-width: 768px) {
   .b-logo img {
     width: 75px;
   }
