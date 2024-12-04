@@ -436,10 +436,11 @@
 }
 .woocommerce-bacs-bank-details ul li {
   margin: 10px 0;
-  margin-left: -1px;
+  margin-left: -1px !important;
   padding: 15px 15px;
-  border-right: 1px dashed #cfc8d8;
-  border-left: 1px dashed #cfc8d8;
+  border-right: 1px dashed #cfc8d8 !important;
+  border-left: 1px dashed #cfc8d8 !important;
+  float: none !important;
   @media #{$sm} {
     padding: 5px 10px;
     margin: 5px 0;
