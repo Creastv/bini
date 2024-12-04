@@ -19,12 +19,12 @@ function mytheme_customize_register($wp_customize)
     ));
 
     // Dodanie ustawienia i kontrolki dla Twittera
-    $wp_customize->add_setting('twitter_url', array(
+    $wp_customize->add_setting('pinterest', array(
         'default'           => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
-    $wp_customize->add_control('twitter_url', array(
-        'label'    => __('Twitter URL', 'go'),
+    $wp_customize->add_control('pinterest', array(
+        'label'    => __('Pinterest', 'go'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ));
