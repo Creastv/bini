@@ -177,9 +177,9 @@ document.addEventListener('DOMContentLoaded', function () {
           // Inicjalizacja karuzeli
           function initNewSwiper() {
             // swiper.slideTo(0);
-            // if (swiper) {
-            //     swiper.destroy(true, true); // Usuwa wszystkie eventy i DOM Swipera
-            // }
+            if (swiper) {
+                swiper.destroy(true, true); // Usuwa wszystkie eventy i DOM Swipera
+            }
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: 1,
                 spaceBetween: 15,
@@ -200,10 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             });
-            // swiper.update()
-            // swiper.update();
-            // swiper.destroy()
-            // swiper.update()
+            swiper.update()
+    
 
             console.log('Swiper slides:', swiper.slides.length);
             console.log('Pagination element:', document.querySelector('.swiper-pagination--col'));
