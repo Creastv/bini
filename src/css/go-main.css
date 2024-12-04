@@ -3342,6 +3342,10 @@ select {
   }
 }
 
+.woocommerce-order p {
+  text-align: center;
+}
+
 .woocommerce-message::before {
   border-radius: 6px;
   border: none !important;
