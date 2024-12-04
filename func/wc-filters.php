@@ -23,7 +23,7 @@ function display_filter_dropdown()
 ?>
 
     <form method="GET" action="<?php echo esc_url(home_url('/sklep/')); ?>" class="filter-form">
-        <select name="collection" class="size-filter-dropdown" onchange="this.form.submit()">
+        <select name="rozmiar" class="size-filter-dropdown" onchange="this.form.submit()">
             <option value=""><?php _e('Filtruj po rozmiarze', 'go'); ?></option>
             <?php foreach ($size_terms as $term) : ?>
                 <option value="<?php echo esc_attr($term->slug); ?>"
