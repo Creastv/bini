@@ -5,27 +5,27 @@ const togglerNav = document.querySelector(".js-navbar__toggler");
 const nav = document.querySelector("#header");
 const closeNav =document.querySelector('.close-nav');
 let navFlag = false;
-
-togglerNav.addEventListener("click", () => {
-  if (navFlag == false) {
-    nav.classList.add("active");
-    togglerNav.classList.add("active");
-    // document.querySelector("body").style.overflow = "hidden";
-    navFlag = true;
-  } else {
+if(togglerNav) {
+  togglerNav.addEventListener("click", () => {
+    if (navFlag == false) {
+      nav.classList.add("active");
+      togglerNav.classList.add("active");
+      // document.querySelector("body").style.overflow = "hidden";
+      navFlag = true;
+    } else {
+      nav.classList.remove("active");
+      togglerNav.classList.remove("active");
+      // document.querySelector("body").style.overflow = "inherit";
+      navFlag = false;
+    }
+  });
+  closeNav.addEventListener('click', () => {
     nav.classList.remove("active");
     togglerNav.classList.remove("active");
     // document.querySelector("body").style.overflow = "inherit";
     navFlag = false;
-  }
-});
-closeNav.addEventListener('click', () => {
-  nav.classList.remove("active");
-  togglerNav.classList.remove("active");
-  // document.querySelector("body").style.overflow = "inherit";
-  navFlag = false;
-});
-
+  });
+}
 
 
 
@@ -76,12 +76,13 @@ const serchSliderWrap= document.querySelector('.search-slider__form');
 const searchSliderBg= document.querySelector('.search-slider__bg');
 const container= document.querySelector('.js-navbar');
 
-serchSliderIcon.addEventListener("click", () => {
-  serchSliderWrap.classList.add('active');
-  // serchSliderWrap.style.width = `${container.offsetWidth}px`;
-  searchSliderBg.classList.add('active');
-});
-
+if(serchSliderIcon) { 
+  serchSliderIcon.addEventListener("click", () => {
+    serchSliderWrap.classList.add('active');
+    // serchSliderWrap.style.width = `${container.offsetWidth}px`;
+    searchSliderBg.classList.add('active');
+  });
+}
 window.onclick = function(event) {
   if (event.target == searchSliderBg) {
     serchSliderWrap.classList.remove('active');

@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function pokazWysokosc() {
     sidebarContent.style.maxHeight = (window.innerHeight - 130) + "px";
-
     }
 
     pokazWysokosc()
+
     window.addEventListener('resize', pokazWysokosc);
     function sidebarScroll(){
         const topPosition = container.getBoundingClientRect().top;
@@ -29,18 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
             sidebarContent.style.overflow = 'hidden';
         }
     }
-    sidebarScroll()
-    window.addEventListener('scroll', sidebarScroll);
 
+    sidebarScroll()
+
+    window.addEventListener('scroll', sidebarScroll);
     closeSidebar.addEventListener('click', function(){
-        
         container.classList.remove('active');
         if (masonry) {
             masonry.reloadItems(); // Przeładuj elementy
             masonry.layout();      // Przywróć układ
         }
     });
-
 
     let masonry = null;
 
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             percentPosition: true
         });
     }
+    
 
     // Funkcja obsługująca kliknięcia w elementy gridu
     function handleGridItemClick(event) {
@@ -96,33 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             masonry.reloadItems(); // Przeładuj elementy
             masonry.layout();      // Przywróć układ
         }
-        // swiper.slideTo(0);
-        
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-             spaceBetween: 15,
-             pagination: {
-                el: ".swiper-pagination--col",
-                clickable: true,
-              },
-              breakpoints: {
-    
-                768: {
-                  slidesPerView: 1,
-                },
-                1024: {
-                  slidesPerView: 2,
-                },
-                1200: {
-                  slidesPerView: 2,
-                }
-              }
-        });
-        // swiper.update();
-        // swiper.destroy()
-        // swiper.update()
-
-
+       
     }
 
     // Funkcja dodająca event listener do elementów gridu
@@ -133,8 +107,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.addEventListener('click', handleGridItemClick);
                 item.classList.add('listener-added');
             }
+            
         });
     }
+
 
     // Wywołaj funkcję dla początkowych elementów
     addEventListenersToGridItems();
@@ -170,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
                         }
                         addEventListenersToGridItems();
+                        initNewSwiper()
 
                         loadMoreBtn.setAttribute('data-page', currentPage);
                         if (!response.data.has_more) {
@@ -188,4 +165,47 @@ document.addEventListener('DOMContentLoaded', function () {
             request.send(`action=load_more_inspirations&page=${currentPage}`);
         });
     }
+
+  
+
+        const buttons = document.querySelectorAll('.grid-item');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                initNewSwiper()
+            });
+        });
+          // Inicjalizacja karuzeli
+          function initNewSwiper() {
+            // swiper.slideTo(0);
+            // if (swiper) {
+            //     swiper.destroy(true, true); // Usuwa wszystkie eventy i DOM Swipera
+            // }
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                pagination: {
+                    el: ".swiper-pagination--col",
+                    clickable: true,
+                },
+                breakpoints: {
+        
+                    768: {
+                    slidesPerView: 1,
+                    },
+                    1024: {
+                    slidesPerView: 2,
+                    },
+                    1200: {
+                    slidesPerView: 2,
+                    }
+                }
+            });
+            // swiper.update()
+            // swiper.update();
+            // swiper.destroy()
+            // swiper.update()
+
+            console.log('Swiper slides:', swiper.slides.length);
+            console.log('Pagination element:', document.querySelector('.swiper-pagination--col'));
+        }
 });
