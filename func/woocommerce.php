@@ -335,3 +335,10 @@ function enqueue_custom_sort_select2_script()
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_sort_select2_script');
+
+add_action('template_redirect', function () {
+    if (is_page('moje-konto')) { // 'moje-konto' to slug strony
+        wp_redirect(home_url());
+        exit;
+    }
+});
