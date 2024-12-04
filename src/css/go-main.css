@@ -3322,6 +3322,25 @@ select {
   }
 }
 
+.wc-bacs-bank-detail {
+  padding: 0px;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+.wc-bacs-bank-detail li {
+  margin: 10px 0;
+  margin-left: -1px;
+  padding: 15px 15px;
+  border-right: 1px dashed #cfc8d8;
+  border-left: 1px dashed #cfc8d8;
+}
+@media only screen and (max-width: 768px) {
+  .wc-bacs-bank-detail li {
+    padding: 5px 10px;
+    margin: 5px 0;
+  }
+}
+
 .woocommerce-message::before {
   border-radius: 6px;
   border: none !important;
