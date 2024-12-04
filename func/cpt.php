@@ -86,6 +86,27 @@ function create_opinie_cpt()
     register_post_type('opinie', $args);
 }
 add_action('init', 'create_opinie_cpt');
+// Wyłączenie widoczności pojedynczych postów
+function disable_single_opinie()
+{
+    if (is_singular('opinie')) {
+        wp_redirect(get_post_type_archive_link('opinie'));
+        exit;
+    }
+}
+add_action('template_redirect', 'disable_single_opinie');
+
+//  Wyłączenie dostępu do API dla pojedynczych postów
+
+function restrict_opinie_rest_access($response, $post, $request)
+{
+    if ($post->post_type === 'opinie' && is_singular('opinie')) {
+        return new WP_Error('rest_forbidden', __('Access denied.', 'go'), array('status' => 403));
+    }
+    return $response;
+}
+add_filter('rest_prepare_opinie', 'restrict_opinie_rest_access', 10, 3);
+
 
 // Cpt Inspirations
 function create_inspirations_cpt()
@@ -118,3 +139,23 @@ function enable_classic_editor_for_inspirations($can_edit, $post_type)
     return $can_edit;
 }
 add_filter('use_block_editor_for_post_type', 'enable_classic_editor_for_inspirations', 10, 2);
+
+// Wyłączenie widoczności pojedynczych postów CPT
+function disable_single_inspiracje()
+{
+    if (is_singular('inspiracje')) {
+        wp_redirect(get_post_type_archive_link('inspiracje'));
+        exit;
+    }
+}
+add_action('template_redirect', 'disable_single_inspiracje');
+
+// Wyłączenie dostępu do API dla pojedynczych postów
+function restrict_inspiracje_rest_access($response, $post, $request)
+{
+    if ($post->post_type === 'inspiracje' && is_singular('inspiracje')) {
+        return new WP_Error('rest_forbidden', __('Access denied.', 'go'), array('status' => 403));
+    }
+    return $response;
+}
+add_filter('rest_prepare_inspiracje', 'restrict_inspiracje_rest_access', 10, 3);
