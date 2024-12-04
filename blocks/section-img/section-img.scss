@@ -57,6 +57,7 @@
       .content {
         justify-self: flex-end;
         @media #{$sm} {
+          justify-content: flex-start;
           * {
             text-align: left !important;
           }

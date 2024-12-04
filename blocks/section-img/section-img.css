@@ -64,6 +64,9 @@
   justify-self: flex-end;
 }
 @media only screen and (max-width: 768px) {
+  .section-img.Prawa .col:nth-child(2) .content {
+    justify-content: flex-start;
+  }
   .section-img.Prawa .col:nth-child(2) .content * {
     text-align: left !important;
   }
