@@ -42,6 +42,7 @@ add_filter('woocommerce_checkout_fields', 'remove_state_field');
 function remove_state_field($fields)
 {
     unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_nip']);
     unset($fields['shipping']['shipping_state']);
     unset($fields['billing']['billing_company']);
     return $fields;
