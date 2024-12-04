@@ -161,6 +161,8 @@
     font-size: 1rem;
     text-transform: uppercase;
 
+    margin-bottom: 10px !important;
+
     @media #{$lg} {
       b {
         color: #ffff;
@@ -223,12 +225,13 @@ li.active {
 
   @media #{$lg} {
     transform: translate(0px, 0px);
-    width: 17px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 10px;
     right: 0px;
     top: 0px;
   }
+
   svg {
     position: absolute;
     top: 50%;

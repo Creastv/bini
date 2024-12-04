@@ -1164,6 +1164,7 @@ body {
 .mega-submenu .wraper-links__title {
   font-size: 1rem;
   text-transform: uppercase;
+  margin-bottom: 10px !important;
 }
 @media only screen and (max-width: 1300px) {
   .mega-submenu .wraper-links__title b {
@@ -1221,8 +1222,8 @@ li.active .arrow-plus svg path {
 @media only screen and (max-width: 1300px) {
   .arrow-plus {
     transform: translate(0px, 0px);
-    width: 17px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 10px;
     right: 0px;
     top: 0px;
