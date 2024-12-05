@@ -342,3 +342,22 @@ add_action('template_redirect', function () {
         exit;
     }
 });
+
+//Usunięcie sidebara
+
+add_action('get_header', function () {
+    if (is_woocommerce() || is_shop() || is_product_category() || is_product()) {
+        remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+    }
+});
+
+
+// Zmiana miejsca up-sel
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+// add_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+
+
+// add_action('woocommerce_after_single_product', function () {
+//     // Twój kod HTML lub PHP
+//     woocommerce_upsell_display();
+// });

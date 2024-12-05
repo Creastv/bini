@@ -681,6 +681,7 @@ body {
 #header:hover .wpml-ls-statics-shortcode_actions li a,
 #header:hover .wpml-ls-statics-shortcode_actions li a span {
   color: #000 !important;
+  transition: all 0.3s ease;
 }
 #header:hover .wpml-ls-statics-shortcode_actions li a:hover,
 #header:hover .wpml-ls-statics-shortcode_actions li a span:hover {

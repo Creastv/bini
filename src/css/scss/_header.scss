@@ -9,10 +9,18 @@
     .wpml-ls-statics-shortcode_actions li a,
     .wpml-ls-statics-shortcode_actions li a span {
       color: $black !important;
+      transition: all 0.3s ease;
       &:hover {
         color: $main !important;
       }
     }
+    // .wpml-ls-legacy-dropdown a.wpml-ls-item-toggle:after,
+    // .wpml-ls-legacy-dropdown a.wpml-ls-item-toggle:after {
+    //   content: url('data:image/svg+xml;charset=UTF-8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.3554 4.10499C9.30892 4.05813 9.25361 4.02093 9.19269 3.99555C9.13176 3.97016 9.0664 3.95709 9.0004 3.95709C8.93439 3.95709 8.86904 3.97016 8.80811 3.99555C8.74718 4.02093 8.69188 4.05813 8.6454 4.10499L6.3554 6.39499C6.30892 6.44185 6.25361 6.47905 6.19269 6.50443C6.13176 6.52982 6.0664 6.54289 6.0004 6.54289C5.93439 6.54289 5.86904 6.52982 5.80811 6.50443C5.74718 6.47905 5.69188 6.44185 5.6454 6.39499L3.3554 4.10499C3.30891 4.05813 3.25361 4.02093 3.19268 3.99555C3.13176 3.97016 3.0664 3.95709 3.0004 3.95709C2.93439 3.95709 2.86904 3.97016 2.80811 3.99555C2.74718 4.02093 2.69188 4.05813 2.6454 4.10499C2.55227 4.19867 2.5 4.3254 2.5 4.45749C2.5 4.58958 2.55227 4.71631 2.6454 4.80999L4.9404 7.10499C5.22165 7.38589 5.6029 7.54366 6.0004 7.54366C6.3979 7.54366 6.77915 7.38589 7.0604 7.10499L9.3554 4.80999C9.44852 4.71631 9.50079 4.58958 9.50079 4.45749C9.50079 4.3254 9.44852 4.19867 9.3554 4.10499Z" fill="black"/></svg>');
+    //   display: inline-block; /* Aby element był widoczny */
+    //   width: 12px;
+    //   height: 12px;
+    // }
     .header-nav-list li a span {
       color: $black !important;
       @media #{$lg} {
