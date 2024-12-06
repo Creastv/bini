@@ -1246,6 +1246,11 @@ li.active .arrow-plus svg path {
   flex-wrap: wrap;
 }
 @media only screen and (max-width: 1300px) {
+  .mega-submenu .wraper-links {
+    padding: 10px 20px;
+  }
+}
+@media only screen and (max-width: 1300px) {
   .mega-submenu .wraper-links .cco {
     width: 100% !important;
     padding: 5px;
@@ -1266,7 +1271,7 @@ li.active .arrow-plus svg path {
 }
 @media only screen and (max-width: 1300px) {
   .mega-submenu .wraper-links .no {
-    padding: 10px 15px 10px 10px;
+    padding: 5px 0;
   }
 }
 .mega-submenu .wraper-links .no p {
@@ -1275,13 +1280,28 @@ li.active .arrow-plus svg path {
 .mega-submenu .wraper-links .no a {
   margin-bottom: 5px;
 }
+@media only screen and (max-width: 1300px) {
+  .mega-submenu .wraper-links .no a {
+    margin-bottom: 0px;
+  }
+}
 .mega-submenu .wraper-links .childe {
   padding: 0px 15px;
   display: block;
   width: 100%;
 }
+@media only screen and (max-width: 1300px) {
+  .mega-submenu .wraper-links .childe {
+    padding: 10px 0;
+  }
+}
 .mega-submenu .wraper-links .childe a {
   margin-bottom: 5px;
+}
+@media only screen and (max-width: 1300px) {
+  .mega-submenu .wraper-links .childe a {
+    margin-bottom: 0px;
+  }
 }
 .mega-submenu .wraper-links .separator-prawy {
   border-right: 1px solid #e1e1e1;
@@ -1299,6 +1319,8 @@ li.active .arrow-plus svg path {
 }
 @media only screen and (max-width: 1300px) {
   .mega-submenu .wraper-links .bold {
+    font-size: 0.85rem;
+    font-weight: initial !important;
     margin-bottom: 0px !important;
   }
 }
@@ -1349,6 +1371,11 @@ li.active .arrow-plus svg path {
 }
 .mega-submenu .wraper-links a:after {
   display: none !important;
+}
+
+.wpml-ls-legacy-dropdown a.wpml-ls-item-toggle:after {
+  border: 0.3em solid transparent;
+  border-top: 0.4em solid;
 }
 
 .entry-desc,

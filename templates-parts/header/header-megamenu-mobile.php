@@ -61,17 +61,19 @@
                                                         </a>
                                                     <?php endif; ?>
                                                 </div>
-                                                <div class="childe">
-                                                    <?php if ($linkChildeChilde) { ?>
-                                                        <?php foreach ($linkChildeChilde['linki'] as $link) : ?>
-                                                            <a itemprop="url" href="<?php echo esc_url($link['link']['url']); ?>"
-                                                                title="<?php echo $link['link']['title']; ?>">
-                                                                <span class="name <?php echo $styl; ?>"
-                                                                    itemprop="name"><?php echo esc_html($link['link']['title']); ?></span>
-                                                            </a>
-                                                        <?php endforeach; ?>
-                                                    <?php } ?>
-                                                </div>
+                                                <?php if ($linkChildeChilde['linki']) { ?>
+                                                    <div class="childe">
+                                                        <?php if ($linkChildeChilde) { ?>
+                                                            <?php foreach ($linkChildeChilde['linki'] as $link) : ?>
+                                                                <a itemprop="url" href="<?php echo esc_url($link['link']['url']); ?>"
+                                                                    title="<?php echo $link['link']['title']; ?>">
+                                                                    <span class="name <?php echo $styl; ?>"
+                                                                        itemprop="name"><?php echo esc_html($link['link']['title']); ?></span>
+                                                                </a>
+                                                            <?php endforeach; ?>
+                                                        <?php } ?>
+                                                    </div>
+                                                <?php } ?>
 
                                             <?php endwhile; ?>
                                         </div>

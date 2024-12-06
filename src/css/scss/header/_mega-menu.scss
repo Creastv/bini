@@ -285,6 +285,9 @@ li.active {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    @media #{$lg} {
+      padding: 10px 20px;
+    }
 
     .cco {
       @media #{$lg} {
@@ -304,21 +307,30 @@ li.active {
       // width: 20%;
       padding: 20px 50px;
       @media #{$lg} {
-        padding: 10px 15px 10px 10px;
+        padding: 5px 0;
       }
       p {
         margin-bottom: 15px;
       }
       a {
         margin-bottom: 5px;
+        @media #{$lg} {
+          margin-bottom: 0px;
+        }
       }
     }
     .childe {
       padding: 0px 15px;
       display: block;
       width: 100%;
+      @media #{$lg} {
+        padding: 10px 0;
+      }
       a {
         margin-bottom: 5px;
+        @media #{$lg} {
+          margin-bottom: 0px;
+        }
       }
     }
     .separator-prawy {
@@ -333,6 +345,8 @@ li.active {
       font-weight: bold !important;
       margin-bottom: 10px !important;
       @media #{$lg} {
+        font-size: 0.85rem;
+        font-weight: initial !important;
         margin-bottom: 0px !important;
       }
     }
@@ -387,4 +401,8 @@ li.active {
       }
     }
   }
+}
+.wpml-ls-legacy-dropdown a.wpml-ls-item-toggle:after {
+  border: 0.3em solid transparent;
+  border-top: 0.4em solid;
 }
