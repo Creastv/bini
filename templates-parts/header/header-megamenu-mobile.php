@@ -1,19 +1,9 @@
 <?php if (have_rows('menu', 'option')): ?>
-    <nav class="header-nav js desktop">
+    <nav class="header-nav js mobile">
         <span class="close-nav h1">
-
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.77 96.78">
-                <defs>
-                    <style>
-                        .cls-1 {
-                            fill: #fff;
-                        }
-                    </style>
-                </defs>
-
                 <path fill="#fff"
                     d="M7.55,0C7.61,0,7.67,0,7.73,0c.19.24.36.5.58.72,13.09,13.12,26.18,26.23,39.27,39.35.22.22.45.42.71.66.26-.24.5-.45.71-.66C62.1,26.95,75.19,13.83,88.28.72c.22-.22.39-.48.58-.72.06,0,.13,0,.19,0,2.55,2.47,5.09,4.95,7.73,7.5-13.72,13.75-27.25,27.3-40.81,40.89,13.56,13.58,27.08,27.14,40.79,40.87-2.62,2.56-5.16,5.04-7.71,7.52h-.19c-.19-.24-.36-.5-.58-.72-13.09-13.12-26.18-26.23-39.27-39.35-.22-.22-.45-.42-.71-.66-.26.24-.5.45-.71.66-13.09,13.11-26.18,26.23-39.27,39.35-.22.22-.39.48-.58.72h-.19C5.03,94.26,2.52,91.73,0,89.21c0-.06,0-.13,0-.19.24-.19.5-.36.71-.58,13.09-13.11,26.18-26.23,39.27-39.35.22-.22.42-.45.66-.71-.24-.26-.45-.5-.66-.71C26.9,34.56,13.81,21.44.71,8.33.5,8.11.24,7.94,0,7.75c0-.06,0-.13,0-.19C2.52,5.04,5.03,2.52,7.55,0Z" />
-
             </svg>
         </span>
         <ul id="header-nav-list" class="header-nav-list" itemscope itemtype="https://www.schema.org/SiteNavigationElement">
@@ -58,11 +48,11 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="wraper-links">
-                                            <div class="co no separator-prawy">
-                                                <?php while (have_rows('linki_potomne', 'option')): the_row();
-                                                    $linkChilde = get_sub_field('link_potomny_two');
-                                                    $linkChildeChilde = get_sub_field('linki_potomne_3');
-                                                ?>
+                                            <?php while (have_rows('linki_potomne', 'option')): the_row();
+                                                $linkChilde = get_sub_field('link_potomny_two');
+                                                $linkChildeChilde = get_sub_field('linki_potomne_3');
+                                            ?>
+                                                <div class="co no ">
                                                     <?php if ($linkChilde) : ?>
                                                         <a itemprop="url" href="<?php echo esc_url($linkChilde['url']); ?>"
                                                             title="<?php echo $linkChilde['title']; ?>">
@@ -70,17 +60,9 @@
                                                                 itemprop="name"><?php echo esc_html($linkChilde['title']); ?></span>
                                                         </a>
                                                     <?php endif; ?>
-                                                <?php endwhile; ?>
-                                            </div>
-                                            <?php while (have_rows('linki_potomne', 'option')): the_row();
-                                                $linkChilde = get_sub_field('link_potomny_two');
-                                                $linkChildeChilde = get_sub_field('linki_potomne_3');
-                                            ?>
-                                                <div class="co no separator-prawy">
+                                                </div>
+                                                <div class="childe">
                                                     <?php if ($linkChildeChilde) { ?>
-                                                        <?php if ($linkChildeChilde['tytul']) { ?>
-                                                            <p><b><?php echo $linkChildeChilde['tytul']; ?></b></p>
-                                                        <?php } ?>
                                                         <?php foreach ($linkChildeChilde['linki'] as $link) : ?>
                                                             <a itemprop="url" href="<?php echo esc_url($link['link']['url']); ?>"
                                                                 title="<?php echo $link['link']['title']; ?>">

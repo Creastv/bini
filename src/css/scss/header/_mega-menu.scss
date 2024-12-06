@@ -5,14 +5,36 @@
     position: absolute;
     z-index: 99999;
     height: 100vh;
-    background: $black;
+    background: #f8f4e8;
     left: -150%;
     top: 0;
     max-width: 300px;
-    transition: all 0.3 ease-in;
+    transition: all 0.5s ease-in;
   }
 }
-
+.header-nav.mobile {
+  display: none !important;
+  @media #{$lg} {
+    display: block !important;
+  }
+}
+.header-nav.desktop {
+  display: block !important;
+  @media #{$lg} {
+    display: none !important;
+  }
+}
+.wpml-ls-statics-shortcode_actions li a,
+.wpml-ls-statics-shortcode_actions li a span {
+  color: $black !important;
+  transition: all 0.3s ease;
+  &:hover {
+    color: #d4df7e !important;
+  }
+}
+.wpml-ls-sub-menu {
+  background-color: #fff;
+}
 .js-header.active {
   .header-nav {
     left: 0;
@@ -20,7 +42,7 @@
 }
 .close-nav {
   display: none;
-  color: #fff;
+  color: $black;
   position: absolute;
   z-index: 3;
   right: 20px;
@@ -65,8 +87,8 @@
       width: 100%;
       padding: 10px 0;
       display: block;
-      border-top: 1px solid #2e2e2e;
-      border-bottom: 1px solid #2e2e2e;
+      border-top: 1px solid $gray;
+      border-bottom: 1px solid $gray;
       margin-top: -1px;
       margin-bottom: 0;
     }
@@ -79,16 +101,16 @@
       span {
         transition: all 0.3s ease;
         @media #{$lg} {
-          color: #fff !important;
+          color: $black;
         }
       }
     }
     &:hover {
       > a {
         > span {
-          color: $main;
+          color: #d4df7e;
           @media #{$lg} {
-            color: $main !important;
+            color: #d4df7e !important;
           }
         }
       }
@@ -108,12 +130,12 @@
   .current_page_item {
     a {
       span {
-        color: $main;
+        color: #d4df7e;
       }
     }
     .has-child {
       a {
-        color: $black !important;
+        color: #d4df7e !important;
       }
     }
   }
@@ -165,7 +187,7 @@
 
     @media #{$lg} {
       b {
-        color: #ffff;
+        color: $black;
       }
     }
   }
@@ -198,6 +220,12 @@
 .sticky {
   .mega-submenu.active {
     transform: translate(0, 30px);
+  }
+}
+
+.arrow-plus path {
+  @media #{$lg} {
+    fill: $black !important;
   }
 }
 
@@ -276,20 +304,37 @@ li.active {
       // width: 20%;
       padding: 20px 50px;
       @media #{$lg} {
-        padding: 10px 15px;
+        padding: 10px 15px 10px 10px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      a {
+        margin-bottom: 5px;
+      }
+    }
+    .childe {
+      padding: 0px 15px;
+      display: block;
+      width: 100%;
+      a {
+        margin-bottom: 5px;
       }
     }
     .separator-prawy {
       border-right: 1px solid $gray;
       @media #{$lg} {
         border-right: none;
-        border-bottom: 1px solid #242424;
+        border-bottom: 1px solid $gray;
       }
     }
     .bold {
       font-size: 1rem;
       font-weight: bold !important;
       margin-bottom: 10px !important;
+      @media #{$lg} {
+        margin-bottom: 0px !important;
+      }
     }
     .co-1 {
       width: 100%;
@@ -320,7 +365,7 @@ li.active {
       }
       &:hover {
         .name {
-          color: $main;
+          color: #d4df7e;
         }
       }
       .des {

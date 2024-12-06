@@ -6,101 +6,70 @@ body #header {
   width: 100%;
   background: none;
   border: none;
-  .wpml-ls-statics-shortcode_actions li a,
-  .wpml-ls-statics-shortcode_actions li a span {
-    color: #fff !important;
-    &:hover {
-      color: $main !important;
+  .menu-item > a {
+    span {
+      color: #fff;
+      @media #{$lg} {
+        color: $black;
+      }
+    }
+  }
+  path {
+    fill: #fff;
+  }
+  .close-nav path,
+  .arrow-plus path {
+    @media #{$lg} {
+      fill: $black;
     }
   }
 
-  @media #{$sm} {
-    background-color: #fff !important;
-
-    .menu-item > a span {
-      color: $black !important;
-      &:hover {
-        color: $main !important;
-      }
-    }
-    .wpml-ls-statics-shortcode_actions {
-      * {
-        color: $black !important;
-      }
-    }
-    .navbar__brand {
-      path {
-        fill: $black !important;
-      }
-    }
-    .navbar-right {
-      svg path {
-        fill: $black !important;
-        &:hover {
-          fill: $main !important;
-        }
-      }
-    }
-    a:hover {
-      color: $black !important;
-    }
-    .navbar__toggler .navbar__toggler__btn span {
-      background-color: $black !important;
-    }
-    .wpml-ls-statics-shortcode_actions li a,
-    .wpml-ls-statics-shortcode_actions li a span {
-      color: $black !important;
-      &:hover {
-        color: $main !important;
-      }
-    }
-  }
-  // .arrow-plus path {
-  //   fill: #fff !important;
-  // }
-  .menu-item > a span {
-    color: #fff !important;
-    &:hover {
-      color: $main !important;
-    }
-  }
   .navbar__brand {
     path {
       fill: #fff;
     }
   }
-  .navbar-right,
-  .navbar-left {
-    svg path {
-      fill: #fff;
-      &:hover {
-        fill: $main !important;
-      }
+  .wpml-ls-statics-shortcode_actions li a,
+  .wpml-ls-statics-shortcode_actions li a span {
+    color: #fff !important;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #d4df7e !important;
     }
   }
-  a:hover {
-    color: $black;
-  }
+
   .navbar__toggler .navbar__toggler__btn span {
     background-color: #fff;
   }
 }
-body #header.sticky {
-  // position: absolute;
-  // z-index: 99;
-  // width: 100%;
-  // background: none;
-  .menu-item > a span,
+body #header.sticky,
+body #header:hover {
+  background-color: #fff !important;
+  .menu-item > a {
+    span {
+      color: $black;
+      &:hover {
+        color: #d4df7e;
+      }
+    }
+  }
+  path {
+    fill: $black;
+  }
+  .navbar__brand {
+    path {
+      fill: $black;
+    }
+  }
   .wpml-ls-statics-shortcode_actions li a,
   .wpml-ls-statics-shortcode_actions li a span {
     color: $black !important;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #d4df7e !important;
+    }
   }
-  svg path {
-    fill: $black;
-  }
-  a:hover {
-    color: $black;
-  }
+
   .navbar__toggler .navbar__toggler__btn span {
     background-color: $black;
   }
@@ -125,21 +94,6 @@ body #header.sticky {
 
       background-size: cover;
       background-position: center;
-
-      // &:before {
-      //   content: "";
-      //   position: absolute;
-      //   width: 100%;
-      //   height: 100%;
-      //   left: 0;
-      //   top: 0;
-      //   background: rgb(0, 0, 0);
-      //   background: linear-gradient(
-      //     0deg,
-      //     rgba(0, 0, 0, 0.31923144257703081) 0%,
-      //     rgba(255, 255, 255, 0) 100%
-      //   );
-      // }
     }
     .content {
       position: absolute;

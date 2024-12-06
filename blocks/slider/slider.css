@@ -5,87 +5,74 @@ body #header {
   background: none;
   border: none;
 }
-body #header .wpml-ls-statics-shortcode_actions li a,
-body #header .wpml-ls-statics-shortcode_actions li a span {
-  color: #fff !important;
-}
-body #header .wpml-ls-statics-shortcode_actions li a:hover,
-body #header .wpml-ls-statics-shortcode_actions li a span:hover {
-  color: #f2db72 !important;
-}
-@media only screen and (max-width: 768px) {
-  body #header {
-    background-color: #fff !important;
-  }
-  body #header .menu-item > a span {
-    color: #000 !important;
-  }
-  body #header .menu-item > a span:hover {
-    color: #f2db72 !important;
-  }
-  body #header .wpml-ls-statics-shortcode_actions * {
-    color: #000 !important;
-  }
-  body #header .navbar__brand path {
-    fill: #000 !important;
-  }
-  body #header .navbar-right svg path {
-    fill: #000 !important;
-  }
-  body #header .navbar-right svg path:hover {
-    fill: #f2db72 !important;
-  }
-  body #header a:hover {
-    color: #000 !important;
-  }
-  body #header .navbar__toggler .navbar__toggler__btn span {
-    background-color: #000 !important;
-  }
-  body #header .wpml-ls-statics-shortcode_actions li a,
-  body #header .wpml-ls-statics-shortcode_actions li a span {
-    color: #000 !important;
-  }
-  body #header .wpml-ls-statics-shortcode_actions li a:hover,
-  body #header .wpml-ls-statics-shortcode_actions li a span:hover {
-    color: #f2db72 !important;
-  }
-}
 body #header .menu-item > a span {
-  color: #fff !important;
+  color: #fff;
 }
-body #header .menu-item > a span:hover {
-  color: #f2db72 !important;
+@media only screen and (max-width: 1300px) {
+  body #header .menu-item > a span {
+    color: #000;
+  }
+}
+body #header path {
+  fill: #fff;
+}
+@media only screen and (max-width: 1300px) {
+  body #header .close-nav path,
+  body #header .arrow-plus path {
+    fill: #000;
+  }
 }
 body #header .navbar__brand path {
   fill: #fff;
 }
-body #header .navbar-right svg path,
-body #header .navbar-left svg path {
-  fill: #fff;
+body #header .wpml-ls-statics-shortcode_actions li a,
+body #header .wpml-ls-statics-shortcode_actions li a span {
+  color: #fff !important;
+  transition: all 0.3s ease;
 }
-body #header .navbar-right svg path:hover,
-body #header .navbar-left svg path:hover {
-  fill: #f2db72 !important;
-}
-body #header a:hover {
-  color: #000;
+body #header .wpml-ls-statics-shortcode_actions li a:hover,
+body #header .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #d4df7e !important;
 }
 body #header .navbar__toggler .navbar__toggler__btn span {
   background-color: #fff;
 }
 
+body #header.sticky,
+body #header:hover {
+  background-color: #fff !important;
+}
 body #header.sticky .menu-item > a span,
-body #header.sticky .wpml-ls-statics-shortcode_actions li a,
-body #header.sticky .wpml-ls-statics-shortcode_actions li a span {
-  color: #000 !important;
-}
-body #header.sticky svg path {
-  fill: #000;
-}
-body #header.sticky a:hover {
+body #header:hover .menu-item > a span {
   color: #000;
 }
-body #header.sticky .navbar__toggler .navbar__toggler__btn span {
+body #header.sticky .menu-item > a span:hover,
+body #header:hover .menu-item > a span:hover {
+  color: #d4df7e;
+}
+body #header.sticky path,
+body #header:hover path {
+  fill: #000;
+}
+body #header.sticky .navbar__brand path,
+body #header:hover .navbar__brand path {
+  fill: #000;
+}
+body #header.sticky .wpml-ls-statics-shortcode_actions li a,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a span,
+body #header:hover .wpml-ls-statics-shortcode_actions li a,
+body #header:hover .wpml-ls-statics-shortcode_actions li a span {
+  color: #000 !important;
+  transition: all 0.3s ease;
+}
+body #header.sticky .wpml-ls-statics-shortcode_actions li a:hover,
+body #header.sticky .wpml-ls-statics-shortcode_actions li a span:hover,
+body #header:hover .wpml-ls-statics-shortcode_actions li a:hover,
+body #header:hover .wpml-ls-statics-shortcode_actions li a span:hover {
+  color: #d4df7e !important;
+}
+body #header.sticky .navbar__toggler .navbar__toggler__btn span,
+body #header:hover .navbar__toggler .navbar__toggler__btn span {
   background-color: #000;
 }
 

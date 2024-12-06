@@ -500,53 +500,6 @@ body {
   background-color: #fff;
   transition: all 0.3s ease;
 }
-#header:hover {
-  background-color: #fff !important;
-}
-#header:hover .wpml-ls-statics-shortcode_actions li a,
-#header:hover .wpml-ls-statics-shortcode_actions li a span {
-  color: #000 !important;
-  transition: all 0.3s ease;
-}
-#header:hover .wpml-ls-statics-shortcode_actions li a:hover,
-#header:hover .wpml-ls-statics-shortcode_actions li a span:hover {
-  color: #f2db72 !important;
-}
-#header:hover .header-nav-list li a span {
-  color: #000 !important;
-}
-@media only screen and (max-width: 1300px) {
-  #header:hover .header-nav-list li a span {
-    color: #fff !important;
-  }
-}
-#header:hover .navbar__brand path {
-  fill: #000;
-}
-#header:hover .navbar-right svg path,
-#header:hover .navbar-left svg path {
-  fill: #000;
-}
-#header:hover .navbar-right svg path:hover,
-#header:hover .navbar-left svg path:hover {
-  fill: #f2db72 !important;
-}
-#header:hover a:hover {
-  color: #000;
-}
-#header:hover .navbar__toggler .navbar__toggler__btn span {
-  background-color: #000;
-}
-#header:hover .close-nav path,
-#header:hover .arrow-plus path {
-  fill: #000 !important;
-}
-@media only screen and (max-width: 1300px) {
-  #header:hover .close-nav path,
-  #header:hover .arrow-plus path {
-    fill: #fff !important;
-  }
-}
 #header .navbar {
   display: flex;
   align-items: center;
@@ -589,6 +542,11 @@ body {
   }
 }
 
+.close-nav path,
+.arrow-plus path {
+  fill: #000;
+}
+
 #header.sticky {
   position: fixed;
   width: 100%;
@@ -604,27 +562,19 @@ body {
     width: 80%;
   }
 }
-#header.sticky #header-nav-list li a span {
-  color: #000 !important;
-}
-@media only screen and (max-width: 1300px) {
-  #header.sticky #header-nav-list li a span {
-    color: #fff !important;
-  }
-}
 #header.sticky .close-nav path,
 #header.sticky .arrow-plus path {
   fill: #000 !important;
 }
-@media only screen and (max-width: 1300px) {
-  #header.sticky .close-nav path,
-  #header.sticky .arrow-plus path {
-    fill: #fff !important;
-  }
-}
 
 .navbar__brand a {
   display: block;
+}
+.navbar__brand a svg {
+  transition: all 0.3s ease;
+}
+.navbar__brand a svg:hover {
+  transform: scale(1.1);
 }
 @media only screen and (max-width: 460px) {
   .navbar__brand a svg {
@@ -662,20 +612,20 @@ body {
   transition: all 0.3s ease;
 }
 .navbar__navigation__list ul li a:hover span {
-  color: #f2db72;
+  color: #d4df7e;
 }
 .navbar__navigation__list ul .current_page_item a {
-  color: #f2db72 !important;
+  color: #d4df7e !important;
 }
 .navbar__navigation__list ul .current_page_item a span {
-  color: #f2db72 !important;
+  color: #d4df7e !important;
 }
 .navbar__navigation__list .border {
   position: absolute;
   bottom: -2px;
   left: 0;
   height: 2px;
-  background-color: #f2db72;
+  background-color: #d4df7e;
   transition: transform 0.3s ease, width 0.3s ease;
   z-index: 2;
 }

@@ -179,3 +179,9 @@ if (function_exists('acf_add_options_page')) {
 		'parent_slug' => 'themes.php',
 	));
 }
+
+
+function isMobile()
+{
+	return preg_match('/(android|iphone|ipad|ipod|blackberry|webos|windows phone|opera mini|iemobile|mobile)/i', $_SERVER['HTTP_USER_AGENT']);
+}

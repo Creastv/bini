@@ -25,7 +25,12 @@
                     <div class="navbar-left">
                         <?php //get_template_part('templates-parts/header/header', 'nav'); 
                         ?>
+
+
+                        <?php get_template_part('templates-parts/header/header-megamenu-mobile'); ?>
+
                         <?php get_template_part('templates-parts/header/header-megamenu'); ?>
+
                         <?php get_template_part('templates-parts/header/header', 'burger'); ?>
                     </div>
                     <div class="navbar-middle">

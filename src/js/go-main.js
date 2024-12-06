@@ -91,27 +91,6 @@ window.onclick = function(event) {
   }
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  var menuItems = document.querySelectorAll(".navbar-left li");
-  var border = document.querySelector(".border");
-  for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener("mouseover", function() {
-      var itemRect = this.getBoundingClientRect();
-      var menuRect = this.parentNode.getBoundingClientRect();
-      var leftPos = itemRect.left - menuRect.left;
-      var width = itemRect.width;
-
-      border.style.transform = "translateX(" + leftPos + "px)";
-      border.style.width = width + "px";
-    });
-    menuItems[i].addEventListener("mouseout", function() {
-      border.style.width = '0px';
-    });
-  }
-});
-
-
 function setupEvents() {
 
 const isMobile = window.innerWidth >= 1300;
