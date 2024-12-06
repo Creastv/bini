@@ -76,21 +76,22 @@
                                                 $linkChilde = get_sub_field('link_potomny_two');
                                                 $linkChildeChilde = get_sub_field('linki_potomne_3');
                                             ?>
-                                                <div class="co no separator-prawy">
-                                                    <?php if ($linkChildeChilde) { ?>
-                                                        <?php if ($linkChildeChilde['tytul']) { ?>
-                                                            <p><b><?php echo $linkChildeChilde['tytul']; ?></b></p>
+                                                <?php if ($linkChildeChilde['linki']) { ?>
+                                                    <div class="co no separator-prawy">
+                                                        <?php if ($linkChildeChilde) { ?>
+                                                            <?php if ($linkChildeChilde['tytul']) { ?>
+                                                                <p><b><?php echo $linkChildeChilde['tytul']; ?></b></p>
+                                                            <?php } ?>
+                                                            <?php foreach ($linkChildeChilde['linki'] as $link) : ?>
+                                                                <a itemprop="url" href="<?php echo esc_url($link['link']['url']); ?>"
+                                                                    title="<?php echo $link['link']['title']; ?>">
+                                                                    <span class="name <?php echo $styl; ?>"
+                                                                        itemprop="name"><?php echo esc_html($link['link']['title']); ?></span>
+                                                                </a>
+                                                            <?php endforeach; ?>
                                                         <?php } ?>
-                                                        <?php foreach ($linkChildeChilde['linki'] as $link) : ?>
-                                                            <a itemprop="url" href="<?php echo esc_url($link['link']['url']); ?>"
-                                                                title="<?php echo $link['link']['title']; ?>">
-                                                                <span class="name <?php echo $styl; ?>"
-                                                                    itemprop="name"><?php echo esc_html($link['link']['title']); ?></span>
-                                                            </a>
-                                                        <?php endforeach; ?>
-                                                    <?php } ?>
-                                                </div>
-
+                                                    </div>
+                                                <?php } ?>
                                             <?php endwhile; ?>
                                         </div>
                                     </div>
