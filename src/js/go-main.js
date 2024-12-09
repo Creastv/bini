@@ -182,3 +182,15 @@ for (let i = 0; i < menuItems.length; i++) {
 
 
 });
+
+
+
+// // Wysyłanie wiadomości
+// window.postMessage({ action: "exampleAction", data: "Hello" }, "*");
+
+// // Odbieranie wiadomości
+// window.addEventListener("message", (event) => {
+//     if (event.data.action === "exampleAction") {
+//         console.log("Received data:", event.data.data);
+//     }
+// });
