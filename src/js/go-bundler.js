@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Wysyłam produkty:', productsToAdd);
 
             try {
-                const response = await fetch('https://bini.jffrbblxkx.cfolks.pl/wp-json/custom-bundler/v1/add-to-cart', {
+                const response = await fetch('https://bini.co/wp-json/custom-bundler/v1/add-to-cart', {
                     // const response = await fetch('http://localhost/bini/wp-json/custom-bundler/v1/add-to-cart', {
                     method: 'POST',
                     headers: {

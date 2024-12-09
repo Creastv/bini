@@ -185,3 +185,38 @@ function isMobile()
 {
 	return preg_match('/(android|iphone|ipad|ipod|blackberry|webos|windows phone|opera mini|iemobile|mobile)/i', $_SERVER['HTTP_USER_AGENT']);
 }
+
+
+
+add_action('wp_footer', 'track_add_to_cart_event_with_wpml');
+function track_add_to_cart_event_with_wpml()
+{
+	// Pobierz aktualną walutę z WPML
+	$current_currency = get_woocommerce_currency();
+
+?>
+	<script>
+		jQuery(document.body).on('added_to_cart', function(event, fragments, cart_hash) {
+			var productId = jQuery('.add_to_cart_button.added').data('product_id');
+			var productName = jQuery('.add_to_cart_button.added').closest('.product').find(
+				'.woocommerce-loop-product__title').text();
+			var productPrice = jQuery('.add_to_cart_button.added').closest('.product').find('.price').text();
+
+			window.dataLayer.push({
+				event: "addToCart",
+				ecommerce: {
+					currencyCode: "<?php echo esc_js($current_currency); ?>", // Dynamiczna waluta
+					add: {
+						products: [{
+							id: productId,
+							name: productName,
+							price: productPrice,
+							quantity: 1
+						}]
+					}
+				}
+			});
+		});
+	</script>
+<?php
+}
