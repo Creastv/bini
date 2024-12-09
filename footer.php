@@ -2,7 +2,6 @@
 </div>
 </main>
 
-
 <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
     <?php get_template_part('templates-parts/footer/footer', 'one'); ?>
     <?php get_template_part('templates-parts/footer/footer', 'info'); ?>
@@ -15,30 +14,30 @@
 </span>
 <?php wp_footer(); ?>
 <script>
-    jQuery(function($) {
-        $('#invoice_checkbox').change(function() {
-            if ($(this).is(':checked')) {
-                $('.hidden-field').show();
-            } else {
-                $('.hidden-field').hide();
-            }
-        });
+jQuery(function($) {
+    $('#invoice_checkbox').change(function() {
+        if ($(this).is(':checked')) {
+            $('.hidden-field').show();
+        } else {
+            $('.hidden-field').hide();
+        }
     });
+});
 </script>
 <script>
-    jQuery(document).ready(function($) {
-        $('.accordion-title').on('click', function() {
-            var contentId = $(this).data('accordion');
+jQuery(document).ready(function($) {
+    $('.accordion-title').on('click', function() {
+        var contentId = $(this).data('accordion');
 
-            // Toggle current accordion
-            $('#' + contentId).toggleClass('open');
-            $(this).toggleClass('active');
+        // Toggle current accordion
+        $('#' + contentId).toggleClass('open');
+        $(this).toggleClass('active');
 
-            // Close other accordions
-            // $('.accordion-content').not('#' + contentId).removeClass('open');
-            // $('.accordion-title').not(this).removeClass('active');
-        });
+        // Close other accordions
+        // $('.accordion-content').not('#' + contentId).removeClass('open');
+        // $('.accordion-title').not(this).removeClass('active');
     });
+});
 </script>
 </body>
 

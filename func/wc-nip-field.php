@@ -81,17 +81,17 @@ function add_invoice_script()
 {
     if (is_checkout()) { // Sprawdzamy, czy jesteśmy na stronie checkout
 ?>
-        <script type="text/javascript">
-            jQuery(function($) {
-                $('#invoice_checkbox').change(function() {
-                    if ($(this).is(':checked')) {
-                        $('.hidden-field').show();
-                    } else {
-                        $('.hidden-field').hide();
-                    }
-                });
-            });
-        </script>
+<script type="text/javascript">
+jQuery(function($) {
+    $('#invoice_checkbox').change(function() {
+        if ($(this).is(':checked')) {
+            $('.hidden-field').show();
+        } else {
+            $('.hidden-field').hide();
+        }
+    });
+});
+</script>
 <?php
     }
 }
