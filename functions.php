@@ -187,36 +187,65 @@ function isMobile()
 }
 
 
+add_action('woocommerce_thankyou', 'add_user_phone_to_datalayer', 10, 1);
 
-add_action('wp_footer', 'track_add_to_cart_event_with_wpml');
-function track_add_to_cart_event_with_wpml()
+function add_user_phone_to_datalayer($order_id)
 {
-	// Pobierz aktualną walutę z WPML
-	$current_currency = get_woocommerce_currency();
+	if (!$order_id) return;
 
-?>
-	<script>
-		jQuery(document.body).on('added_to_cart', function(event, fragments, cart_hash) {
-			var productId = jQuery('.add_to_cart_button.added').data('product_id');
-			var productName = jQuery('.add_to_cart_button.added').closest('.product').find(
-				'.woocommerce-loop-product__title').text();
-			var productPrice = jQuery('.add_to_cart_button.added').closest('.product').find('.price').text();
+	$order = wc_get_order($order_id);
+	$user_id = $order->get_user_id(); // ID użytkownika
+	$user_data = [];
 
-			window.dataLayer.push({
-				event: "addToCart",
-				ecommerce: {
-					currencyCode: "<?php echo esc_js($current_currency); ?>", // Dynamiczna waluta
-					add: {
-						products: [{
-							id: productId,
-							name: productName,
-							price: productPrice,
-							quantity: 1
-						}]
-					}
-				}
-			});
-		});
-	</script>
-<?php
+	if ($user_id) {
+		$user = get_userdata($user_id);
+		$user_data = [
+			'id'         => $user_id,
+			'email'      => $user->user_email,
+			'first_name' => $user->first_name,
+			'last_name'  => $user->last_name,
+			'phone'      => $order->get_billing_phone(), // Numer telefonu z danych zamówienia
+			'role'       => implode(', ', $user->roles),
+		];
+	} else {
+		$user_data = [
+			'id'         => 'guest',
+			'email'      => $order->get_billing_email(),
+			'first_name' => $order->get_billing_first_name(),
+			'last_name'  => $order->get_billing_last_name(),
+			'phone'      => $order->get_billing_phone(), // Numer telefonu
+			'role'       => 'guest',
+		];
+	}
+
+	// Dane zamówienia
+	$order_data = [
+		'transaction_id' => $order->get_id(),
+		'affiliation'    => get_bloginfo('name'),
+		'value'          => $order->get_total(),
+		'currency'       => get_woocommerce_currency(),
+		'tax'            => $order->get_total_tax(),
+		'shipping'       => $order->get_shipping_total(),
+		'coupon'         => implode(', ', $order->get_coupon_codes()),
+		'items'          => [],
+		'user_data'      => $user_data, // Dodanie danych użytkownika z numerem telefonu
+	];
+
+	// Produkty w zamówieniu
+	foreach ($order->get_items() as $item_id => $item) {
+		$product = $item->get_product();
+		$order_data['items'][] = [
+			'id'       => $product->get_id(),
+			'name'     => $product->get_name(),
+			'category' => implode(', ', wp_get_post_terms($product->get_id(), 'product_cat', ['fields' => 'names'])),
+			'quantity' => $item->get_quantity(),
+			'price'    => $item->get_total() / $item->get_quantity(),
+		];
+	}
+
+	// Wydruk Data Layer
+	echo '<script>';
+	echo 'window.dataLayer = window.dataLayer || [];';
+	echo 'window.dataLayer.push(' . json_encode($order_data) . ');';
+	echo '</script>';
 }
