@@ -33,13 +33,14 @@ window.addEventListener('scroll', function() {
   const header = document.querySelector('.js-header');
   const stickyinfo = document.querySelector('.info-stripe');
   const body = document.querySelector('body');
-
-   if (window.pageYOffset >= stickyinfo.offsetHeight) {
-    header.classList.add('sticky'); // Przypinamy do góry
-   body.style.paddingTop = header.offsetHeight + "px";
-  } else {
-    header.classList.remove('sticky'); // Odklejamy
-    body.style.paddingTop = "0px";
+  if( header) {
+    if (window.pageYOffset >= stickyinfo.offsetHeight) {
+      header.classList.add('sticky'); // Przypinamy do góry
+    body.style.paddingTop = header.offsetHeight + "px";
+    } else {
+      header.classList.remove('sticky'); // Odklejamy
+      body.style.paddingTop = "0px";
+    }
   }
 });
 
@@ -166,12 +167,6 @@ for (let i = 0; i < menuItems.length; i++) {
 };
   setupEvents();
 
-  // window.addEventListener("resize", setupEvents);
-  // window.addEventListener("scroll", setupEvents);
-
-
-
-
   // footer
   const calaps = document.querySelectorAll(".calaps");
   for (let i = 0; i < calaps.length; i++) {
@@ -182,15 +177,3 @@ for (let i = 0; i < menuItems.length; i++) {
 
 
 });
-
-
-
-// // Wysyłanie wiadomości
-// window.postMessage({ action: "exampleAction", data: "Hello" }, "*");
-
-// // Odbieranie wiadomości
-// window.addEventListener("message", (event) => {
-//     if (event.data.action === "exampleAction") {
-//         console.log("Received data:", event.data.data);
-//     }
-// });
