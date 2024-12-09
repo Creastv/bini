@@ -175,5 +175,49 @@ for (let i = 0; i < menuItems.length; i++) {
     });
   }
 
+});
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const co = document.querySelector('.woocommerce-checkout .woocommerce');
+  const orderReview = document.querySelector('#order_review');
+ 
+  if (co && orderReview ) {
+    const updateMinHeight = () => {
+      setTimeout(() => {
+        const height =  document.querySelector('#order_review').offsetHeight;
+        if (window.innerWidth >= 998) {
+          co.style.minHeight = height + 50 + 'px';
+        } else {
+          co.style.minHeight = 'auto';
+        }
+      }, 1000); 
+    };
+
+    // Initial update
+    updateMinHeight();
+    setTimeout(() => {
+      const radioButtons = document.querySelectorAll('.woocommerce-checkout input[type="radio"]');
+       // Add event listeners to radio buttons
+      radioButtons.forEach(radio => {
+        radio.addEventListener('change', updateMinHeight);
+      });
+    }, 2000); 
+   
+    // Update on resize
+    window.addEventListener('resize', updateMinHeight);
+
+    // Update on scroll
+    let isThrottled = false;
+    window.addEventListener('scroll', () => {
+      if (!isThrottled) {
+        isThrottled = true;
+        setTimeout(() => {
+          updateMinHeight();
+          isThrottled = false;
+        }, 100); // Adjust throttle time as needed
+      }
+    });
+  }
 });
